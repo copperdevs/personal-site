@@ -5,6 +5,7 @@ interface Props {
 
 const { title } = Astro.props;
 
+import { ViewTransitions } from "astro:transitions";
 import "../styles/global.css";
 ---
 
@@ -16,9 +17,16 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{title} | personal site</title>
+    <ViewTransitions />
   </head>
   <body>
-    <slot />
+    <main>
+      <h1><span class="text-gradient">{title}</span></h1>
+      <li><a href="/">home</a></li>
+      <li><a href="/blog">blog</a></li>
+      <li><a href="/projects">projects</a></li>
+      <slot />
+    </main>
   </body>
 </html>

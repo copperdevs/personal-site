@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("projects"));
+---
+
+<Layout title="projects">
+    <section>
+        <ul>
+          {
+            posts.map((post) => (
+              <li>
+                <a href={`/projects/${post.slug}/`}>
+                    <h4><span class="text-gradient">{post.data.title}</span></h4>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+</Layout>
