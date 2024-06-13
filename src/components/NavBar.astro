@@ -1,0 +1,46 @@
+---
+interface Props {
+  active: string;
+}
+
+const { active } = Astro.props;
+---
+
+<div>
+  <slot />
+  {
+    active === "home" ? (
+      <h2 transition:name="homeheader" style="display: inline-block">
+        <a href="/">home</a>
+      </h2>
+    ) : (
+      <h3 transition:name="homeheader" style="display: inline-block">
+        <a href="/">home</a>
+      </h3>
+    )
+  }
+
+  {
+    active === "blog" ? (
+      <h2 transition:name="blogheader" style="display: inline-block">
+        <a href="/blog">blog</a>
+      </h2>
+    ) : (
+      <h3 transition:name="blogheader" style="display: inline-block">
+        <a href="/blog">blog</a>
+      </h3>
+    )
+  }
+
+  {
+    active === "projects" ? (
+      <h2 transition:name="projectsheader" style="display: inline-block">
+        <a href="/projects">projects</a>
+      </h2>
+    ) : (
+      <h3 transition:name="projectsheader" style="display: inline-block">
+        <a href="/projects">projects</a>
+      </h3>
+    )
+  }
+</div>

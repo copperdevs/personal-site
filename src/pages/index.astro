@@ -1,18 +1,9 @@
 ---
+import NavBar from "../components/NavBar.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 ---
 
 <Layout title="home">
-  <div>
-    <h2 transition:name="homeheader" style="display: inline-block">
-      <a href="/">home</a>
-    </h2>
-    <h3 transition:name="blogheader" style="display: inline-block">
-      <a href="/blog">blog</a>
-    </h3>
-    <h3 transition:name="projectsheader" style="display: inline-block">
-      <a href="/projects">projects</a>
-    </h3>
-  </div>
+  <NavBar active="home" />
 </Layout>

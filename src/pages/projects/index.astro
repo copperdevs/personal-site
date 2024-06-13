@@ -1,25 +1,15 @@
 ---
-import { slide } from "astro:transitions";
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
 
 import { getCollection } from "astro:content";
+import NavBar from "../../components/NavBar.astro";
 
 const posts = await getCollection("projects");
 ---
 
 <Layout title="projects">
-  <div>
-    <h3 transition:name="homeheader" style="display: inline-block">
-      <a href="/">home</a>
-    </h3>
-    <h3 transition:name="blogheader" style="display: inline-block">
-      <a href="/blog">blog</a>
-    </h3>
-    <h2 transition:name="projectsheader" style="display: inline-block">
-      <a href="/projects">projects</a>
-    </h2>
-  </div>
+  <NavBar active="projects" />
 
   <section>
     {

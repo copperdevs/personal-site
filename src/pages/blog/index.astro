@@ -5,6 +5,7 @@ import "../../styles/global.css";
 import FormattedDate from "../../components/FormattedDate.astro";
 
 import { getCollection } from "astro:content";
+import NavBar from "../../components/NavBar.astro";
 
 const allPosts = await getCollection("posts");
 
@@ -14,17 +15,7 @@ const posts = allPosts.sort(
 ---
 
 <Layout title="blog">
-  <div>
-    <h3 transition:name="homeheader" style="display: inline-block">
-      <a href="/">home</a>
-    </h3>
-    <h2 transition:name="blogheader" style="display: inline-block">
-      <a href="/blog">blog</a>
-    </h2>
-    <h3 transition:name="projectsheader" style="display: inline-block">
-      <a href="/projects">projects</a>
-    </h3>
-  </div>
+  <NavBar active="blog" />
 
   <section>
     {
