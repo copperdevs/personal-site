@@ -1,24 +1,35 @@
 ---
+import { slide } from "astro:transitions";
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
 
 import { getCollection } from "astro:content";
 
-const posts = (await getCollection("projects"));
+const posts = await getCollection("projects");
 ---
 
 <Layout title="projects">
-    <section>
-        <ul>
-          {
-            posts.map((post) => (
-              <li>
-                <a href={`/projects/${post.slug}/`}>
-                    <h4><span class="text-gradient">{post.data.title}</span></h4>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
+  <div>
+    <h3 transition:name="homeheader" style="display: inline-block">
+      <a href="/">home</a>
+    </h3>
+    <h3 transition:name="blogheader" style="display: inline-block">
+      <a href="/blog">blog</a>
+    </h3>
+    <h2 transition:name="projectsheader" style="display: inline-block">
+      <a href="/projects">projects</a>
+    </h2>
+  </div>
+
+  <section>
+    {
+      posts.map((post) => (
+        <a href={`/projects/${post.slug}/`}>
+          <h4 transition:animate="fade">
+            <span class="text-gradient">{post.data.title}</span>
+          </h4>
+        </a>
+      ))
+    }
+  </section>
 </Layout>

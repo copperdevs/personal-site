@@ -6,23 +6,36 @@ import FormattedDate from "../../components/FormattedDate.astro";
 
 import { getCollection } from "astro:content";
 
-const posts = (await getCollection("posts")).sort(
+const allPosts = await getCollection("posts");
+
+const posts = allPosts.sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---
 
 <Layout title="blog">
+  <div>
+    <h3 transition:name="homeheader" style="display: inline-block">
+      <a href="/">home</a>
+    </h3>
+    <h2 transition:name="blogheader" style="display: inline-block">
+      <a href="/blog">blog</a>
+    </h2>
+    <h3 transition:name="projectsheader" style="display: inline-block">
+      <a href="/projects">projects</a>
+    </h3>
+  </div>
+
   <section>
-    <ul>
-      {
-        posts.map((post) => (
-          <li>
-            <a href={`/blog/${post.slug}/`}>
-                <h4><span class="text-gradient">{post.data.title}</span> - <FormattedDate date={post.data.pubDate} /></h4>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+    {
+      posts.map((post) => (
+        <a href={`/blog/${post.slug}/`}>
+          <h4 transition:animate="fade">
+            <span class="text-gradient">{post.data.title}</span> -{" "}
+            <FormattedDate date={post.data.pubDate} />
+          </h4>
+        </a>
+      ))
+    }
   </section>
 </Layout>
