@@ -28,14 +28,17 @@ const posts = allPosts.sort(
 
   <section>
     {
-      posts.map((post) => (
-        <a href={`/blog/${post.slug}/`}>
-          <h4 transition:animate="fade">
-            <span class="text-gradient">{post.data.title}</span> -{" "}
-            <FormattedDate date={post.data.pubDate} />
-          </h4>
-        </a>
-      ))
+      posts.map(
+        (post) =>
+          !post.data.hidden && (
+            <a href={`/blog/${post.slug}/`}>
+              <h4 transition:animate="fade">
+                <span class="text-gradient">{post.data.title}</span> -{" "}
+                <FormattedDate date={post.data.pubDate} />
+              </h4>
+            </a>
+          )
+      )
     }
   </section>
 </Layout>

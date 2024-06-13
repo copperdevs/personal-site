@@ -8,6 +8,7 @@ const postsCollection = defineCollection({
     pubDate: z.date(),
     description: z.string(),
     author: z.string(),
+    hidden: z.boolean(),
   }),
 });
 
@@ -17,6 +18,7 @@ const projectsCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     creator: z.string(),
+    hidden: z.boolean(),
   }),
 });
 // Export a single `collections` object to register your collection(s)
