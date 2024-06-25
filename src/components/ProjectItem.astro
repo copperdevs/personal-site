@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+}
+
+const { title, description, slug } = Astro.props;
+---
+
+<a href={`/projects/${slug}/`}>
+  <h3 class="project-item-header">
+    <span class="text-gradient">{title}</span>
+  </h3>
+</a>
+
+
+
+<h5 class="project-item-paragraph">
+  <span>{description}</span>
+</h5>
+
+<hr />

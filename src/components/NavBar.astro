@@ -21,13 +21,13 @@ const { active } = Astro.props;
   }
 
   {
-    active === "blog" ? (
-      <h2 transition:name="blogheader" style="display: inline-block">
-        <a href="/blog">blog</a>
+    active === "socials" ? (
+      <h2 transition:name="socialsheader" style="display: inline-block">
+        <a href="/socials">socials</a>
       </h2>
     ) : (
-      <h3 transition:name="blogheader" style="display: inline-block">
-        <a href="/blog">blog</a>
+      <h3 transition:name="socialsheader" style="display: inline-block">
+        <a href="/socials">socials</a>
       </h3>
     )
   }

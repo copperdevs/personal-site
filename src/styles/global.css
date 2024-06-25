@@ -10,13 +10,13 @@
     rgb(var(--accent-light)) 30%,
     white 60%
   );
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
+  --black: 15, 18, 25;
+  --gray: 96, 115, 159;
+  --gray-light: 178, 182, 191;
+  --gray-dark: 34, 41, 57;
+  --gray-gradient: rgba(var(--gray-light), 50%), #fff;
+  --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
+    0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
 }
 
 html {
@@ -148,5 +148,16 @@ blockquote {
 
 hr {
   border: none;
-  border-top: 1px solid rgb(var(--black));
+  border-top: 1px solid rgb(var(--gray-dark));
+}
+
+.project-item-header {
+  margin:0;
+  padding:0;
+}
+
+.project-item-paragraph {
+  color: rgb(var(--gray-light));
+  margin:0;
+  padding:0;
 }

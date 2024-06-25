@@ -4,6 +4,7 @@ import "../../styles/global.css";
 
 import { getCollection } from "astro:content";
 import NavBar from "../../components/NavBar.astro";
+import ProjectItem from "../../components/ProjectItem.astro";
 
 const posts = await getCollection("projects");
 ---
@@ -15,13 +16,7 @@ const posts = await getCollection("projects");
     {
       posts.map(
         (post) =>
-          !post.data.hidden && (
-            <a href={`/projects/${post.slug}/`}>
-              <h4 transition:animate="fade">
-                <span class="text-gradient">{post.data.title}</span>
-              </h4>
-            </a>
-          )
+          !post.data.hidden && <ProjectItem title={post.data.title} description={post.data.description} slug={post.slug} />
       )
     }
   </section>
