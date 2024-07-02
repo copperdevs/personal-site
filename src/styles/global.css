@@ -126,7 +126,7 @@ img {
 
 code {
   padding: 2px 5px;
-  background-color: rgb(var(--gray));
+  background-color: rgb(var(--gray-dark));
   border-radius: 2px;
 }
 
@@ -140,10 +140,16 @@ pre > code {
 }
 
 blockquote {
-  border-left: 4px solid var(--accent);
-  padding: 0 0 0 20px;
+  /* padding: 0 1em;
   margin: 0px;
   font-size: 1.333em;
+  border-left: solid var(--accent-light); */
+
+  margin: 0;
+  padding: 0 1em;
+  color: rgba(var(--gray-light), 55%);
+  border-left: solid rgba(var(--gray-dark), 55%);
+  border-width: 0 .25em;
 }
 
 hr {
@@ -152,12 +158,12 @@ hr {
 }
 
 .project-item-header {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 .project-item-paragraph {
   color: rgb(var(--gray-light));
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
