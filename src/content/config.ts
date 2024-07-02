@@ -9,6 +9,7 @@ const projectsCollection = defineCollection({
     description: z.string(),
     creator: z.string(),
     hidden: z.boolean(),
+    source: z.string(),
   }),
 });
 

@@ -149,7 +149,7 @@ blockquote {
   padding: 0 1em;
   color: rgba(var(--gray-light), 55%);
   border-left: solid rgba(var(--gray-dark), 55%);
-  border-width: 0 .25em;
+  border-width: 0 0.25em;
 }
 
 hr {
@@ -160,10 +160,34 @@ hr {
 .project-item-header {
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .project-item-paragraph {
   color: rgb(var(--gray-light));
   margin: 0;
   padding: 0;
+}
+
+.icon-wrapper {
+  display: inline-block;
+}
+
+.icon {
+  display: block;
+  fill: currentColor;
+}
+
+.github-icon-cls-1 {
+  fill-rule: evenodd;
+}
+.github-icon-cls-2 {
+  fill: none;
+}
+
+.github-icon {
+  margin-left: auto;
+  color: rgb(var(--accent-gradient));
 }

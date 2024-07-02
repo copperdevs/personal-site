@@ -1,19 +1,30 @@
 ---
+import GithubIcon from "./icons/GithubIcon.astro";
+
 interface Props {
   title: string;
   description: string;
   slug: string;
+  source: string;
 }
 
-const { title, description, slug } = Astro.props;
+const { title, description, slug, source } = Astro.props;
 ---
 
 <div class="project-item">
-  <a href={`/projects/${slug}/`}>
-    <h3 class="project-item-header">
+  <h3 class="project-item-header">
+    <a href={`/projects/${slug}/`}>
       <span class="text-gradient">{title}</span>
-    </h3>
-  </a>
+    </a>
+
+    <a href={source}>
+      <GithubIcon
+        title="GitHub"
+        class="github-icon"
+        aria-label="Website source"
+      />
+    </a>
+  </h3>
 
   <h5 class="project-item-paragraph">
     <span>{description}</span>

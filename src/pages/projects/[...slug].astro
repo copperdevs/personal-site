@@ -19,7 +19,7 @@ const { Content } = await post.render();
 <Layout title={post.data.title}>
   <NavBar active="none">
     <h2 style="display: inline-block">
-      <a href="/projects">{post.data.title}</a>
+      <a href={post.data.source}>{post.data.title}</a>
     </h2>
   </NavBar>
   <Content />

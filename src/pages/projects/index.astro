@@ -16,7 +16,14 @@ const posts = await getCollection("projects");
     {
       posts.map(
         (post) =>
-          !post.data.hidden && <ProjectItem title={post.data.title} description={post.data.description} slug={post.slug} />
+          !post.data.hidden && (
+            <ProjectItem
+              title={post.data.title}
+              description={post.data.description}
+              slug={post.slug}
+              source={post.data.source}
+            />
+          )
       )
     }
   </section>
