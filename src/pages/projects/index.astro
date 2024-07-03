@@ -7,6 +7,7 @@ import NavBar from "../../components/NavBar.astro";
 import ProjectItem from "../../components/ProjectItem.astro";
 
 const posts = await getCollection("projects");
+const visiblePosts = posts.filter((post) => !post.data.hidden);
 ---
 
 <Layout title="projects">
@@ -14,17 +15,17 @@ const posts = await getCollection("projects");
 
   <section>
     {
-      posts.map(
-        (post) =>
-          !post.data.hidden && (
-            <ProjectItem
-              title={post.data.title}
-              description={post.data.description}
-              slug={post.slug}
-              source={post.data.source}
-            />
-          )
-      )
+      visiblePosts.map((post, index) => (
+        <>
+          <ProjectItem
+            title={post.data.title}
+            description={post.data.description}
+            slug={post.slug}
+            source={post.data.source}
+          />
+          {index < visiblePosts.length - 1 && <hr />}
+        </>
+      ))
     }
   </section>
 </Layout>
