@@ -4,7 +4,7 @@ description: "Core library for all of my csharp projects"
 creator: "me"
 hidden: false
 source: "https://github.com/copperdevs/CopperDevs.Core"
-category: Library
+category: Libraries
 ---
 
 > Common files used in multiple projects of mine

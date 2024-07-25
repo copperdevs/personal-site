@@ -1,4 +1,6 @@
 ---
+import NavBarHeaderLink from './NavBarHeaderLink.astro';
+
 interface Props {
   active: string;
 }
@@ -8,39 +10,7 @@ const { active } = Astro.props;
 
 <div>
   <slot />
-  {
-    active === "home" ? (
-      <h2 transition:name="homeheader" style="display: inline-block">
-        <a href="/">home</a>
-      </h2>
-    ) : (
-      <h3 transition:name="homeheader" style="display: inline-block">
-        <a href="/">home</a>
-      </h3>
-    )
-  }
-
-  {
-    active === "socials" ? (
-      <h2 transition:name="socialsheader" style="display: inline-block">
-        <a href="/socials">socials</a>
-      </h2>
-    ) : (
-      <h3 transition:name="socialsheader" style="display: inline-block">
-        <a href="/socials">socials</a>
-      </h3>
-    )
-  }
-
-  {
-    active === "projects" ? (
-      <h2 transition:name="projectsheader" style="display: inline-block">
-        <a href="/projects">projects</a>
-      </h2>
-    ) : (
-      <h3 transition:name="projectsheader" style="display: inline-block">
-        <a href="/projects">projects</a>
-      </h3>
-    )
-  }
+  <NavBarHeaderLink name="home" href="/" active={active} />
+  <NavBarHeaderLink name="socials" href="/socials" active={active} />
+  <NavBarHeaderLink name="projects" href="/projects" active={active} />
 </div>

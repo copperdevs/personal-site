@@ -4,7 +4,7 @@ description: "Collection of common tools that I use in most of my unity projects
 creator: "me"
 hidden: false
 source: "https://github.com/copperdevs/CopperTools"
-category: Unity Package
+category: Unity Packages
 ---
 
 > Collection of common tools that I use in most of my unity projects

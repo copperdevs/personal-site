@@ -1,12 +1,30 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-
 import { getCollection } from "astro:content";
 import NavBar from "../../components/NavBar.astro";
 import ProjectItem from "../../components/ProjectItem.astro";
+import ProjectCategoryIcon from "../../components/ProjectCategoryIcon.astro";
 
-const posts = await getCollection("projects");
-const visiblePosts = posts.filter((post) => !post.data.hidden);
+const projects = await getCollection("projects");
+const visibleProjects = projects.filter((project) => !project.data.hidden);
+
+// group projects by category
+const groupedProjects = visibleProjects.reduce((acc, project) => {
+  const category = project.data.category;
+  if (!acc[category]) {
+    acc[category] = [];
+  }
+  acc[category].push(project);
+  return acc;
+}, {});
+
+// Optionally sort categories and projects within categories
+const sortedCategories = Object.keys(groupedProjects).sort();
+sortedCategories.forEach((category) => {
+  groupedProjects[category].sort((a, b) =>
+    a.data.title.localeCompare(b.data.title)
+  );
+});
 ---
 
 <Layout title="projects">
@@ -14,16 +32,28 @@ const visiblePosts = posts.filter((post) => !post.data.hidden);
 
   <section>
     {
-      visiblePosts.map((post, index) => (
+      sortedCategories.map((category) => (
         <>
-          <ProjectItem
-            title={post.data.title}
-            description={post.data.description}
-            slug={post.slug}
-            source={post.data.source}
-            category={post.data.category}
-          />
-          {index < visiblePosts.length - 1 && <hr />}
+          <h2 class="project-category-header">
+            {category}
+            <div>
+              <ProjectCategoryIcon category={category} />
+            </div>
+          </h2>
+          <hr />
+          {groupedProjects[category].map((project, index) => (
+            <>
+              <ProjectItem
+                title={project.data.title}
+                description={project.data.description}
+                slug={project.slug}
+                source={project.data.source}
+                category={project.data.category}
+              />
+              {index < groupedProjects[category].length - 1 && <hr />}
+              {!(index < groupedProjects[category].length - 1) && (<br /><br />)}
+            </>
+          ))}
         </>
       ))
     }

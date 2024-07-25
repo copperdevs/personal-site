@@ -4,7 +4,7 @@ description: 'Online tools for the fps game "Havoc"'
 creator: "me"
 hidden: false
 source: "https://github.com/copperdevs/havoc-tools"
-category: Website
+category: Websites
 ---
 
 > Many online tools for the fps game [Havoc](https://store.steampowered.com/app/2149290/Havoc/).
