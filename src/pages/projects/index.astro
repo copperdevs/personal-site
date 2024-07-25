@@ -46,9 +46,8 @@ sortedCategories.forEach((category) => {
               <ProjectItem
                 title={project.data.title}
                 description={project.data.description}
-                slug={project.slug}
+                url={project.data.link}
                 source={project.data.source}
-                category={project.data.category}
               />
               {index < groupedProjects[category].length - 1 && <hr />}
               {!(index < groupedProjects[category].length - 1) && (<br /><br />)}
