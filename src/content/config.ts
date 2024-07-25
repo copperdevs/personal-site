@@ -10,6 +10,7 @@ const projectsCollection = defineCollection({
     creator: z.string(),
     hidden: z.boolean(),
     source: z.string(),
+    category: z.string(),
   }),
 });
 

@@ -1,0 +1,11 @@
+---
+interface Props {
+  category: string;
+}
+
+const { category } = Astro.props;
+---
+
+{category == "Unity Package" && <i class="fa-brands fa-unity" />}
+{category == "Library" && <i class="fa-regular fa-file-code" />}
+{category == "Website" && <i class="fa-solid fa-globe" />}

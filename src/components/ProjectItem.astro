@@ -1,14 +1,15 @@
 ---
-import GithubIcon from "./icons/GithubIcon.astro";
+import ProjectCategoryIcon from "./ProjectCategoryIcon.astro";
 
 interface Props {
   title: string;
   description: string;
   slug: string;
   source: string;
+  category: string;
 }
 
-const { title, description, slug, source } = Astro.props;
+const { title, description, slug, source, category } = Astro.props;
 ---
 
 <div class="project-item">
@@ -17,12 +18,12 @@ const { title, description, slug, source } = Astro.props;
       <span class="text-gradient">{title}</span>
     </a>
 
+    <div class="project-item-header-icon">
+      <ProjectCategoryIcon category={category} />
+    </div>
+
     <a href={source}>
-      <GithubIcon
-        title="GitHub"
-        class="github-icon"
-        aria-label="Website source"
-      />
+      <i class="fa-brands fa-github"></i>
     </a>
   </h3>
 

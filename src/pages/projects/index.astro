@@ -21,6 +21,7 @@ const visiblePosts = posts.filter((post) => !post.data.hidden);
             description={post.data.description}
             slug={post.slug}
             source={post.data.source}
+            category={post.data.category}
           />
           {index < visiblePosts.length - 1 && <hr />}
         </>

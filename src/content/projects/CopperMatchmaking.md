@@ -4,6 +4,7 @@ description: "Simple matchmaking server for creating two even player count teams
 creator: "me"
 hidden: false
 source: "https://github.com/copperdevs/CopperMatchmaking"
+category: Library
 ---
 
 > Simple matchmaking server for creating two even player count teams for use in peer to peer
