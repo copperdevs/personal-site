@@ -1,9 +1,9 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import NavBar from "../../components/NavBar.astro";
-import ProjectItem from "../../components/ProjectItem.astro";
-import ProjectCategoryIcon from "../../components/ProjectCategoryIcon.astro";
+import NavBar from "../components/NavBar.astro";
+import ProjectItem from "../components/ProjectItem.astro";
+import ProjectCategoryIcon from "../components/ProjectCategoryIcon.astro";
 
 const projects = await getCollection("projects");
 const visibleProjects = projects.filter((project) => !project.data.hidden);
@@ -21,7 +21,7 @@ const groupedProjects = visibleProjects.reduce((acc, project) => {
 // Optionally sort categories and projects within categories
 const sortedCategories = Object.keys(groupedProjects).sort();
 sortedCategories.forEach((category) => {
-  groupedProjects[category].sort((a, b) =>
+  groupedProjects[category].sort((a: { data: { title: string; }; }, b: { data: { title: any; }; }) =>
     a.data.title.localeCompare(b.data.title)
   );
 });
@@ -41,7 +41,7 @@ sortedCategories.forEach((category) => {
             </div>
           </h2>
           <hr />
-          {groupedProjects[category].map((project, index) => (
+          {groupedProjects[category].map((project: { data: { title: string; description: string; link: string; source: string; }; }, index: number) => (
             <>
               <ProjectItem
                 title={project.data.title}

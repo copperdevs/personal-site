@@ -1,5 +1,7 @@
 ---
-import NavBarHeaderLink from './NavBarHeaderLink.astro';
+import Divider from "../../common-astro/components/Divider.astro";
+import NavBarHeaderLink from "./NavBarHeaderLink.astro";
+import SocialIcon from "./SocialIcon.astro";
 
 interface Props {
   active: string;
@@ -8,9 +10,22 @@ interface Props {
 const { active } = Astro.props;
 ---
 
-<div>
-  <slot />
-  <NavBarHeaderLink name="home" href="/" active={active} />
-  <NavBarHeaderLink name="socials" href="/socials" active={active} />
-  <NavBarHeaderLink name="projects" href="/projects" active={active} />
+<div class="navbar">
+  <div class="navbar-links">
+    <slot />
+    <NavBarHeaderLink name="home" href="/" active={active} />
+    <NavBarHeaderLink name="projects" href="/projects" active={active} />
+  </div>
+
+  <div class="navbar-socials">
+    <h2>
+      <SocialIcon social="discord" />
+      <Divider />
+      <SocialIcon social="youtube" />
+      <Divider />
+      <SocialIcon social="github" />
+      <Divider />
+      <SocialIcon social="twitch" />
+    </h2>
+  </div>
 </div>
