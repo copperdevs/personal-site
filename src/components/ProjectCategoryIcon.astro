@@ -4,10 +4,14 @@ interface Props {
 }
 
 const { category } = Astro.props;
+
+const icons = {
+  "Unity Packages": "fa-brands fa-unity",
+  Libraries: "fa-regular fa-file-code",
+  Websites: "fa-solid fa-globe",
+  Minecraft: "fa-solid fa-cubes",
+  "Desktop Apps": "fa-regular fa-window-maximize",
+};
 ---
 
-{category == "Unity Packages" && <i class="fa-brands fa-unity" />}
-{category == "Libraries" && <i class="fa-regular fa-file-code" />}
-{category == "Websites" && <i class="fa-solid fa-globe" />}
-{category == "Minecraft" && <i class="fa-solid fa-cubes" />}
-{category == "Desktop Apps" && <i class="fa-regular fa-window-maximize" />}
+{icons[category] && <i class={icons[category]} />}
