@@ -1,5 +1,6 @@
 ---
 import NavBar from "../components/NavBar.astro";
+import RandomProject from "../components/RandomProject.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -7,7 +8,13 @@ import Layout from "../layouts/Layout.astro";
   <NavBar active="home" />
 
   <div>
-    <p>hi im <span class="text-gradient">copper</span></p>
-    <p>i do stuff :3</p>
+    <h3>Hello 👋 I'm <span class="text-gradient">Copper</span></h3>
+  </div>
+
+  <hr />
+
+  <div>
+    <h3>Projects - <a href="/projects">View All</a></h3>
+    <RandomProject amount={3} astro:before-preparation />
   </div>
 </Layout>

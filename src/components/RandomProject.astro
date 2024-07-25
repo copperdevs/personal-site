@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import ProjectItem from "../components/ProjectItem.astro";
+import ProjectCategoryIcon from "../components/ProjectCategoryIcon.astro";
+import DisplayProjects from "./DisplayProjects.astro";
+
+interface Props {
+  amount: number;
+}
+
+const { amount } = Astro.props;
+
+const projects = await getCollection("projects");
+const visibleProjects = projects.filter((project) => !project.data.hidden);
+
+function getRandomProjects(arr, n) {
+  const shuffled = [...arr].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, n);
+}
+
+const randomProjects = getRandomProjects(visibleProjects, amount);
+---
+
+<DisplayProjects projects={randomProjects} />
