@@ -1,7 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import ProjectItem from "../components/ProjectItem.astro";
-import ProjectCategoryIcon from "../components/ProjectCategoryIcon.astro";
 import DisplayProjects from "./DisplayProjects.astro";
 
 interface Props {
@@ -21,4 +19,4 @@ function getRandomProjects(arr, n) {
 const randomProjects = getRandomProjects(visibleProjects, amount);
 ---
 
-<DisplayProjects projects={randomProjects} />
+<DisplayProjects projects={randomProjects} showCategoryIcon={false} />

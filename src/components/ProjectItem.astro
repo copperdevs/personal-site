@@ -1,28 +1,43 @@
 ---
+import ProjectCategoryIcon from "./ProjectCategoryIcon.astro";
+
 interface Props {
   title: string;
   description: string;
   url: string;
   source: string;
+  category: string;
+  showCategoryIcon: boolean;
 }
 
-const { title, description, url, source } = Astro.props;
+const { title, description, url, source, category, showCategoryIcon } =
+  Astro.props;
 ---
 
-<div>
+<div class="color-gray-light">
   <h3 class="project-item-header">
     <a href={url}>
       <span class="text-gradient">{title}</span>
     </a>
 
-    {
-      !(url === source) && (
-        <a href={source}>
-          {" "}
-          <i class="fa-brands fa-github" />{" "}
-        </a>
-      )
-    }
+    <div>
+      {
+        !(url === source) && (
+          <a href={source}>
+            {" "}
+            <i class="fa-brands fa-github" />{" "}
+          </a>
+        )
+      }
+
+      {
+        showCategoryIcon && category != "" && (
+          <>
+            <ProjectCategoryIcon category={category} />
+          </>
+        )
+      }
+    </div>
   </h3>
 
   <h5 class="project-item-paragraph">

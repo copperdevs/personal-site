@@ -42,7 +42,10 @@ sortedCategories.forEach((category) => {
             </div>
           </h2>
           <hr />
-          <DisplayProjects projects={groupedProjects[category]} />
+          <DisplayProjects
+            projects={groupedProjects[category]}
+            showCategoryIcon={false}
+          />
         </>
       ))
     }
