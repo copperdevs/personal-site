@@ -1,0 +1,44 @@
+---
+interface Props {
+  social: string;
+  link: string;
+}
+
+const { social, link } = Astro.props;
+
+import "../../common-astro/style/style.css";
+import NavBar from "../components/NavBar.astro";
+import NavBarHeaderLink from "../components/NavBarHeaderLink.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content=`redirect page from where ever to my ${social}`
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>copperdevs' {social.toLowerCase()}</title>
+    <meta http-equiv="refresh" content=`0; url =${link}` />
+  </head>
+  <body onload="window.location={link}">
+    <main>
+      <NavBar active="Redirect">
+        <NavBarHeaderLink name="Redirect" href="/" active="Redirect" />
+      </NavBar>
+
+      <div class="index-callout">
+        <h2 class="index-callout-main">
+          Redirecting to <span class="text-gradient">{social}</span>
+        </h2>
+        <h4 class="index-callout-sub">
+          If you don't get automatically redirect, <a href={link}>click here</a>
+        </h4>
+      </div>
+    </main>
+  </body>
+</html>
