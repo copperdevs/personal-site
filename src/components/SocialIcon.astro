@@ -1,16 +1,11 @@
 ---
+import FontAwesomeIcon from "../../common-astro/components/FontAwesomeIcon.astro";
+
 interface Props {
   social: string;
 }
 
 const { social } = Astro.props;
-
-const icons = {
-  discord: "fa-brands fa-discord",
-  youtube: "fa-brands fa-youtube",
-  github: "fa-brands fa-github",
-  twitch: "fa-brands fa-twitch",
-};
 
 const urls = {
   discord: "https://discord.com/users/781660039537623080/",
@@ -20,6 +15,4 @@ const urls = {
 };
 ---
 
-<a href={urls[social]} target="_blank">
-  {icons[social] && <i class={icons[social]} />}
-</a>
+<FontAwesomeIcon iconName=`fa-brands fa-${social}` targetUrl={urls[social]}/>
