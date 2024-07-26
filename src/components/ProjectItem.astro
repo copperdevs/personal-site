@@ -20,12 +20,12 @@ const { title, description, url, source, category, showCategoryIcon } =
       <span class="text-gradient">{title}</span>
     </a>
 
-    <div>
+    <div aria-disabled="true">
       {
         !(url === source) && (
           <a href={source}>
             {" "}
-            <i class="fa-brands fa-github" />{" "}
+            <i class="fa-brands fa-github" aria-disabled="true" />{" "}
           </a>
         )
       }
@@ -33,7 +33,7 @@ const { title, description, url, source, category, showCategoryIcon } =
       {
         showCategoryIcon && category != "" && (
           <>
-            <ProjectCategoryIcon category={category} />
+            <ProjectCategoryIcon category={category} aria-disabled="true" />
           </>
         )
       }
