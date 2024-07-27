@@ -1,21 +1,17 @@
 ---
-import CurrentAge from "../components/CurrentAge.astro";
 import NavBar from "../components/NavBar.astro";
-import NavBarHeaderLink from "../components/NavBarHeaderLink.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="home">
-  <NavBar active="404">
-    <NavBarHeaderLink name="404" href="/" active="404" />
-  </NavBar>
+  <NavBar active="404" />
 
   <div class="index-callout">
     <h2 class="index-callout-main">
       Woopsies! <span class="text-gradient">404</span>
     </h2>
     <h4 class="index-callout-sub">
-        Hmm.. the page you're looking for couldn't be found
+      Hmm.. the page you're looking for couldn't be found
     </h4>
   </div>
 </Layout>
