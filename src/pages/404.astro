@@ -1,4 +1,5 @@
 ---
+import RandomText from "../../common-astro/components/RandomText.astro";
 import NavBar from "../components/NavBar.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -11,7 +12,13 @@ import Layout from "../layouts/Layout.astro";
       Woopsies! <span class="text-gradient">404</span>
     </h2>
     <h4 class="index-callout-sub">
-      Hmm.. the page you're looking for couldn't be found
+      <RandomText
+        options={[
+          "Hmm.. the page you're looking for couldn't be found",
+          "Woopsies :p dropped the page you were looking for",
+          "yo what page are you looking for? cause i cant find it :p"
+        ]}
+      />
     </h4>
   </div>
 </Layout>
