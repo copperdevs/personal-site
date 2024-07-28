@@ -1,8 +1,9 @@
 ---
-import CurrentAge from "../components/CurrentAge.astro";
 import NavBar from "../components/NavBar.astro";
 import RandomProject from "../components/RandomProject.astro";
 import Layout from "../layouts/Layout.astro";
+
+import { getCurrentAge } from "../lib/utils";
 ---
 
 <Layout title="home">
@@ -13,7 +14,7 @@ import Layout from "../layouts/Layout.astro";
       Hello 👋 I'm <span class="text-gradient">Copper</span>
     </h2>
     <h4 class="index-callout-sub">
-      I'm a {(<CurrentAge />)} year old developer from America.
+      I'm a {getCurrentAge()} year old developer from America.
     </h4>
   </div>
 
