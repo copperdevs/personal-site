@@ -1,5 +1,5 @@
 export function getCurrentAge() {
-  const birthDate = new Date(2008, 7, 30);
+  const birthDate = new Date(2008, 6, 30);
   const today = new Date();
   const month = today.getMonth() - birthDate.getMonth();
 
