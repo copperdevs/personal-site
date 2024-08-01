@@ -33,14 +33,6 @@ import LinkTextPageTitle from "../../common-astro/components/LinkTextPageTitle.a
         badUrls={["copperdevs.pages.dev"]}
         targetUrl="copperdevs.com"
       />
-
-      <LinkTextPageTitle
-        links={["copperdevs.com", "localhost:4321"]}
-        texts={["copperdevs site", "localhost"]}
-        defaultText="copperdevs site"
-        client:load
-      />
-
       <slot />
     </main>
   </body>
