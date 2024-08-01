@@ -9,6 +9,7 @@ import { ViewTransitions } from "astro:transitions";
 import "../../common-astro/style/style.css";
 import FontAwesome from "../../common-astro/components/FontAwesome.astro";
 import LinkRedirect from "../../common-astro/components/LinkRedirect.astro";
+import LinkTextPageTitle from "../../common-astro/components/LinkTextPageTitle.astro";
 ---
 
 <!doctype html>
@@ -22,7 +23,7 @@ import LinkRedirect from "../../common-astro/components/LinkRedirect.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} | copperdevs site</title>
+    <title>{title}</title>
     <ViewTransitions />
     <FontAwesome />
   </head>
@@ -32,6 +33,14 @@ import LinkRedirect from "../../common-astro/components/LinkRedirect.astro";
         badUrls={["copperdevs.pages.dev"]}
         targetUrl="copperdevs.com"
       />
+
+      <LinkTextPageTitle
+        links={["copperdevs.com", "localhost:4321"]}
+        texts={["copperdevs site", "localhost"]}
+        defaultText="copperdevs site"
+        client:load
+      />
+
       <slot />
     </main>
   </body>
