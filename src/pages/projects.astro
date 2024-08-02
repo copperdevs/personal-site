@@ -2,8 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import NavBar from "../components/NavBar.astro";
-import ProjectCategoryIcon from "../components/ProjectCategoryIcon.astro";
-import DisplayProjects from "../components/DisplayProjects.astro";
+import ProjectCategoryIcon from "../components/ProjectCategoryIcon.jsx";
+import DisplayProjects from "../components/DisplayProjects.jsx";
 
 const projects = await getCollection("projects");
 const visibleProjects = projects.filter((project) => !project.data.hidden);
