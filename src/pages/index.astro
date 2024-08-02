@@ -19,8 +19,10 @@ import { getCurrentAge } from "../lib/utils";
   </div>
 
   <div>
-    <h3 class="index-projects-header index-projects-spacing">Projects - <a href="/projects">View All</a></h3>
-    <hr>
-    <RandomProject amount={3} astro:before-preparation />
+    <h3 class="index-projects-header index-projects-spacing">
+      Projects - <a href="/projects">View All</a>
+    </h3>
+    <hr />
+    <RandomProject amount={3} astro:before-preparation client:load/>
   </div>
 </Layout>
