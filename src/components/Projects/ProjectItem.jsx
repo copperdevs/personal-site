@@ -1,4 +1,4 @@
-import ProjectCategoryIcon from "./ProjectCategoryIcon";
+import ProjectCategoryIcon from "../Icons/ProjectCategoryIcon";
 
 const ProjectItem = ({
   title,
