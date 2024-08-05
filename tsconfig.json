@@ -1,7 +1,11 @@
+// https://github.com/withastro/astro/blob/main/packages/astro/tsconfigs/base.json
+
 {
   "extends": "astro/tsconfigs/base",
-  // "compilerOptions": {
-  //   "strictNullChecks": true,
-  //   "allowJs": true
-  // }
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "allowImportingTsExtensions": true,
+    "allowJs": true,
+    "jsx": "preserve"
+  }
 }

@@ -1,28 +1,15 @@
 ---
-import NavBar from "../components/Navigation/NavBar.astro";
-import RandomProjects from "../components/Projects/RandomProjects.jsx";
 import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/Navigation/NavBar.astro";
 
-import { getCurrentAge } from "../lib/utils";
+import IndexCallout from "../components/IndexPage/IndexCallout.astro";
+import IndexRandomProjects from "../components/IndexPage/IndexRandomProjects.jsx";
 ---
 
 <Layout title="home">
   <NavBar active="home" />
 
-  <div class="index-callout">
-    <h2 class="index-callout-main">
-      Hello 👋 I'm <span class="text-gradient">Copper</span>
-    </h2>
-    <h4 class="index-callout-sub color-gray-light">
-      I'm a {getCurrentAge()} year old developer from America.
-    </h4>
-  </div>
+  <IndexCallout />
 
-  <div>
-    <h3 class="index-projects-header index-projects-spacing">
-      Projects - <a href="/projects">View All</a>
-    </h3>
-    <hr />
-    <RandomProjects amount={3} showCategoryIcon={false} client:load />
-  </div>
+  <IndexRandomProjects client:load/>
 </Layout>

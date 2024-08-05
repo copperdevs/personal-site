@@ -1,7 +1,6 @@
-import { getCollection } from "astro:content";
+import { getAllProjects } from "../../lib/projects.js";
 
 export async function GET({}) {
-  const projects = await getCollection("projects");
-  const visibleProjects = projects.filter((project) => !project.data.hidden);
-  return new Response(JSON.stringify(visibleProjects));
+  const projects = await getAllProjects();
+  return new Response(JSON.stringify(projects));
 }
