@@ -13,6 +13,7 @@
     "@astrojs/preact": "^3.5.1",
     "@astrojs/renderer-preact": "^0.5.0",
     "astro": "^4.12.2",
+    "astro-analytics": "^2.7.0",
     "preact": "^10.23.1"
   }
 }
