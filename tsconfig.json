@@ -1,5 +1,3 @@
-// https://github.com/withastro/astro/blob/main/packages/astro/tsconfigs/base.json
-
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
