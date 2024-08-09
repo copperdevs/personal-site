@@ -16,13 +16,13 @@ const ProjectItem = ({
 
       <div aria-disabled="true">
         {url !== source && (
-          <a href={source}>
-            <i class="fa-brands fa-github" aria-disabled="true" />
+          <a href={source} aria-label="Github navigation icon that links to the projects page">
+            <i class="fa-brands fa-github" />
           </a>
         )}
 
         {showCategoryIcon && category !== "" && (
-          <ProjectCategoryIcon category={category} aria-disabled="true" />
+          <ProjectCategoryIcon category={category} />
         )}
       </div>
     </h3>

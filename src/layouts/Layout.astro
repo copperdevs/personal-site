@@ -9,6 +9,7 @@ import { ViewTransitions } from "astro:transitions";
 import "../../common-astro/style/style.css";
 import FontAwesome from "../../common-astro/components/FontAwesome.astro";
 import LinkRedirect from "../../common-astro/components/LinkRedirect.astro";
+import Footer from "../components/Ui/Footer.astro";
 ---
 
 <!doctype html>
@@ -28,15 +29,20 @@ import LinkRedirect from "../../common-astro/components/LinkRedirect.astro";
       src="https://cloud.umami.is/script.js"
       data-website-id="bc408a92-1357-4f9b-86ad-5f608ff9e04d"></script>
     <ViewTransitions />
-    <FontAwesome projectId="45b7384014"/>
+    <FontAwesome projectId="45b7384014" />
   </head>
   <body>
-    <main>
-      <LinkRedirect
-        badUrls={["copperdevs.pages.dev"]}
-        targetUrl="copperdevs.com"
-      />
-      <slot />
-    </main>
+    <div class="content">
+      <main>
+        <LinkRedirect
+          badUrls={["copperdevs.pages.dev"]}
+          targetUrl="copperdevs.com"
+        />
+        <slot />
+      </main>
+    </div>
+    <div class="footer">
+      <Footer />
+    </div>
   </body>
 </html>

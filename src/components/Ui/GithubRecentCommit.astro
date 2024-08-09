@@ -1,0 +1,19 @@
+---
+import FontAwesomeIcon from "../../../common-astro/components/FontAwesomeIcon.astro";
+import {
+  getMostRecentCommitName,
+  getMostRecentCommitUrl,
+} from "../../lib/github.ts";
+
+const repoPath = "copperdevs/personal-site";
+
+const commitName = await getMostRecentCommitName(repoPath);
+const commitUrl = await getMostRecentCommitUrl(repoPath);
+---
+
+<div class="color-white">
+  <a href={commitUrl}>
+    <FontAwesomeIcon iconName="fa-solid fa-code-branch" />
+    <span>{commitName}</span>
+  </a>
+</div>
