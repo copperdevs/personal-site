@@ -1,6 +1,5 @@
 ---
 import Divider from "../../../common-astro/components/Divider.astro";
-import NavBarHeaderLink from "../Navigation/NavBarHeaderLink.astro";
 import SocialIcon from "../Icons/SocialIcon.astro";
 import FontAwesomeIcon from "../../../common-astro/components/FontAwesomeIcon.astro";
 
@@ -21,10 +20,11 @@ const { sections, links, icons, iconUrls, socials } = Astro.props;
       sections.map((section: string) => (
         <>
           <span style="display: inline-block">
-            <NavBarHeaderLink
-              name={section}
-              href={links[sections.indexOf(section)]}
-            />
+            <h3>
+              <a href={links[sections.indexOf(section)]}>
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </a>
+            </h3>
           </span>
         </>
       ))
@@ -46,6 +46,27 @@ const { sections, links, icons, iconUrls, socials } = Astro.props;
         </h2>
       )
     }
+    {
+      icons &&
+        icons?.length > 0 &&
+        iconUrls &&
+        iconUrls?.length > 0 &&
+        iconUrls.length == icons.length && (
+          <h2 aria-label="Navigation bar social icons">
+            <>
+              {icons.map((icon: string) => (
+                <>
+                  <FontAwesomeIcon
+                    iconName={icon}
+                    targetUrl={iconUrls[icons.indexOf(icon)]}
+                  />
+                  {icons.indexOf(icon) < icons.length - 1 && <Divider />}
+                </>
+              ))}
+            </>
+          </h2>
+        )
+    }
   </div>
 </div>
 
@@ -62,10 +83,11 @@ const { sections, links, icons, iconUrls, socials } = Astro.props;
     <div class="overlay-content">
       {
         sections.map((section: string) => (
-          <NavBarHeaderLink
-            name={section}
-            href={links[sections.indexOf(section)]}
-          />
+          <h3>
+            <a href={links[sections.indexOf(section)]}>
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </a>
+          </h3>
         ))
       }
 
@@ -86,6 +108,28 @@ const { sections, links, icons, iconUrls, socials } = Astro.props;
               </>
             </h2>
           )
+        }
+        {
+          icons &&
+            icons?.length > 0 &&
+            iconUrls &&
+            iconUrls?.length > 0 &&
+            iconUrls.length == icons.length && (
+              <h2 aria-label="Navigation bar social icons">
+                <>
+                  {icons.map((icon: string) => (
+                    <>
+                      <span style="display:inline-block;">
+                        <FontAwesomeIcon
+                          iconName={icon}
+                          targetUrl={iconUrls[icons.indexOf(icon)]}
+                        />
+                      </span>
+                    </>
+                  ))}
+                </>
+              </h2>
+            )
         }
       </div>
     </div>
