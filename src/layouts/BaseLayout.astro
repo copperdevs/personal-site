@@ -1,14 +1,15 @@
 ---
 interface Props {
   title: string;
+  description: string;
+  pageTitle: string;
 }
 
-const { title } = Astro.props;
+const { title, description, pageTitle } = Astro.props;
 
 import { ViewTransitions } from "astro:transitions";
 import "../../common-astro/style/style.css";
 import FontAwesome from "../../common-astro/components/FontAwesome.astro";
-import LinkRedirect from "../../common-astro/components/LinkRedirect.astro";
 import Footer from "../components/Ui/Footer.astro";
 ---
 
@@ -16,14 +17,11 @@ import Footer from "../components/Ui/Footer.astro";
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="my funny personal site for me to put crap on :3"
-    />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>copperdevs // {title}</title>
+    <title>{pageTitle} // {title}</title>
     <script
       defer
       src="https://cloud.umami.is/script.js"
@@ -34,10 +32,6 @@ import Footer from "../components/Ui/Footer.astro";
   <body>
     <div class="content">
       <main>
-        <LinkRedirect
-          badUrls={["copperdevs.pages.dev"]}
-          targetUrl="copperdevs.com"
-        />
         <slot />
       </main>
     </div>

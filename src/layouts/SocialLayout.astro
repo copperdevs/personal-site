@@ -7,7 +7,7 @@ interface Props {
 const { social, link } = Astro.props;
 
 import "../../common-astro/style/style.css";
-import NavBar from "../components/Navigation/NavBar.astro";
+import IndexCallout from "../components/IndexPage/IndexCallout.astro";
 ---
 
 <!doctype html>
@@ -19,23 +19,21 @@ import NavBar from "../components/Navigation/NavBar.astro";
       content=`redirect page from where ever to my ${social}`
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>copperdevs' {social.toLowerCase()}</title>
+    <title>copperdevs // {social.toLowerCase()}</title>
     <meta http-equiv="refresh" content=`0; url =${link}` />
   </head>
   <body onload="window.location={link}">
     <main>
-      <NavBar active="redirects" />
-
-      <div class="index-callout">
-        <h2 class="index-callout-main">
+      <IndexCallout>
+        <span slot="main">
           Redirecting to <span class="text-gradient">{social}</span>
-        </h2>
-        <h4 class="index-callout-sub">
+        </span>
+        <span slot="sub">
           If you don't get automatically redirect, <a href={link}>click here</a>
-        </h4>
-      </div>
+        </span>
+      </IndexCallout>
     </main>
   </body>
 </html>

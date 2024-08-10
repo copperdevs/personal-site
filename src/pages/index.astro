@@ -1,6 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import NavBar from "../components/Navigation/NavBar.astro";
+import Layout from "../layouts/MainLayout.astro";
 
 import IndexCallout from "../components/IndexPage/IndexCallout.astro";
 import IndexRandomProjects from "../components/IndexPage/IndexRandomProjects.jsx";
@@ -9,7 +8,6 @@ import { getCurrentAge } from "../lib/utils";
 ---
 
 <Layout title="home">
-  <NavBar active="home" />
 
   <IndexCallout>
     <span slot="main">

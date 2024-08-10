@@ -5,31 +5,47 @@ import SocialIcon from "../Icons/SocialIcon.astro";
 import FontAwesomeIcon from "../../../common-astro/components/FontAwesomeIcon.astro";
 
 interface Props {
-  active: string;
+  sections: string[];
+  links: string[];
+  icons?: string[];
+  iconUrls?: string[];
+  socials?: string[];
 }
+
+const { sections, links, icons, iconUrls, socials } = Astro.props;
 ---
 
 <div class="navbar show-on-desktop hide-on-mobile">
   <div class="navbar-links">
-    <slot />
-    <span style="display: inline-block">
-      <NavBarHeaderLink name="home" href="/" />
-    </span>
-    <span style="display: inline-block">
-      <NavBarHeaderLink name="projects" href="/projects" />
-    </span>
+    {
+      sections.map((section: string) => (
+        <>
+          <span style="display: inline-block">
+            <NavBarHeaderLink
+              name={section}
+              href={links[sections.indexOf(section)]}
+            />
+          </span>
+        </>
+      ))
+    }
   </div>
 
   <div class="navbar-socials">
-    <h2 aria-label="Navigation bar social icons">
-      <SocialIcon social="discord" />
-      <Divider />
-      <SocialIcon social="youtube" />
-      <Divider />
-      <SocialIcon social="github" />
-      <Divider />
-      <SocialIcon social="twitch" />
-    </h2>
+    {
+      socials && socials?.length > 0 && (
+        <h2 aria-label="Navigation bar social icons">
+          <>
+            {socials.map((social: string) => (
+              <>
+                <SocialIcon social={social} />
+                {socials.indexOf(social) < socials.length - 1 && <Divider />}
+              </>
+            ))}
+          </>
+        </h2>
+      )
+    }
   </div>
 </div>
 
@@ -44,24 +60,33 @@ interface Props {
     </span>
 
     <div class="overlay-content">
-      <NavBarHeaderLink name="home" href="/" />
-      <NavBarHeaderLink name="projects" href="/projects" />
+      {
+        sections.map((section: string) => (
+          <NavBarHeaderLink
+            name={section}
+            href={links[sections.indexOf(section)]}
+          />
+        ))
+      }
 
       <Divider />
 
       <div>
-        <span style="display:inline-block;">
-          <SocialIcon social="discord" />
-        </span>
-        <span style="display:inline-block;">
-          <SocialIcon social="youtube" />
-        </span>
-        <span style="display:inline-block;">
-          <SocialIcon social="github" />
-        </span>
-        <span style="display:inline-block;">
-          <SocialIcon social="twitch" />
-        </span>
+        {
+          socials && socials?.length > 0 && (
+            <h2 aria-label="Navigation bar social icons">
+              <>
+                {socials.map((social: string) => (
+                  <>
+                    <span style="display:inline-block;">
+                      <SocialIcon social={social} />
+                    </span>
+                  </>
+                ))}
+              </>
+            </h2>
+          )
+        }
       </div>
     </div>
 

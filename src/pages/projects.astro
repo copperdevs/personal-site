@@ -1,7 +1,6 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
-import NavBar from "../components/Navigation/NavBar.astro";
 import ProjectCategoryIcon from "../components/Icons/ProjectCategoryIcon.jsx";
 import DisplayProjects from "../components/Projects/DisplayProjects.jsx";
 
@@ -29,8 +28,6 @@ sortedCategories.forEach((category) => {
 ---
 
 <Layout title="projects">
-  <NavBar active="projects" />
-
   <section class="mobile-spacing">
     {
       sortedCategories.map((category) => (
