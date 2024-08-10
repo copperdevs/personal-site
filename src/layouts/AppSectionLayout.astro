@@ -17,6 +17,11 @@ import BaseLayout from "./BaseLayout.astro";
   pageTitle="copper devs apps"
 >
   <LinkRedirect badUrls={["copperdevs.pages.dev"]} targetUrl="copperdevs.com" />
-  <NavBar sections={["home", "projects"]} links={["/", "/projects"]} />
+  <NavBar
+    sections={["home", "projects"]}
+    links={["/apps", "/apps/projects"]}
+    icons={["fa-brands fa-github"]}
+    iconUrls={["https://github.com/copperdevsapps"]}
+  />
   <slot />
 </BaseLayout>
