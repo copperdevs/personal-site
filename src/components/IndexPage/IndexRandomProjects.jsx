@@ -1,5 +1,5 @@
 import { useState } from "preact/hooks";
-import RandomProjects from "../Projects/RandomProjects";
+import RandomProjects from "../Projects/RandomProjects.jsx";
 
 const IndexRandomProjects = () => {
   const [fetchError, setFetchError] = useState(false);
