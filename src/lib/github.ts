@@ -1,4 +1,7 @@
+import { isLocalHost } from "./utils";
+
 export async function getMostRecentCommit(repo: string) {
+  if (isLocalHost()) return "development";
   const response = await fetch(`https://api.github.com/repos/${repo}/commits`);
 
   if (!response.ok) {
@@ -11,6 +14,8 @@ export async function getMostRecentCommit(repo: string) {
 }
 
 export async function getMostRecentCommitName(repo: string) {
+  if (isLocalHost()) return "development";
+
   const response = await fetch(`https://api.github.com/repos/${repo}/commits`);
 
   if (!response.ok) {
@@ -23,11 +28,13 @@ export async function getMostRecentCommitName(repo: string) {
 }
 
 export async function getMostRecentCommitUrl(repo: string) {
+  if (isLocalHost()) return "#development";
+
   const response = await fetch(`https://api.github.com/repos/${repo}/commits`);
 
   if (!response.ok) {
     console.log("Github Recent Commit Url | Network response not okay");
-    return "##";
+    return "#null";
   }
 
   const data = await response.json();

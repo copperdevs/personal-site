@@ -10,3 +10,11 @@ export function getCurrentAge() {
   }
   return age;
 }
+
+export function isLocalHost() {
+  try {
+    return document.location.hostname === "localhost";
+  } catch (error) {
+    return false;
+  }
+}
