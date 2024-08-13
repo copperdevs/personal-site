@@ -1,10 +1,10 @@
 ---
 interface Props {
-  social: string;
+  siteName: string;
   link: string;
 }
 
-const { social, link } = Astro.props;
+const { siteName, link } = Astro.props;
 
 import "../../common-astro/style/style.css";
 import IndexCallout from "../components/IndexPage/IndexCallout.astro";
@@ -16,19 +16,19 @@ import IndexCallout from "../components/IndexPage/IndexCallout.astro";
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content=`redirect page from where ever to my ${social}`
+      content=`redirect page from where ever to my ${siteName}`
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>copperdevs // {social.toLowerCase()}</title>
+    <title>copperdevs // {siteName.toLowerCase()}</title>
     <meta http-equiv="refresh" content=`0; url =${link}` />
   </head>
   <body onload="window.location={link}">
     <main>
       <IndexCallout>
         <span slot="main">
-          Redirecting to <span class="text-gradient">{social}</span>
+          Redirecting to <span class="text-gradient">{siteName}</span>
         </span>
         <span slot="sub">
           If you don't get automatically redirect, <a href={link}>click here</a>
