@@ -16,7 +16,10 @@ const ProjectItem = ({
 
       <div aria-disabled="true">
         {url !== source && (
-          <a href={source} aria-label="Github navigation icon that links to the projects page">
+          <a
+            href={source}
+            aria-label="Github navigation icon that links to the projects page"
+          >
             <i class="fa-brands fa-github" />
           </a>
         )}

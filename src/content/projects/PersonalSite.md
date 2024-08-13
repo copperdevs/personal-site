@@ -2,7 +2,7 @@
 title: "Personal Site"
 description: "The very site you're on right now!"
 hidden: false
-link: "https://copperdevs.com/"
+link: "/"
 source: "https://github.com/copperdevs/personal-site"
 category: Websites
 ---
