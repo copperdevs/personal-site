@@ -5,4 +5,5 @@ hidden: false
 link: "/games"
 source: "https://github.com/copperdevsgames"
 category: Subsets
+randomResult: false
 ---

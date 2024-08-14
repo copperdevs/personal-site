@@ -5,4 +5,5 @@ hidden: false
 link: "https://havoc-tools.copperdevs.com/"
 source: "https://github.com/copperdevs/havoc-tools"
 category: Websites
+randomResult: true
 ---

@@ -5,4 +5,5 @@ hidden: false
 link: "https://github.com/copperdevs/mouse-wheelie"
 source: "https://github.com/copperdevs/mouse-wheelie"
 category: Minecraft
+randomResult: true
 ---

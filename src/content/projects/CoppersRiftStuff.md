@@ -5,4 +5,5 @@ hidden: false
 link: "https://github.com/copperdevs/CopperDevs.Rift?tab=readme-ov-file#rift-launcher"
 source: "https://github.com/copperdevs/CopperDevs.Rift?tab=readme-ov-file#rift-launcher"
 category: Desktop Apps
+randomResult: true
 ---

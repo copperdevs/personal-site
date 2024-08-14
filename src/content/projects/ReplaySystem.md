@@ -5,4 +5,5 @@ hidden: true
 link: "https://github.com/copperdevs/ReplaySystem"
 source: "https://github.com/copperdevs/ReplaySystem"
 category: Unity Packages
+randomResult: true
 ---

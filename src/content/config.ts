@@ -11,6 +11,7 @@ const projectsCollection = defineCollection({
     link: z.string(),
     source: z.string(),
     category: z.string(),
+    randomResult: z.boolean()
   }),
 });
 

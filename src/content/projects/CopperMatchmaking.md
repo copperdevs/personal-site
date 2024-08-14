@@ -5,4 +5,5 @@ hidden: false
 link: "https://www.nuget.org/packages/CopperDevs.Matchmaking"
 source: "https://github.com/copperdevs/CopperMatchmaking"
 category: Libraries
+randomResult: true
 ---

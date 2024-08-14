@@ -39,7 +39,7 @@ async function getRandomProjects(amount) {
 
   const projects = await response.json();
 
-  const visibleProjects = projects.filter((project) => !project.data.hidden);
+  const visibleProjects = projects.filter((project) => !project.data.hidden && project.data.randomResult);
 
   function randomizeProjects(arr, n) {
     const shuffled = [...arr].sort(() => 0.5 - Math.random());
