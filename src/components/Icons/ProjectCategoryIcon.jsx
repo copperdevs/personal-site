@@ -5,7 +5,9 @@ const ProjectCategoryIcon = ({ category }) => {
     Websites: "fa-solid fa-globe",
     Minecraft: "fa-solid fa-cubes",
     "Desktop Apps": "fa-regular fa-window-maximize",
-    Subsets: "fa-solid fa-diagram-project"
+    Subsets: "fa-solid fa-diagram-project",
+    Games: "fa-solid fa-gamepad",
+    Apps: "fa-solid fa-mobile-screen-button",
   };
 
   return icons[category] ? <i class={icons[category]} /> : null;

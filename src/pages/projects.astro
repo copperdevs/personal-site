@@ -7,7 +7,6 @@ import DisplayProjects from "../components/Projects/DisplayProjects.jsx";
 const projects = await getCollection("projects");
 const visibleProjects = projects.filter((project) => !project.data.hidden);
 
-// group projects by category
 const groupedProjects = visibleProjects.reduce((acc, project) => {
   const category = project.data.category;
   if (!acc[category]) {
@@ -17,7 +16,6 @@ const groupedProjects = visibleProjects.reduce((acc, project) => {
   return acc;
 }, {});
 
-// Optionally sort categories and projects within categories
 const sortedCategories = Object.keys(groupedProjects).sort();
 sortedCategories.forEach((category) => {
   groupedProjects[category].sort(

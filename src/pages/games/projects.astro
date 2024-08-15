@@ -1,15 +1,39 @@
 ---
 import Layout from "../../layouts/GamesSectionLayout.astro";
+import { getCollection } from "astro:content";
+import DisplayProjects from "../../components/Projects/DisplayProjects.jsx";
+import ProjectCategoryIcon from "../../components/Icons/ProjectCategoryIcon.jsx";
 
-import IndexCallout from "../../components/IndexPage/IndexCallout.astro";
+const projects = await getCollection("games");
+const visibleProjects = projects.filter((project) => !project.data.hidden);
+
+const sortedProjects = visibleProjects.sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
+);
 ---
 
-<Layout title="home">
+<Layout title="projects">
+  <section class="mobile-spacing">
+    <h2 class="project-category-header">
+      <span class="white-hover glow-hover">Projects</span>
+      <div class="white-hover glow-hover">
+        <ProjectCategoryIcon category="Games" />
+      </div>
+    </h2>
+    <hr />
+    <DisplayProjects projects={sortedProjects} showCategoryIcon={false} />
 
-  <IndexCallout>
-    <span slot="main">
-      copper devs games <span class="text-gradient">projects</span> 🛠️
-    </span>
-    <span slot="sub"> wip section of the site :p </span>
-  </IndexCallout>
+    {
+      sortedProjects.length == 0 && (
+        <h4>
+          <span class="color-gray-light white-hover glow-hover">
+            wow this is really awkward..
+          </span>
+          <span class="color-gray-light white-hover glow-hover">
+            i dont got any public projects to show here yet :p
+          </span>
+        </h4>
+      )
+    }
+  </section>
 </Layout>
