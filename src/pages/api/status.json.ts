@@ -6,10 +6,20 @@ export async function GET({}) {
   );
 
   if (!response.ok) {
-    return new Response("offline");
+    return new Response(JSON.stringify({ activityStatus: Status.Offline }), {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   }
 
   const lanyardData = await response.json();
 
-  return new Response(JSON.stringify({activityStatus: Status.DoNotDisturb}));
+  return new Response(JSON.stringify({ activityStatus: Status.DoNotDisturb }), {
+    status: 200,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 }
