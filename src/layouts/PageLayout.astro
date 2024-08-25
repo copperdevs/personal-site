@@ -22,11 +22,14 @@ import Umami from "../components/analytics/Umami.astro";
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
     <title>{pageTitle} // {title}</title>
-    <Umami siteId="bc408a92-1357-4f9b-86ad-5f608ff9e04d" />
+
     <ViewTransitions />
+
+    <Umami siteId="bc408a92-1357-4f9b-86ad-5f608ff9e04d" />
     <FontAwesome projectId="45b7384014" />
   </head>
   <body>
