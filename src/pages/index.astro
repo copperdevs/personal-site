@@ -1,21 +1,11 @@
 ---
-import Layout from "../layouts/MainLayout.astro";
-
-import IndexCallout from "../components/IndexPage/IndexCallout.astro";
-import IndexRandomProjects from "../components/IndexPage/IndexRandomProjects.jsx";
-
-import { getCurrentAge } from "../lib/utils";
+import PageLayout from "../layouts/PageLayout.astro";
 ---
 
-<Layout title="home">
-  <IndexCallout>
-    <span slot="main">
-      Hello 👋 I'm <span class="text-gradient">Copper</span>
-    </span>
-    <span slot="sub">
-      I'm a {getCurrentAge()} year old developer from America.
-    </span>
-  </IndexCallout>
-
-  <IndexRandomProjects client:load astro:before-preparation/>
-</Layout>
+<PageLayout
+  title="copperdevs"
+  description="home page of my personal site"
+  pageTitle="home"
+>
+  <h1>site v2</h1>
+</PageLayout>

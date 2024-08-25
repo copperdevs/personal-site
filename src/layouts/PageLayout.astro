@@ -8,9 +8,7 @@ interface Props {
 const { title, description, pageTitle } = Astro.props;
 
 import { ViewTransitions } from "astro:transitions";
-import "../../common-astro/style/style.css";
-import FontAwesome from "../../common-astro/components/FontAwesome.astro";
-import Footer from "../components/Ui/Footer.astro";
+import FontAwesome from "../components/icons/FontAwesome.astro";
 ---
 
 <!doctype html>
@@ -30,13 +28,8 @@ import Footer from "../components/Ui/Footer.astro";
     <FontAwesome projectId="45b7384014" />
   </head>
   <body>
-    <div class="content">
-      <main>
-        <slot />
-      </main>
-    </div>
-    <div class="footer">
-      <Footer />
-    </div>
+    <main>
+      <slot />
+    </main>
   </body>
 </html>

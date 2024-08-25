@@ -1,0 +1,35 @@
+---
+interface Props {
+  iconName: string;
+  targetUrl?: string;
+}
+
+const { iconName, targetUrl } = Astro.props;
+
+const urlLabel = `Icon of type ${iconName}.`;
+const textLabel = `${urlLabel} On click the icon leads to ${targetUrl}.`;
+---
+
+<span
+  astro:before-preparation
+  aria-label=`Icon of type ${iconName} ${targetUrl && ('On click the icon leads to ' + targetUrl)}`
+>
+  {
+    targetUrl && (
+      <a
+        href={targetUrl}
+        target="_blank"
+        style="text-decoration: none;"
+        aria-label={urlLabel}
+      >
+        {targetUrl && iconName && <i class={iconName} />}
+      </a>
+    )
+  }
+
+  {
+    !targetUrl && (
+      <span>{iconName && <i class={iconName} aria-label={textLabel} />}</span>
+    )
+  }
+</span>
