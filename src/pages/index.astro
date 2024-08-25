@@ -1,5 +1,7 @@
 ---
+import DogPicture from "../components/ui/DogPicture.astro";
 import PageLayout from "../layouts/PageLayout.astro";
+import { Status } from "../lib/types";
 ---
 
 <PageLayout
@@ -7,19 +9,13 @@ import PageLayout from "../layouts/PageLayout.astro";
   description="home page of my personal site"
   pageTitle="home"
 >
-  <h1>
-    <span class="text-gradient">site v2</span>
-  </h1>
-
-  <hr />
-
-  <h1>
-    <span class="text-gradient">section one</span>
-  </h1>
-
-  <hr class="alt" />
-
-  <h1>
-    <span class="text-gradient">section two</span>
-  </h1>
+  <div class="callout">
+    <h1 class="header no-spacing">
+      <span class="text-gradient">copperdevs</span>
+      <DogPicture status={Status.Online} />
+    </h1>
+    <h3 class="sub-header no-spacing">
+      I'm a 16 year old developer from America.
+    </h3>
+  </div>
 </PageLayout>

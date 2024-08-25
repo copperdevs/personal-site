@@ -21,3 +21,23 @@
 .color-accent-secondary {
   color: var(--accent-secondary);
 }
+
+.red-glow {
+  border-radius: 25px;
+  box-shadow: var(--red-glow);
+}
+
+.yellow-glow {
+  border-radius: 25px;
+  box-shadow: var(--yellow-glow);
+}
+
+.green-glow {
+  border-radius: 25px;
+  box-shadow: var(--green-glow);
+}
+
+.gray-glow {
+  border-radius: 25px;
+  box-shadow: var(--gray-glow);
+}
