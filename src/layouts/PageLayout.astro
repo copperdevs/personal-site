@@ -13,6 +13,7 @@ import FontAwesome from "../components/icons/FontAwesome.astro";
 import "../styles/main.css";
 import "../styles/colors.css";
 import "../styles/effects.css";
+import Umami from "../components/analytics/Umami.astro";
 ---
 
 <!doctype html>
@@ -24,10 +25,7 @@ import "../styles/effects.css";
     <link rel="icon" type="image/x-icon" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle} // {title}</title>
-    <script
-      defer
-      src="https://cloud.umami.is/script.js"
-      data-website-id="bc408a92-1357-4f9b-86ad-5f608ff9e04d"></script>
+    <Umami siteId="bc408a92-1357-4f9b-86ad-5f608ff9e04d" />
     <ViewTransitions />
     <FontAwesome projectId="45b7384014" />
   </head>
