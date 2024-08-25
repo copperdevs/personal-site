@@ -1,7 +1,6 @@
 ---
-import DogPicture from "../components/ui/DogPicture.tsx";
+import DynamicDogPicture from "../components/ui/DynamicDogPicture.tsx";
 import PageLayout from "../layouts/PageLayout.astro";
-import { Status } from "../lib/types.ts";
 ---
 
 <PageLayout
@@ -12,7 +11,7 @@ import { Status } from "../lib/types.ts";
   <div class="callout">
     <h1 class="header no-spacing">
       <span class="text-gradient">copperdevs</span>
-      <DogPicture status={Status.Online} />
+      <DynamicDogPicture />
     </h1>
     <h3 class="sub-header no-spacing">
       I'm a 16 year old developer from America.
