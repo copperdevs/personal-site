@@ -1,0 +1,23 @@
+.color-black {
+  color: var(--black);
+}
+
+.color-white {
+  color: var(--white);
+}
+
+.color-gray {
+  color: var(--gray);
+}
+
+.color-light-gray{
+  color: var(--light-gray);
+}
+
+.color-accent-main {
+  color: var(--accent-main);
+}
+
+.color-accent-secondary {
+  color: var(--accent-secondary);
+}

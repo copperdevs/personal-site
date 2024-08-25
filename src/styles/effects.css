@@ -1,0 +1,13 @@
+.text-gradient {
+  background: var(--accent-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: var(--primary-transition);
+}
+
+.text-gradient:hover {
+  background-position: 100%;
+  color: white;
+  text-shadow: var(--text-glow);
+}
