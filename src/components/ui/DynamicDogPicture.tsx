@@ -1,10 +1,24 @@
-import { h } from "preact";
-import { Status } from "../../lib/types.ts";
+import { useEffect, useState } from "react";
+import { Status, DiscordStatus } from "../../lib/types.ts";
 import DogImage from "./DogPicture.tsx";
-import { getCurrentStatus } from "../../lib/lanyard.ts";
 
 const DynamicDogImage = () => {
-  return <DogImage status={Status.Online} />;
+  const [status, setStatus] = useState<Status>(Status.Online);
+
+  useEffect(() => {
+    const fetchStatus = async () => {
+      const response = await fetch("/api/status.json");
+      const data = await response.json();
+
+      setStatus(data["activityStatus"]);
+    };
+
+    fetchStatus();
+    console.log(status);
+  }, []);
+
+  console.log(status);
+  return <DogImage status={status} />;
 };
 
 export default DynamicDogImage;

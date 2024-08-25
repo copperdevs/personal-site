@@ -1,11 +1,5 @@
-import { h } from "preact";
-import { Status } from "../../lib/types.ts";
 
-interface Props {
-  status: Status;
-}
-
-const DogImage: preact.FunctionComponent<Props> = ({ status }) => {
+const DogImage = ({ status }) => {
   return (
     <img
       src="./favicon.png"
