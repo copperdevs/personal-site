@@ -28,3 +28,9 @@
   border-radius: 25px;
   box-shadow: var(--gray-glow);
 }
+
+.callout hr {
+  margin-top: 8px;
+  min-width: 365px;
+  max-width: 60%;
+}
