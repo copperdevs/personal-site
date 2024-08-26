@@ -3,6 +3,7 @@ import DogPicture from "../components/ui/DogPicture";
 import SocialIcons from "../components/icons/SocialIcons.astro";
 import PageLayout from "../layouts/PageLayout.astro";
 import { Status } from "../lib/types";
+import ScrollIndicator from "../components/ui/ScrollIndicator.astro";
 ---
 
 <PageLayout
@@ -10,7 +11,9 @@ import { Status } from "../lib/types";
   description="home page of my personal site"
   pageTitle="home"
 >
-  <div class="callout top-spacing">
+  <ScrollIndicator />
+
+  <div class="callout callout-top-spacing">
     <h1 class="header no-spacing">
       Hello World. I'm
       <span class="text-gradient name">
@@ -24,13 +27,18 @@ import { Status } from "../lib/types";
     <hr class="no-spacing" />
   </div>
 
-  <div class="callout top-spacing-half">
+  <div class="callout top-spacing-half-vh">
     <h2 class="smaller-header no-spacing">Projects</h2>
     <hr class="no-spacing" />
   </div>
 
-  <div class="callout top-spacing-half">
+  <div class="callout top-spacing-128">
     <h2 class="smaller-header no-spacing">Favorite Songs</h2>
+    <hr class="no-spacing" />
+  </div>
+
+  <div class="callout top-spacing-128">
+    <h2 class="smaller-header no-spacing">Uses</h2>
     <hr class="no-spacing" />
   </div>
 </PageLayout>

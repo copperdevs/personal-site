@@ -32,3 +32,8 @@
   border-radius: 25px;
   box-shadow: var(--gray-glow);
 }
+
+.callout-top-spacing {
+  margin-top: 40vh;
+  padding: 8px;
+}

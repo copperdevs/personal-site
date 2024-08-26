@@ -1,0 +1,22 @@
+---
+import FontAwesomeIcon from "../icons/FontAwesomeIcon.astro";
+
+const elementId = "scroll-element";
+---
+
+<div id={elementId} class="bottom-center">
+  <FontAwesomeIcon iconName="fa-solid fa-chevron-down" />
+</div>
+
+<script is:inline define:vars={{ elementId }}>
+  let lastScrollTop = 0;
+  const scrollElement = document.getElementById(elementId);
+
+  window.addEventListener("scroll", () => {
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    scrollElement.style.opacity = scrollTop > lastScrollTop ? "0" : "1";
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>

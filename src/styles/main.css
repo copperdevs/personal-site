@@ -92,12 +92,25 @@ hr.alt {
   padding: 2px;
 }
 
-.top-spacing {
-  margin-top: 256px;
+.top-spacing-half-vh {
+  margin-top: 50vh;
   padding: 8px;
 }
 
-.top-spacing-half {
+.top-spacing-128 {
   margin-top: 128px;
   padding: 8px;
+}
+
+.bottom-center {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 5px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
 }
