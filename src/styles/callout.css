@@ -1,6 +1,4 @@
 .callout {
-  margin-top: 256px;
-  padding: 8px;
 }
 
 .callout .header {
@@ -8,6 +6,13 @@
   font-weight: 750;
   line-height: 1;
   color: var(--white);
+}
+
+.callout .smaller-header {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--lighter-gray);
 }
 
 .callout .sub-header {
@@ -28,10 +33,4 @@
   opacity: 100%;
   border-radius: 25px;
   box-shadow: var(--gray-glow);
-}
-
-.callout hr {
-  margin-top: 8px;
-  min-width: 365px;
-  max-width: 60%;
 }

@@ -61,6 +61,10 @@ hr {
   border-top: 4px solid var(--light-gray);
   border-radius: 25px;
   box-shadow: var(--hr-glow);
+
+  margin-top: 8px;
+  min-width: 365px;
+  max-width: 60%;
 }
 
 hr.alt {
@@ -86,4 +90,14 @@ hr.alt {
   line-height: 2rem;
   margin: 2px;
   padding: 2px;
+}
+
+.top-spacing {
+  margin-top: 256px;
+  padding: 8px;
+}
+
+.top-spacing-half {
+  margin-top: 128px;
+  padding: 8px;
 }
