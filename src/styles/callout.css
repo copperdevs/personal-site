@@ -12,6 +12,7 @@
 
 .callout .sub-header {
   color: var(--lighter-gray);
+  display: flex;
 }
 
 .callout .dog-image {

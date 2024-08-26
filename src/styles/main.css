@@ -24,8 +24,7 @@
 
   /* transitions */
   --primary-transition: all ease-in-out 0.15s;
-  --icon-transition: color 0.3s ease, background 0.3s ease,
-    text-shadow 0.3s ease;
+  --icon-transition: all ease 0.3s;
 
   /* gradients */
   --accent-gradient: -webkit-linear-gradient(
@@ -79,7 +78,6 @@ hr.alt {
   padding: 0px;
   display: flex;
   text-decoration: none;
-  transform: translate(470px, -50px);
   max-width: 135px;
 }
 
