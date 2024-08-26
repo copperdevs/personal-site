@@ -24,6 +24,8 @@
 
   /* transitions */
   --primary-transition: all ease-in-out 0.15s;
+  --icon-transition: color 0.3s ease, background 0.3s ease,
+    text-shadow 0.3s ease;
 
   /* gradients */
   --accent-gradient: -webkit-linear-gradient(
@@ -35,7 +37,7 @@
 
 html {
   font-family: "Onest", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
   font-optical-sizing: auto;
   font-variation-settings: "slnt" 0;
@@ -70,4 +72,20 @@ hr.alt {
 .no-spacing {
   margin: 0px;
   padding: 0px;
+}
+
+.socials {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  text-decoration: none;
+  transform: translate(470px, -50px);
+  max-width: 135px;
+}
+
+.socials i {
+  font-size: 1.45rem;
+  line-height: 2rem;
+  margin: 2px;
+  padding: 2px;
 }

@@ -1,5 +1,6 @@
 ---
 import DogPicture from "../components/ui/DogPicture";
+import SocialIcons from "../components/icons/SocialIcons.astro";
 import PageLayout from "../layouts/PageLayout.astro";
 import { Status } from "../lib/types";
 ---
@@ -13,12 +14,13 @@ import { Status } from "../lib/types";
     <h1 class="header no-spacing">
       Hello World. I'm
       <span class="text-gradient name">
-        Copper <DogPicture status={Status.None} class:list={"image"}/>
+        Copper <DogPicture status={Status.None} class:list={"image"} />
       </span>
     </h1>
     <h3 class="sub-header no-spacing">
       I'm a 16 year old developer from America.
     </h3>
-    <hr class="no-spacing">
+    <hr class="no-spacing" />
+    <SocialIcons />
   </div>
 </PageLayout>

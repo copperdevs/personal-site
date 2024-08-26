@@ -1,0 +1,23 @@
+a {
+  cursor: grab;
+  text-decoration: none;
+  background: var(--accent-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: var(--icon-transition);
+}
+
+a:hover {
+  text-shadow: var(--text-glow);
+  background: white;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: white;
+}
+
+a:active {
+  background: none;
+  color: white;
+}
