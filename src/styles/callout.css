@@ -1,6 +1,3 @@
-.callout {
-}
-
 .callout .header {
   font-size: 3rem;
   font-weight: 750;
@@ -13,6 +10,7 @@
   font-weight: 700;
   line-height: 1;
   color: var(--lighter-gray);
+  padding-bottom: 8px;
 }
 
 .callout .sub-header {

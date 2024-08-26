@@ -23,14 +23,18 @@ const textLabel = `${urlLabel} On click the icon leads to ${targetUrl}.`;
         style="text-decoration: none;"
         aria-label={urlLabel}
       >
-        {targetUrl && iconName && <i class={iconName} title={title}/>}
+        {targetUrl && iconName && <i class={iconName} title={title} />}
       </a>
     )
   }
 
   {
     !targetUrl && (
-      <span>{iconName && <i class={iconName} aria-label={textLabel} title={title}/>}</span>
+      <span>
+        {iconName && (
+          <i class={iconName} aria-label={textLabel} title={title} />
+        )}
+      </span>
     )
   }
 </span>
