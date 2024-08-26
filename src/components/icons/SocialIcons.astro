@@ -1,11 +1,26 @@
 ---
-import { IconType } from "../../lib/types";
-import SocialIcon from "./SocialIcon.astro";
+import FontAwesomeIcon from "./FontAwesomeIcon.astro";
 ---
 
 <div class="socials" astro:before-preparation>
-  <SocialIcon iconType={IconType.Discord} iconLink="#" />
-  <SocialIcon iconType={IconType.Github} iconLink="#" />
-  <SocialIcon iconType={IconType.Youtube} iconLink="#" />
-  <SocialIcon iconType={IconType.Twitter} iconLink="#" />
+  <FontAwesomeIcon
+    iconName="fa-brands fa-discord"
+    targetUrl="https://discord.com/users/781660039537623080"
+    title="@copperdev"
+  />
+  <FontAwesomeIcon
+    iconName="fa-brands fa-github"
+    targetUrl="https://github.com/copperdevs"
+    title="@copperdevs"
+  />
+  <FontAwesomeIcon
+    iconName="fa-brands fa-youtube"
+    targetUrl="https://www.youtube.com/channel/UCySWaUpLfNj6oMIN4lyjhpQ"
+    title="@copperdevs"
+  />
+  <FontAwesomeIcon
+    iconName="fa-brands fa-twitter"
+    targetUrl="https://x.com/copperdevs"
+    title="@copperdevs"
+  />
 </div>

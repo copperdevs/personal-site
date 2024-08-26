@@ -10,14 +10,18 @@ a {
 
 a:hover {
   text-shadow: var(--text-glow);
-  background: white;
+  background: var(--white);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: white;
+  color: var(--white);
 }
 
 a:active {
-  background: none;
-  color: white;
+  text-shadow: var(--text-glow);
+  background: var(--lighter-gray);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--lighter-gray);
 }

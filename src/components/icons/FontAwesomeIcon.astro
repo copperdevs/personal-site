@@ -2,9 +2,10 @@
 interface Props {
   iconName: string;
   targetUrl?: string;
+  title?: string;
 }
 
-const { iconName, targetUrl } = Astro.props;
+const { iconName, targetUrl, title } = Astro.props;
 
 const urlLabel = `Icon of type ${iconName}.`;
 const textLabel = `${urlLabel} On click the icon leads to ${targetUrl}.`;
@@ -22,14 +23,14 @@ const textLabel = `${urlLabel} On click the icon leads to ${targetUrl}.`;
         style="text-decoration: none;"
         aria-label={urlLabel}
       >
-        {targetUrl && iconName && <i class={iconName} />}
+        {targetUrl && iconName && <i class={iconName} title={title}/>}
       </a>
     )
   }
 
   {
     !targetUrl && (
-      <span>{iconName && <i class={iconName} aria-label={textLabel} />}</span>
+      <span>{iconName && <i class={iconName} aria-label={textLabel} title={title}/>}</span>
     )
   }
 </span>
