@@ -1,0 +1,30 @@
+.callout {
+  margin-top: 256px;
+  padding: 8px;
+}
+
+.callout .header {
+  font-size: 3rem;
+  font-weight: 750;
+  line-height: 1;
+  color: var(--white);
+}
+
+.callout .sub-header {
+  color: var(--lighter-gray);
+}
+
+.callout .dog-image {
+  transform: translateY(3px);
+}
+
+.callout .header .name .dog-image {
+  transition: var(--primary-transition);
+  opacity: 0%;
+}
+
+.callout .header .name:hover .dog-image {
+  opacity: 100%;
+  border-radius: 25px;
+  box-shadow: var(--gray-glow);
+}

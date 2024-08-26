@@ -71,20 +71,3 @@ hr.alt {
   margin: 0px;
   padding: 0px;
 }
-
-.callout {
-  margin-top: 64px;
-  padding: 8px;
-}
-
-.callout .header {
-  color: var(--white);
-}
-
-.callout .sub-header {
-  color: var(--lighter-gray);
-}
-
-.callout .dog-image {
-  transform: translateY(4px);
-}
