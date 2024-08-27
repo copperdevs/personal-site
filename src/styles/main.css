@@ -64,13 +64,13 @@ hr {
 }
 
 hr.alt {
-  border-top: 3px solid var(--light-gray);
+  border-top: 2px solid var(--light-gray);
   box-shadow: var(--hr-glow-alt);
 }
 
 hr.limit {
   margin-top: 8px;
-  min-width: 365px;
+  min-width: 300px;
   max-width: 60%;
 }
 
@@ -126,4 +126,16 @@ hr.limit-center {
 
 .hidden {
   opacity: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .show-on-desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .hide-on-desktop {
+    display: none;
+  }
 }

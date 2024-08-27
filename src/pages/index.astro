@@ -12,9 +12,12 @@ import ContentDisplayer from "../components/content/ContentDisplayer.astro";
   description="home page of my personal site"
   pageTitle="home"
 >
-  <ScrollIndicator />
+  <div class="show-on-desktop">
+    <ScrollIndicator />
+  </div>
 
   <div class="callout callout-top-spacing">
+    <div class="show-on-desktop"><div class="callout-extra-spacing"></div></div>
     <h1 class="header no-spacing">
       Hello World. I'm
       <span class="text-gradient name">
@@ -23,8 +26,13 @@ import ContentDisplayer from "../components/content/ContentDisplayer.astro";
     </h1>
     <h3 class="sub-header no-spacing">
       <span>I'm a 16 year old developer from America.</span>
-      <SocialIcons />
+      <div class="show-on-desktop">
+        <SocialIcons />
+      </div>
     </h3>
+    <div class="hide-on-desktop">
+      <SocialIcons />
+    </div>
     <hr class="no-spacing limit" />
   </div>
 
@@ -33,7 +41,7 @@ import ContentDisplayer from "../components/content/ContentDisplayer.astro";
     <hr class="no-spacing limit-center" />
     <ContentDisplayer
       contentType={ContentType.Projects}
-      showSeperators={false}
+      showSeperators={true}
     />
   </div>
 

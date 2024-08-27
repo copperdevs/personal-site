@@ -40,6 +40,10 @@
 }
 
 .callout-top-spacing {
-  margin-top: 40vh;
+  margin-top: 35vh;
   padding: 8px;
+}
+
+.callout-extra-spacing {
+  margin-top: 5vh;
 }
