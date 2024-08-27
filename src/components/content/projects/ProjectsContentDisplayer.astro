@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import ProjectsItemDisplayer from "./ProjectsItemDisplayer.astro";
+
+interface Props {
+  showSeperators: boolean;
+}
+
+const { showSeperators } = Astro.props;
+
+const content = await getCollection("projects");
+const visibleContent = content.filter((content) => !content.data.hidden);
+---
+
+<section>
+  <hr class="hidden" />
+  {
+    visibleContent.map((content, index) => (
+      <>
+        {index !== 0 && <div class="top-indent" />}
+
+        <ProjectsItemDisplayer
+          name={content.data.name}
+          primaryLink={content.data.primaryLink}
+          packageLink={content.data.packageLink}
+          sourceLink={content.data.sourceLink}
+          projectLink={content.data.projectLink}
+        />
+
+        {index < visibleContent.length - 1 && showSeperators && (
+          <hr class="alt limit-center no-spacing" />
+        )}
+        {!(index < visibleContent.length - 1) && (
+          <>
+            <br />
+            <br />
+          </>
+        )}
+      </>
+    ))
+  }
+</section>

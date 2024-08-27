@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import SongsItemDisplayer from "../songs/SongsItemDisplayer.astro";
+
+interface Props {
+  showSeperators: boolean;
+}
+
+const { showSeperators } = Astro.props;
+
+const content = await getCollection("songs");
+const visibleContent = content.filter((content) => !content.data.hidden);
+---
+
+<section>
+  <hr class="hidden" />
+  {
+    visibleContent.map((content, index) => (
+      <>
+        {index !== 0 && <div class="top-indent" />}
+
+        <SongsItemDisplayer
+          name={content.data.name}
+          artist={content.data.artist}
+          songUrl={content.data.songUrl}
+          artistUrl={content.data.artistUrl}
+        />
+
+        {index < visibleContent.length - 1 && showSeperators && (
+          <hr class="alt limit-center no-spacing" />
+        )}
+        {!(index < visibleContent.length - 1) && (
+          <>
+            <br />
+            <br />
+          </>
+        )}
+      </>
+    ))
+  }
+</section>
