@@ -22,7 +22,7 @@ const songs = defineCollection({
   }),
 });
 const uses = defineCollection({
-  type: "data",
+  type: "content",
   schema: z.object({
     name: z.string(),
     link: z.string().url(),
