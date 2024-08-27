@@ -1,0 +1,19 @@
+---
+interface Props {
+  name: string;
+  artist: string;
+  songUrl: string;
+  artistUrl: string;
+}
+
+const { name, artist, songUrl, artistUrl } = Astro.props;
+---
+
+<div class="no-spacing">
+  <h3 class="no-spacing">
+    <a href={songUrl} target="_blank" class="no-spacing">{name}</a>
+  </h3>
+  <p class="color-lighter-gray no-spacing left-indent">
+    by <a href={artistUrl} target="_blank" class="no-spacing">{artist}</a>
+  </p>
+</div>

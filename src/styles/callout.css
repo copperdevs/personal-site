@@ -1,3 +1,9 @@
+.callout .center {
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .callout .header {
   font-size: 3rem;
   font-weight: 750;

@@ -2,8 +2,9 @@
 import DogPicture from "../components/ui/DogPicture";
 import SocialIcons from "../components/icons/SocialIcons.astro";
 import PageLayout from "../layouts/PageLayout.astro";
-import { Status } from "../lib/types";
+import { ContentType, Status } from "../lib/types";
 import ScrollIndicator from "../components/ui/ScrollIndicator.astro";
+import ContentDisplayer from "../components/content/ContentDisplayer.astro";
 ---
 
 <PageLayout
@@ -24,21 +25,27 @@ import ScrollIndicator from "../components/ui/ScrollIndicator.astro";
       <span>I'm a 16 year old developer from America.</span>
       <SocialIcons />
     </h3>
-    <hr class="no-spacing" />
+    <hr class="no-spacing limit" />
   </div>
 
   <div class="callout top-spacing-half-vh">
     <h2 class="smaller-header no-spacing">Projects</h2>
-    <hr class="no-spacing" />
+    <hr class="no-spacing limit-center" />
+    <ContentDisplayer
+      contentType={ContentType.Projects}
+      showSeperators={false}
+    />
   </div>
 
-  <div class="callout top-spacing-128">
+  <div class="callout">
     <h2 class="smaller-header no-spacing">Favorite Songs</h2>
-    <hr class="no-spacing" />
+    <hr class="no-spacing limit-center" />
+    <ContentDisplayer contentType={ContentType.Songs} showSeperators={true} />
   </div>
 
-  <div class="callout top-spacing-128">
+  <div class="callout">
     <h2 class="smaller-header no-spacing">Uses</h2>
-    <hr class="no-spacing" />
+    <hr class="no-spacing limit-center" />
+    <ContentDisplayer contentType={ContentType.Uses} showSeperators={false} />
   </div>
 </PageLayout>

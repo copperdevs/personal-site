@@ -15,3 +15,9 @@ export enum DiscordStatus {
   Offline = "offline",
   None = "",
 }
+
+export enum ContentType {
+  Projects = "projects",
+  Songs = "songs",
+  Uses = "uses",
+}

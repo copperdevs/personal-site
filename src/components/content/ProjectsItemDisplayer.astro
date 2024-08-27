@@ -1,0 +1,53 @@
+---
+interface Props {
+  name: string;
+  primaryLink: string;
+  packageLink?: string;
+  sourceLink?: string;
+  projectLink?: string;
+}
+
+const { name, primaryLink, packageLink, sourceLink, projectLink } = Astro.props;
+---
+
+<div class="no-spacing">
+  <h3 class="no-spacing"><a href={primaryLink} target="_blank">{name}</a></h3>
+  <div class="left-indent no-spacing color-lighter-gray">
+    {
+      packageLink && (
+        <>
+          <span>
+            -{" "}
+            <a href={packageLink} target="_blank">
+              Package
+            </a>
+          </span>
+          <br />
+        </>
+      )
+    }
+    {
+      sourceLink && (
+        <>
+          <span>
+            -{" "}
+            <a href={sourceLink} target="_blank">
+              Source
+            </a>
+          </span>
+          <br />
+        </>
+      )
+    }
+    {
+      projectLink && (
+        <span>
+          -{" "}
+          <a href={projectLink} target="_blank">
+            Project
+          </a>
+        </span>
+      )
+    }
+  </div>
+</div>

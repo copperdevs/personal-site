@@ -1,0 +1,60 @@
+---
+import { getCollection } from "astro:content";
+import { ContentType } from "../../lib/types";
+import ProjectsItemDisplayer from "./ProjectsItemDisplayer.astro";
+import SongsItemDisplayer from "./SongsItemDisplayer.astro";
+import UsesItemDisplayer from "./UsesItemDisplayer.astro";
+
+interface Props {
+  contentType: ContentType;
+  showSeperators: boolean;
+}
+
+const { contentType, showSeperators } = Astro.props;
+
+const content = await getCollection(contentType);
+const visibleContent = content.filter((content) => !content.data.hidden);
+---
+
+<section>
+  <hr class="hidden" />
+  {
+    visibleContent.map((content, index) => (
+      <>
+        {index !== 0 && <div class="top-indent" />}
+        {contentType == ContentType.Projects && (
+          <ProjectsItemDisplayer
+            name={content.data.name}
+            primaryLink={content.data.primaryLink}
+            packageLink={content.data.packageLink}
+            sourceLink={content.data.sourceLink}
+            projectLink={content.data.projectLink}
+          />
+        )}
+        {contentType == ContentType.Songs && (
+          <SongsItemDisplayer
+            name={content.data.name}
+            artist={content.data.artist}
+            songUrl={content.data.songUrl}
+            artistUrl={content.data.artistUrl}
+          />
+        )}
+        {contentType == ContentType.Uses && (
+          <UsesItemDisplayer
+            name={content.data.name}
+            link={content.data.link}
+          />
+        )}
+        {index < visibleContent.length - 1 && showSeperators && (
+          <hr class="alt limit-center no-spacing" />
+        )}
+        {!(index < visibleContent.length - 1) && (
+          <>
+            <br />
+            <br />
+          </>
+        )}
+      </>
+    ))
+  }
+</section>
