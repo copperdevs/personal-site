@@ -17,6 +17,7 @@ import "../styles/colors.css";
 import "../styles/effects.css";
 import "../styles/links.css";
 import "../styles/callout.css";
+import LinkRedirect from "../components/utility/LinkRedirect.astro";
 ---
 
 <!doctype html>
@@ -37,6 +38,10 @@ import "../styles/callout.css";
   </head>
   <body>
     <main>
+      <LinkRedirect
+        badUrls={["copperdevs.pages.dev"]}
+        targetUrl="copperdevs.com"
+      />
       <slot />
     </main>
   </body>
