@@ -15,22 +15,7 @@ const projectsCollection = defineCollection({
   }),
 });
 
-const subsetCollection = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    hidden: z.boolean(),
-    link: z.string(),
-    source: z.string(),
-    randomResult: z.boolean(),
-  }),
-});
-
 // Export a single `collections` object to register your collection(s)
 export const collections = {
   projects: projectsCollection,
-  websites: subsetCollection,
-  apps: subsetCollection,
-  games: subsetCollection,
 };
