@@ -4,7 +4,7 @@ import SocialIcons from "../components/icons/SocialIcons.astro";
 import PageLayout from "../layouts/PageLayout.astro";
 import { ContentType, Status } from "../lib/types";
 import ScrollIndicator from "../components/ui/ScrollIndicator.astro";
-import ContentDisplayer from "../components/content/ContentDisplayer.astro";
+import ContentDisplayerSection from "../components/ui/ContentDisplayerSection.astro";
 ---
 
 <PageLayout
@@ -36,24 +36,26 @@ import ContentDisplayer from "../components/content/ContentDisplayer.astro";
     <hr class="no-spacing limit" />
   </div>
 
-  <div class="callout top-spacing-half-vh">
-    <h2 class="smaller-header no-spacing">Projects</h2>
-    <hr class="no-spacing limit-center" />
-    <ContentDisplayer
-      contentType={ContentType.Projects}
-      showSeperators={true}
-    />
-  </div>
+  <div class="top-spacing-half-vh"></div>
 
-  <div class="callout">
-    <h2 class="smaller-header no-spacing">Favorite Songs</h2>
-    <hr class="no-spacing limit-center" />
-    <ContentDisplayer contentType={ContentType.Songs} showSeperators={true} />
-  </div>
+  <ContentDisplayerSection
+    sectionTitle="Projects"
+    sectionId="projects"
+    contentType={ContentType.Projects}
+    showSeperators={true}
+  />
 
-  <div class="callout">
-    <h2 class="smaller-header no-spacing">Uses</h2>
-    <hr class="no-spacing limit-center" />
-    <ContentDisplayer contentType={ContentType.Uses} showSeperators={false} />
-  </div>
+  <ContentDisplayerSection
+    sectionTitle="Favorite Songs"
+    sectionId="songs"
+    contentType={ContentType.Songs}
+    showSeperators={true}
+  />
+
+  <ContentDisplayerSection
+    sectionTitle="Uses"
+    sectionId="uses"
+    contentType={ContentType.Uses}
+    showSeperators={false}
+  />
 </PageLayout>

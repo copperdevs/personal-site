@@ -1,0 +1,28 @@
+---
+import type { ContentType } from "../../lib/types";
+import ContentDisplayer from "../content/ContentDisplayer.astro";
+
+interface Props {
+  sectionTitle: string;
+  sectionId: string;
+  contentType: ContentType;
+  showSeperators: boolean;
+}
+
+const { sectionTitle, sectionId, contentType, showSeperators } = Astro.props;
+---
+
+<div>
+  <div class="callout">
+    <h2 class="smaller-header no-spacing" id=`${sectionId}-header`>
+      {sectionTitle}
+    </h2>
+    <div id={sectionId}>
+      <hr class="no-spacing limit-center" />
+      <ContentDisplayer
+        contentType={contentType}
+        showSeperators={showSeperators}
+      />
+    </div>
+  </div>
+</div>

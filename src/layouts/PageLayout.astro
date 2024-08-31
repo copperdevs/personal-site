@@ -7,8 +7,6 @@ interface Props {
 
 const { title, description, pageTitle } = Astro.props;
 
-import { ViewTransitions } from "astro:transitions";
-
 import FontAwesome from "../components/icons/FontAwesome.astro";
 import Umami from "../components/analytics/Umami.astro";
 
@@ -30,8 +28,6 @@ import LinkRedirect from "../components/utility/LinkRedirect.astro";
 
     <link rel="icon" type="image/x-icon" href="/favicon.png" />
     <title>{pageTitle} // {title}</title>
-
-    <ViewTransitions />
 
     <Umami siteId="bc408a92-1357-4f9b-86ad-5f608ff9e04d" />
     <FontAwesome projectId="45b7384014" />
