@@ -19,6 +19,7 @@ const songs = defineCollection({
     songUrl: z.string().url(),
     artistUrl: z.string().url(),
     hidden: z.boolean(),
+    albumArt: z.string(),
   }),
 });
 const uses = defineCollection({
