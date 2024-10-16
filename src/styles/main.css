@@ -139,3 +139,21 @@ hr.limit-center {
     display: none;
   }
 }
+
+.song {
+  display: flex;
+  align-items: center;
+}
+
+.song .album-art {
+  border-radius: 8px;
+  max-height: 128px;
+  max-width: 128px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-right: 16px;
+}
+
+.song .song-info {
+  display: flex;
+  flex-direction: column;
+}

@@ -24,6 +24,7 @@ const visibleContent = content.filter((content) => !content.data.hidden);
           artist={content.data.artist}
           songUrl={content.data.songUrl}
           artistUrl={content.data.artistUrl}
+          albumArt={content.data.albumArt}
         />
 
         {index < visibleContent.length - 1 && showSeperators && (

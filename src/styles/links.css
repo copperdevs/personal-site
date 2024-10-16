@@ -1,27 +1,35 @@
 a {
-  cursor: grab;
-  text-decoration: none;
   background: var(--accent-gradient);
   background-clip: text;
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  cursor: grab;
+  text-decoration: none;
+
   transition: var(--icon-transition);
+  color: var(--white);
 }
 
 a:hover {
-  text-shadow: var(--text-glow);
   background: var(--white);
   background-clip: text;
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  text-shadow: var(--text-glow);
   color: var(--white);
 }
 
 a:active {
-  text-shadow: var(--text-glow);
   background: var(--lighter-gray);
   background-clip: text;
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  text-shadow: var(--text-glow);
   color: var(--lighter-gray);
 }

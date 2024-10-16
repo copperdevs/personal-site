@@ -1,15 +1,12 @@
 ---
 import type { ContentType } from "../../lib/types";
-import ContentDisplayer from "../content/ContentDisplayer.astro";
 
 interface Props {
   sectionTitle: string;
   sectionId: string;
-  contentType: ContentType;
-  showSeperators: boolean;
 }
 
-const { sectionTitle, sectionId, contentType, showSeperators } = Astro.props;
+const { sectionTitle, sectionId } = Astro.props;
 ---
 
 <div>
@@ -19,10 +16,7 @@ const { sectionTitle, sectionId, contentType, showSeperators } = Astro.props;
     </h2>
     <div id={sectionId}>
       <hr class="no-spacing limit-center" />
-      <ContentDisplayer
-        contentType={contentType}
-        showSeperators={showSeperators}
-      />
+      <slot />
     </div>
   </div>
 </div>

@@ -1,10 +1,11 @@
 ---
-import DogPicture from "../components/ui/DogPicture";
 import SocialIcons from "../components/icons/SocialIcons.astro";
 import PageLayout from "../layouts/PageLayout.astro";
-import { ContentType, Status } from "../lib/types";
 import ScrollIndicator from "../components/ui/ScrollIndicator.astro";
 import ContentDisplayerSection from "../components/ui/ContentDisplayerSection.astro";
+import ProjectsContentDisplayer from "../components/content/projects/ProjectsContentDisplayer.astro";
+import SongsContentDisplayer from "../components/content/songs/SongsContentDisplayer.astro";
+import UsesContentDisplayer from "../components/content/uses/UsesContentDisplayer.astro";
 ---
 
 <PageLayout
@@ -23,7 +24,11 @@ import ContentDisplayerSection from "../components/ui/ContentDisplayerSection.as
     <h1 class="header no-spacing">
       Hello World. I'm
       <span class="text-gradient name">
-        Copper <DogPicture status={Status.None} class:list={"image"} />
+        Copper <img
+          src="./favicon.png"
+          alt="a picture of my dog"
+          class="dog-image"
+        />
       </span>
     </h1>
     <h3 class="sub-header no-spacing">
@@ -40,24 +45,15 @@ import ContentDisplayerSection from "../components/ui/ContentDisplayerSection.as
 
   <div class="top-spacing-half-vh"></div>
 
-  <ContentDisplayerSection
-    sectionTitle="Projects"
-    sectionId="projects"
-    contentType={ContentType.Projects}
-    showSeperators={true}
-  />
+  <ContentDisplayerSection sectionTitle="Projects" sectionId="projects">
+    <ProjectsContentDisplayer showSeperators={true} />
+  </ContentDisplayerSection>
 
-  <ContentDisplayerSection
-    sectionTitle="Favorite Songs"
-    sectionId="songs"
-    contentType={ContentType.Songs}
-    showSeperators={true}
-  />
+  <ContentDisplayerSection sectionTitle="Favorite Songs" sectionId="songs">
+    <SongsContentDisplayer showSeperators={true} />
+  </ContentDisplayerSection>
 
-  <ContentDisplayerSection
-    sectionTitle="Uses"
-    sectionId="uses"
-    contentType={ContentType.Uses}
-    showSeperators={false}
-  />
+  <ContentDisplayerSection sectionTitle="Uses" sectionId="uses">
+    <UsesContentDisplayer showSeperators={false} />
+  </ContentDisplayerSection>
 </PageLayout>
