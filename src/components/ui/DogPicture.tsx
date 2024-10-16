@@ -1,4 +1,3 @@
-
 const DogImage = ({ status }) => {
   return (
     <img
