@@ -6,6 +6,7 @@ import ContentDisplayerSection from "../components/ui/ContentDisplayerSection.as
 import ProjectsContentDisplayer from "../components/content/projects/ProjectsContentDisplayer.astro";
 import SongsContentDisplayer from "../components/content/songs/SongsContentDisplayer.astro";
 import UsesContentDisplayer from "../components/content/uses/UsesContentDisplayer.astro";
+import RandomText from "../components/utility/RandomText";
 ---
 
 <PageLayout
@@ -24,15 +25,11 @@ import UsesContentDisplayer from "../components/content/uses/UsesContentDisplaye
     <h1 class="header no-spacing">
       Hello World. I'm
       <span class="text-gradient name">
-        Copper <img
-          src="./favicon.png"
-          alt="a picture of my dog"
-          class="dog-image"
-        />
+        Copper <img src="./favicon.png" alt="my dog" class="dog-image" />
       </span>
     </h1>
     <h3 class="sub-header no-spacing">
-      <span>I'm a 16 year old developer from America.</span>
+      <span>I'm a developer from America.</span>
       <div class="show-on-desktop">
         <SocialIcons />
       </div>
