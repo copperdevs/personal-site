@@ -32,13 +32,10 @@ import LinkRedirect from "../components/utility/LinkRedirect.astro";
     <Umami siteId="bc408a92-1357-4f9b-86ad-5f608ff9e04d" />
     <FontAwesome projectId="45b7384014" />
   </head>
-  <body>
-    <main>
-      <LinkRedirect
-        badUrls={["copperdevs.pages.dev"]}
-        targetUrl="copperdevs.com"
-      />
-      <slot />
-    </main>
-  </body>
+
+  <LinkRedirect badUrls={["copperdevs.pages.dev"]} targetUrl="copperdevs.com" />
+
+  <main>
+    <slot />
+  </main>
 </html>

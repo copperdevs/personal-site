@@ -1,11 +1,5 @@
 ---
-import SocialIcons from "../components/icons/SocialIcons.astro";
 import PageLayout from "../layouts/PageLayout.astro";
-import ScrollIndicator from "../components/ui/ScrollIndicator.astro";
-import ContentDisplayerSection from "../components/ui/ContentDisplayerSection.astro";
-import ProjectsContentDisplayer from "../components/content/projects/ProjectsContentDisplayer.astro";
-import SongsContentDisplayer from "../components/content/songs/SongsContentDisplayer.astro";
-import UsesContentDisplayer from "../components/content/uses/UsesContentDisplayer.astro";
 ---
 
 <PageLayout
@@ -13,43 +7,12 @@ import UsesContentDisplayer from "../components/content/uses/UsesContentDisplaye
   description="home page of my personal site"
   pageTitle="home"
 >
-  <div class="show-on-desktop">
-    <ScrollIndicator />
-  </div>
-
-  <div class="callout callout-top-spacing">
-    <div class="show-on-desktop">
-      <div class="callout-extra-spacing"></div>
+  <div class="content">
+    <div class="sidebar">
+      <h1>sidebar</h1>
     </div>
-    <h1 class="header no-spacing">
-      Hello World. I'm
-      <span class="text-gradient name">
-        Copper <img src="./favicon.png" alt="my dog" class="dog-image" />
-      </span>
-    </h1>
-    <h3 class="sub-header no-spacing">
-      <span>I'm a developer from America.</span>
-      <div class="show-on-desktop">
-        <SocialIcons />
-      </div>
-    </h3>
-    <div class="hide-on-desktop">
-      <SocialIcons />
+    <div class="main">
+      <h1>content</h1>
     </div>
-    <hr class="no-spacing limit" />
   </div>
-
-  <div class="top-spacing-half-vh"></div>
-
-  <ContentDisplayerSection sectionTitle="Projects" sectionId="projects">
-    <ProjectsContentDisplayer showSeperators={true} />
-  </ContentDisplayerSection>
-
-  <ContentDisplayerSection sectionTitle="Favorite Songs" sectionId="songs">
-    <SongsContentDisplayer showSeperators={true} />
-  </ContentDisplayerSection>
-
-  <ContentDisplayerSection sectionTitle="Uses" sectionId="uses">
-    <UsesContentDisplayer showSeperators={false} />
-  </ContentDisplayerSection>
 </PageLayout>

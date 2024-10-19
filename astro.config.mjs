@@ -7,5 +7,12 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://copperdevs.com",
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,
+      },
+    },
+  },
   integrations: [react(), sitemap()],
 });
