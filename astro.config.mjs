@@ -17,9 +17,7 @@ export default defineConfig({
     },
   },
   integrations: [
-    react({
-      experimentalReactChildren: true,
-    }),
+    react(),
     sitemap(),
     tailwind({
       applyBaseStyles: false,
