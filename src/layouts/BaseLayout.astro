@@ -7,6 +7,7 @@ interface Props {
 
 const { title, description, pageTitle } = Astro.props;
 
+import Sidebar from "../components/Sidebar.astro";
 // import FontAwesome from "../components/icons/FontAwesome.astro";
 // import Umami from "../components/analytics/Umami.astro";
 
@@ -36,8 +37,11 @@ import "../styles/main.css";
   <!-- <LinkRedirect badUrls={["copperdevs.pages.dev"]} targetUrl="copperdevs.com" /> -->
 
   <body>
-    <main>
-      <slot />
-    </main>
+    <div class="content">
+      <Sidebar />
+      <main>
+        <slot />
+      </main>
+    </div>
   </body>
 </html>

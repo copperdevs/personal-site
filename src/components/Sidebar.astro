@@ -1,0 +1,43 @@
+---
+import Link, { LinkType } from "./Link.astro";
+---
+
+<aside class="sidebar">
+  <nav class="menu">
+    <p>Pages</p>
+    <ul>
+      <li>
+        <Link url="/" type={LinkType.Blank}>Home</Link>
+      </li>
+      <li>
+        <Link url="/projects" type={LinkType.Blank}>Projects</Link>
+      </li>
+      <li>
+        <Link url="/photos" type={LinkType.Blank}>Photos</Link>
+      </li>
+      <li>
+        <Link url="/stack" type={LinkType.Blank}>Stack</Link>
+      </li>
+      <li>
+        <Link url="/content" type={LinkType.Blank}>Content</Link>
+      </li>
+    </ul>
+  </nav>
+  <div class="menu">
+    <p>Online</p>
+    <ul>
+      <li>
+        <Link url="#" type={LinkType.Blank}>X (Twitter)</Link>
+      </li>
+      <li>
+        <Link url="#" type={LinkType.Blank}>Github</Link>
+      </li>
+      <li>
+        <Link url="#" type={LinkType.Blank}>Discord</Link>
+      </li>
+      <li>
+        <Link url="#" type={LinkType.Blank}>Youtube</Link>
+      </li>
+    </ul>
+  </div>
+</aside>

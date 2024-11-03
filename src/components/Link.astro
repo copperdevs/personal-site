@@ -1,0 +1,22 @@
+---
+import ExternalLink from "./icons/ExternalLink.astro";
+
+interface Props {
+  url: string;
+  type: LinkType;
+}
+
+export enum LinkType {
+  Default = "_self",
+  Blank = "_blank",
+  Parent = "_parent",
+  Top = "_top",
+}
+
+const { url } = Astro.props;
+---
+
+<a href={url}>
+  <slot />
+  {!url.startsWith("/") && <ExternalLink />}
+</a>

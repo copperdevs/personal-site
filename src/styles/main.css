@@ -32,6 +32,7 @@ html {
   background: var(--gray);
   background-size: 224px;
   height: 100vh;
+  /* border: blue 4px solid; */
 }
 
 main {
@@ -44,6 +45,9 @@ main {
   line-height: 1.6;
   cursor: default;
   flex: 1;
+  /* flex-grow: 1;
+  padding: 20px; */
+  /* border: red 4px solid; */
 }
 
 .no-spacing {
@@ -123,4 +127,67 @@ h6 {
   margin-left: 0;
   margin-right: 0;
   font-weight: 500;
+}
+
+.content {
+  display: flex;
+  color: var(--white);
+  /* border: green 4px solid; */
+}
+
+.sidebar {
+  width: 250px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: var(--primary-transition);
+  /* border: purple 4px solid; */
+  position: sticky;
+}
+
+.sidebar * {
+  text-decoration: none;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 4px 0;
+  font-size: 1em;
+  cursor: pointer;
+  transition: var(--primary-transition);
+}
+
+.menu li:hover {
+  color: var(--accent-main);
+}
+
+.menu li:active {
+  color: var(--accent-secondary);
+}
+
+.menu p {
+  font-weight: 500;
+  color: var(--lighter-gray);
+  margin-bottom: 2px;
+}
+
+a {
+  cursor: pointer;
+
+  transition: var(--primary-transition);
+  color: var(--white);
+}
+
+a:hover {
+  color: var(--accent-main);
+}
+
+a:active {
+  color: var(--accent-secondary);
 }
