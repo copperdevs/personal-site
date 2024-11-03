@@ -13,39 +13,60 @@ import Link, { LinkType } from "./Link.astro";
 
 <aside class="sidebar">
   <nav class="menu">
-    <p>Pages</p>
+    <p class="title">Pages</p>
     <ul>
       <li>
-        <Link url="/" type={LinkType.Blank}><Home /> Home</Link>
+        <Link url="/" type={LinkType.Default} disableActive={true}>
+          <Home /> Home
+        </Link>
       </li>
       <li>
-        <Link url="/projects" type={LinkType.Blank}><Archive /> Projects</Link>
+        <Link url="/projects" type={LinkType.Default} disableActive={true}>
+          <Archive /> Projects
+        </Link>
       </li>
       <li>
-        <Link url="/photos" type={LinkType.Blank}><Images /> Photos</Link>
+        <Link url="/photos" type={LinkType.Default} disableActive={true}>
+          <Images /> Photos
+        </Link>
       </li>
       <li>
-        <Link url="/stack" type={LinkType.Blank}><Layers /> Stack</Link>
+        <Link url="/stack" type={LinkType.Default} disableActive={true}>
+          <Layers /> Stack
+        </Link>
       </li>
       <li>
-        <Link url="/content" type={LinkType.Blank}><Library /> Content</Link>
+        <Link url="/content" type={LinkType.Default} disableActive={true}>
+          <Library /> Content
+        </Link>
       </li>
     </ul>
   </nav>
   <div class="menu">
-    <p>Online</p>
+    <p class="title">Socials</p>
     <ul>
       <li>
-        <Link url="#" type={LinkType.Blank}><Twitter /> X (Twitter)</Link>
+        <Link url="https://x.com/copperdevs" type={LinkType.Blank}>
+          <Twitter /> X (Twitter)
+        </Link>
       </li>
       <li>
-        <Link url="#" type={LinkType.Blank}><Github /> Github</Link>
+        <Link url="https://github.com/copperdevs" type={LinkType.Blank}>
+          <Github /> Github
+        </Link>
       </li>
       <li>
-        <Link url="#" type={LinkType.Blank}><Youtube /> Youtube</Link>
+        <Link url="https://www.youtube.com/@copperdevs" type={LinkType.Blank}>
+          <Youtube /> Youtube
+        </Link>
       </li>
       <li>
-        <Link url="#" type={LinkType.Blank}><Butterfly /> Bluesky</Link>
+        <Link
+          url="https://bsky.app/profile/copperdevs.com"
+          type={LinkType.Blank}
+        >
+          <Butterfly /> Bluesky
+        </Link>
       </li>
     </ul>
   </div>

@@ -3,7 +3,8 @@ import ExternalLink from "./icons/ExternalLink.astro";
 
 interface Props {
   url: string;
-  type: LinkType;
+  type?: LinkType;
+  disableActive?: boolean;
 }
 
 export enum LinkType {
@@ -13,10 +14,27 @@ export enum LinkType {
   Top = "_top",
 }
 
-const { url } = Astro.props;
+const { url, type = LinkType.Default, disableActive = false } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+const currentIsUrl = currentPath === url;
 ---
 
-<a href={url}>
-  <slot />
-  {!url.startsWith("/") && <ExternalLink />}
-</a>
+{
+  currentIsUrl && disableActive && (
+    <p class="no-spacing color-lighter-gray">
+      <slot />
+      {!url.startsWith("/") && <ExternalLink />}
+    </p>
+  )
+}
+
+{
+  (!disableActive || !currentIsUrl) && (
+    <a href={url} target={type} rel="noopener noreferrer">
+      <slot />
+      {!url.startsWith("/") && <ExternalLink />}
+    </a>
+  )
+}

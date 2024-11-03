@@ -159,19 +159,9 @@ h6 {
 .menu li {
   padding: 4px 0;
   font-size: 1em;
-  cursor: pointer;
-  transition: var(--primary-transition);
 }
 
-.menu li:hover {
-  color: var(--accent-main);
-}
-
-.menu li:active {
-  color: var(--accent-secondary);
-}
-
-.menu p {
+.menu .title {
   font-weight: 500;
   color: var(--lighter-gray);
   margin-bottom: 2px;
@@ -189,5 +179,33 @@ a:hover {
 }
 
 a:active {
+  color: var(--accent-secondary);
+}
+
+.color-black {
+  color: var(--black);
+}
+
+.color-white {
+  color: var(--white);
+}
+
+.color-gray {
+  color: var(--gray);
+}
+
+.color-light-gray {
+  color: var(--light-gray);
+}
+
+.color-lighter-gray {
+  color: var(--lighter-gray);
+}
+
+.color-accent-main {
+  color: var(--accent-main);
+}
+
+.color-accent-secondary {
   color: var(--accent-secondary);
 }
