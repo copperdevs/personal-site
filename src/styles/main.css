@@ -12,19 +12,8 @@
   --accent-main: rgb(118, 120, 237);
   --accent-secondary: rgb(129, 228, 218);
 
-  /* glowing effects */
-  --text-glow: rgba(255, 255, 255, 0.45) 0px 0px 26px;
-  --hr-glow: rgba(255, 255, 255, 0.096) 0px 0px 16px;
-  --hr-glow-alt: rgba(255, 255, 255, 0.11) 0px 0px 14px;
-
-  --red-glow: rgba(255, 0, 0, 0.733) 0px 0px 16px;
-  --yellow-glow: rgba(245, 230, 23, 0.938) 0px 0px 14px;
-  --green-glow: rgba(32, 241, 67, 0.767) 0px 0px 15px;
-  --gray-glow: rgba(209, 209, 209, 0.473) 0px 0px 15px;
-
   /* transitions */
   --primary-transition: all ease-in-out 0.15s;
-  --icon-transition: all ease 0.3s;
 
   /* gradients */
   --accent-gradient: -webkit-linear-gradient(
@@ -43,18 +32,16 @@ html {
   background: var(--gray);
   background-size: 224px;
   height: 100vh;
-  /* overflow-y: hidden; */
 }
 
 main {
-  margin: 0;
+  margin: 0 auto;
   padding: 1rem;
-  /* width: 1000px; */
-  /* max-width: calc(100% - 2rem); */
+  width: 750px;
+  max-width: calc(100% - 2rem);
   color: var(--white);
   font-size: 20px;
   line-height: 1.6;
   cursor: default;
   flex: 1;
-  height: 100vh;
 }
