@@ -45,3 +45,82 @@ main {
   cursor: default;
   flex: 1;
 }
+
+.no-spacing {
+  margin: 0px;
+  padding: 0px;
+}
+
+@media screen and (max-width: 480px) {
+  .show-on-desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .hide-on-desktop {
+    display: none;
+  }
+}
+
+h1 {
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.61em;
+  margin-bottom: 0.61em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 600;
+}
+
+h2 {
+  display: block;
+  font-size: 1.17em;
+  margin-top: 0.78em;
+  margin-bottom: 0.78em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 580;
+}
+
+h3 {
+  display: block;
+  font-size: 1.03em;
+  margin-top: 0.89em;
+  margin-bottom: 0.89em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 560;
+}
+
+h4 {
+  display: block;
+  font-size: 0.97em;
+  margin-top: 1.26em;
+  margin-bottom: 1.26em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 540;
+}
+
+h5 {
+  display: block;
+  font-size: 0.99em;
+  font-size: 0.83em;
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 520;
+}
+
+h6 {
+  display: block;
+  font-size: 0.98em;
+  font-size: 0.67em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 500;
+}
