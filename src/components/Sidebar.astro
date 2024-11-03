@@ -1,4 +1,13 @@
 ---
+import Archive from "./icons/Archive.astro";
+import Butterfly from "./icons/Butterfly.astro";
+import Github from "./icons/Github.astro";
+import Home from "./icons/Home.astro";
+import Images from "./icons/Images.astro";
+import Layers from "./icons/Layers.astro";
+import Library from "./icons/Library.astro";
+import Twitter from "./icons/Twitter.astro";
+import Youtube from "./icons/Youtube.astro";
 import Link, { LinkType } from "./Link.astro";
 ---
 
@@ -7,19 +16,19 @@ import Link, { LinkType } from "./Link.astro";
     <p>Pages</p>
     <ul>
       <li>
-        <Link url="/" type={LinkType.Blank}>Home</Link>
+        <Link url="/" type={LinkType.Blank}><Home /> Home</Link>
       </li>
       <li>
-        <Link url="/projects" type={LinkType.Blank}>Projects</Link>
+        <Link url="/projects" type={LinkType.Blank}><Archive /> Projects</Link>
       </li>
       <li>
-        <Link url="/photos" type={LinkType.Blank}>Photos</Link>
+        <Link url="/photos" type={LinkType.Blank}><Images /> Photos</Link>
       </li>
       <li>
-        <Link url="/stack" type={LinkType.Blank}>Stack</Link>
+        <Link url="/stack" type={LinkType.Blank}><Layers /> Stack</Link>
       </li>
       <li>
-        <Link url="/content" type={LinkType.Blank}>Content</Link>
+        <Link url="/content" type={LinkType.Blank}><Library /> Content</Link>
       </li>
     </ul>
   </nav>
@@ -27,16 +36,16 @@ import Link, { LinkType } from "./Link.astro";
     <p>Online</p>
     <ul>
       <li>
-        <Link url="#" type={LinkType.Blank}>X (Twitter)</Link>
+        <Link url="#" type={LinkType.Blank}><Twitter /> X (Twitter)</Link>
       </li>
       <li>
-        <Link url="#" type={LinkType.Blank}>Github</Link>
+        <Link url="#" type={LinkType.Blank}><Github /> Github</Link>
       </li>
       <li>
-        <Link url="#" type={LinkType.Blank}>Discord</Link>
+        <Link url="#" type={LinkType.Blank}><Youtube /> Youtube</Link>
       </li>
       <li>
-        <Link url="#" type={LinkType.Blank}>Youtube</Link>
+        <Link url="#" type={LinkType.Blank}><Butterfly /> Bluesky</Link>
       </li>
     </ul>
   </div>
