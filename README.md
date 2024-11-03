@@ -1,3 +1,3 @@
-# coppers personal site | v2
+# coppers personal site | v3
 
 > personal website for me to put my crap on
