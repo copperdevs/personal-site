@@ -8,17 +8,14 @@ interface Props {
 const { title, description, pageTitle } = Astro.props;
 
 import ViewTransitions from "astro/components/ViewTransitions.astro";
+
 import Sidebar from "../components/Sidebar.astro";
-// import FontAwesome from "../components/icons/FontAwesome.astro";
-// import Umami from "../components/analytics/Umami.astro";
+import Umami from "../components/Umami.astro";
+import LinkRedirect from "../components/LinkRedirect.astro";
+
+import { capitalizeFirstLetter } from "../lib/util";
 
 import "../styles/main.css";
-import { capitalizeFirstLetter } from "../lib/util";
-// import "../styles/colors.css";
-// import "../styles/effects.css";
-// import "../styles/links.css";
-// import "../styles/callout.css";
-// import LinkRedirect from "../components/utility/LinkRedirect.astro";
 
 const currentPath = Astro.url.pathname;
 ---
@@ -36,11 +33,10 @@ const currentPath = Astro.url.pathname;
 
     <ViewTransitions />
 
-    <!-- <Umami siteId="bc408a92-1357-4f9b-86ad-5f608ff9e04d" /> -->
-    <!-- <FontAwesome projectId="45b7384014" /> -->
+    <Umami siteId="bc408a92-1357-4f9b-86ad-5f608ff9e04d" />
   </head>
 
-  <!-- <LinkRedirect badUrls={["copperdevs.pages.dev"]} targetUrl="copperdevs.com" /> -->
+  <LinkRedirect badUrls={["copperdevs.pages.dev"]} targetUrl="copperdevs.com" />
 
   <body>
     <div class="content">
