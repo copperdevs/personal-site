@@ -28,7 +28,7 @@ const photos = defineCollection({
   }),
 });
 
-const blogPosts = defineCollection({
+const posts = defineCollection({
   type: "content",
   schema: z.object({
     name: z.string(),
@@ -40,5 +40,5 @@ export const collections = {
   songs: songs,
   uses: uses,
   pictures: photos,
-  blog: blogPosts,
+  posts: posts,
 };
