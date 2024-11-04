@@ -26,7 +26,7 @@ const currentIsUrl = currentPath === url;
 
 {
   currentIsUrl && disableActive && (
-    <p class="no-spacing color-lighter-gray">
+    <p class="no-spacing color-lighter-gray not-selectable">
       <slot />
       {!url.startsWith("/") && <ExternalLink />}
     </p>
