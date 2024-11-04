@@ -24,20 +24,22 @@ if (!url.endsWith("/")) url += "/";
 const currentIsUrl = currentPath === url;
 ---
 
-{
-  currentIsUrl && disableActive && (
-    <p class="no-spacing color-lighter-gray not-selectable">
-      <slot />
-      {!url.startsWith("/") && <ExternalLink />}
-    </p>
-  )
-}
+<div>
+  {
+    currentIsUrl && disableActive && (
+      <p class="no-spacing color-lighter-gray not-selectable">
+        <slot />
+        {!url.startsWith("/") && <ExternalLink />}
+      </p>
+    )
+  }
 
-{
-  (!disableActive || !currentIsUrl) && (
-    <a href={url} target={type} rel="noopener noreferrer">
-      <slot />
-      {!url.startsWith("/") && <ExternalLink />}
-    </a>
-  )
-}
+  {
+    (!disableActive || !currentIsUrl) && (
+      <a href={url} target={type} rel="noopener noreferrer">
+        <slot />
+        {!url.startsWith("/") && <ExternalLink />}
+      </a>
+    )
+  }
+</div>

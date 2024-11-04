@@ -1,0 +1,34 @@
+---
+interface Props {
+  pageTitle: string;
+  pageLinks?: [string, string, Icon?][];
+}
+
+const { pageTitle, pageLinks } = Astro.props;
+
+import { capitalizeFirstLetter } from "../lib/util";
+import type { Icon } from "./icons/Icons.astro";
+import Icons from "./icons/Icons.astro";
+
+const currentPath = Astro.url.pathname;
+---
+
+<div class="spacer-title">
+  <h1 class="no-spacing">
+    {capitalizeFirstLetter(pageTitle)}
+    <span class="color-lighter-gray">- {currentPath}</span>
+  </h1>
+  <hr class="limit" />
+</div>
+{
+  pageLinks !== undefined && (
+    <div class="pagenav">
+      {pageLinks.map((link) => (
+        <a href={link[1]}>
+          {link[2] !== undefined && <Icons icon={link[2]} />} {link[0]}
+        </a>
+      ))}
+      <hr class="limit" />
+    </div>
+  )
+}

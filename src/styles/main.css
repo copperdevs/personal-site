@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
+/* * {
+  border: red 1px solid;
+} */
+
 :root {
   /* primary colors */
   --black: rgb(9, 8, 9);
@@ -142,7 +146,7 @@ h6 {
 }
 
 .sidebar {
-  width: 250px;
+  width: 235px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -234,7 +238,7 @@ hr.limit {
   margin-top: 16px;
 }
 
-.lucide {
+.menu .lucide {
   transform: translateY(02.5px);
 }
 
@@ -243,5 +247,29 @@ hr.limit {
 }
 
 p {
+  display: block;
+  font-size: 0.85em;
+  margin-top: 0.64em;
+  margin-bottom: 0.64em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 400;
   cursor: text;
+}
+
+/* .pagenav a {
+  padding: 4px 0px;
+  font-size: 1em;
+} */
+
+.pagenav * {
+  text-decoration: none;
+  padding: 4px 4px;
+  font-size: 0.95em;
+}
+
+.pagenav .lucide {
+  transform: translateY(2px);
+  padding: 0px;
+  margin: 0px;
 }

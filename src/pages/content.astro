@@ -1,7 +1,19 @@
 ---
+import { Icon } from "../components/icons/Icons.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="copperdevs" description="stuff" pageTitle="content">
+<BaseLayout
+  pageTitle="content"
+  description="stuff"
+  pageLinks={[
+    ["Movies", "#", Icon.Butterfly],
+    ["Shows", "#", Icon.Butterfly],
+    ["Videos", "#", Icon.Butterfly],
+    ["Musicals", "#", Icon.Butterfly],
+    ["Music Videos", "#", Icon.Butterfly],
+    ["Books", "#", Icon.Butterfly],
+  ]}
+>
   <p>ima put stuff like my watch lists and my reading list here eventually</p>
 </BaseLayout>

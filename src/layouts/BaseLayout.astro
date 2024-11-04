@@ -1,11 +1,11 @@
 ---
 interface Props {
-  title: string;
-  description: string;
   pageTitle: string;
+  description: string;
+  pageLinks?: [string, string, Icon?][];
 }
 
-const { title, description, pageTitle } = Astro.props;
+const { description, pageTitle, pageLinks } = Astro.props;
 
 import ViewTransitions from "astro/components/ViewTransitions.astro";
 
@@ -13,11 +13,9 @@ import Sidebar from "../components/Sidebar.astro";
 import Umami from "../components/Umami.astro";
 import LinkRedirect from "../components/LinkRedirect.astro";
 
-import { capitalizeFirstLetter } from "../lib/util";
-
 import "../styles/main.css";
-
-const currentPath = Astro.url.pathname;
+import PageTitle from "../components/PageTitle.astro";
+import type { Icon } from "../components/icons/Icons.astro";
 ---
 
 <!doctype html>
@@ -29,7 +27,7 @@ const currentPath = Astro.url.pathname;
     <meta name="generator" content={Astro.generator} />
 
     <link rel="icon" type="image/x-icon" href="/favicon.png" />
-    <title>{pageTitle} // {title}</title>
+    <title>{pageTitle} // copperdevs</title>
 
     <ViewTransitions />
 
@@ -42,13 +40,7 @@ const currentPath = Astro.url.pathname;
     <div class="content">
       <Sidebar />
       <main>
-        <div class="spacer-title" transition:name="main-page-tital">
-          <h1 class="no-spacing">
-            {capitalizeFirstLetter(pageTitle)}
-            <span class="color-lighter-gray">- {currentPath}</span>
-          </h1>
-          <hr class="limit" />
-        </div>
+        <PageTitle pageTitle={pageTitle} pageLinks={pageLinks} />
         <slot />
       </main>
     </div>

@@ -19,3 +19,4 @@ my personal site has many different versions of varying styles that can be found
 
 - <https://ana.sh/>
 - <https://onur.dev/>
+- <https://venqoi.lol/>
