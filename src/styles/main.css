@@ -145,15 +145,17 @@ h6 {
   /* border: green 4px solid; */
 }
 
+.sidebar-spacer,
 .sidebar {
-  width: 235px;
+  width: 215px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  transition: var(--primary-transition);
-  /* border: purple 4px solid; */
-  position: sticky;
+}
+
+.sidebar {
+  position: fixed;
 }
 
 .sidebar * {
@@ -312,4 +314,10 @@ p {
 code {
   margin: 4px;
   padding: 4px;
+}
+
+blockquote {
+  border-left: var(--light-gray) 4px solid;
+  margin-left: 16px;
+  padding-left: 8px;
 }
