@@ -13,6 +13,7 @@ import Sidebar from "../components/Sidebar.astro";
 // import Umami from "../components/analytics/Umami.astro";
 
 import "../styles/main.css";
+import { capitalizeFirstLetter } from "../lib/util";
 // import "../styles/colors.css";
 // import "../styles/effects.css";
 // import "../styles/links.css";
@@ -43,6 +44,10 @@ import "../styles/main.css";
     <div class="content">
       <Sidebar />
       <main>
+        <div class="spacer-title" transition:name="main-page-tital">
+          <h1 class="no-spacing">{capitalizeFirstLetter(pageTitle)}</h1>
+          <hr class="limit" />
+        </div>
         <slot />
       </main>
     </div>

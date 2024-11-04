@@ -209,3 +209,24 @@ a:active {
 .color-accent-secondary {
   color: var(--accent-secondary);
 }
+
+hr {
+  border: none;
+  border-top: 4px solid var(--light-gray);
+  border-radius: 25px;
+  box-shadow: var(--hr-glow);
+  margin: 0px;
+  padding: 0px;
+}
+
+hr.limit {
+  max-width: 85%;
+}
+
+.spacer-title {
+  margin-top: 16px;
+}
+
+.icon {
+  transform: translateY(0px);
+}

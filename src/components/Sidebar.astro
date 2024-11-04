@@ -1,5 +1,6 @@
 ---
 import Archive from "./icons/Archive.astro";
+import Book from "./icons/Book.astro";
 import Butterfly from "./icons/Butterfly.astro";
 import Github from "./icons/Github.astro";
 import Home from "./icons/Home.astro";
@@ -38,6 +39,11 @@ import Link, { LinkType } from "./Link.astro";
       <li>
         <Link url="/content" type={LinkType.Default} disableActive={true}>
           <Library /> Content
+        </Link>
+      </li>
+      <li>
+        <Link url="/blog" type={LinkType.Default} disableActive={true}>
+          <Book /> Blog
         </Link>
       </li>
     </ul>
