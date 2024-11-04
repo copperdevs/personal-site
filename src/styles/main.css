@@ -54,6 +54,10 @@ main {
   /* border: red 4px solid; */
 }
 
+.main-limit {
+  max-width: 85%;
+}
+
 .no-spacing {
   margin: 0px;
   padding: 0px;
@@ -320,4 +324,20 @@ blockquote {
   border-left: var(--light-gray) 4px solid;
   margin-left: 16px;
   padding-left: 8px;
+  color: default;
+  transition: var(--primary-transition);
+
+  display: block;
+  font-size: 0.85em;
+  margin-top: 0.64em;
+  margin-bottom: 0.64em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 400;
+  cursor: text;
+}
+
+blockquote:hover {
+  border-left: var(--lighter-gray) 4px solid;
+  background-color: var(--light-gray);
 }

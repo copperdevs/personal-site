@@ -247,54 +247,6 @@ Some text to show that the reference links can follow later.
 
 ---
 
-# Images
-
-```
-Here's our logo (hover to see the title text):
-
-Inline-style:
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-
-Reference-style:
-![alt text][logo]
-
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
-
-![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-
-Like links, Images also have a footnote style syntax
-
-![Alt text][id]
-
-With a reference later in the document defining the URL location:
-
-[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
-```
-
-Here's our logo (hover to see the title text):
-
-Inline-style:
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-
-Reference-style:
-![alt text][logo]
-
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
-
-![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-
-Like links, Images also have a footnote style syntax
-
-![Alt text][id]
-
-With a reference later in the document defining the URL location:
-
-[id]: https://octodex.github.com/images/dojocat.jpg "The Dojocat"
-
----
-
 # [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
 
 ```
@@ -452,7 +404,7 @@ datahere
 
 ---
 
-# Tables
+<!-- # Tables
 
 ```
 Colons can be used to align columns.
@@ -540,7 +492,7 @@ raw Markdown line up prettily. You can also use inline Markdown.
 | Backtick | `         |
 | Pipe     | \|        |
 
----
+--- -->
 
 # Blockquotes
 
@@ -550,10 +502,12 @@ raw Markdown line up prettily. You can also use inline Markdown.
 
 Quote break.
 
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
+> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
 
 > Blockquotes can also be nested...
->> ...by using additional greater-than signs right next to each other...
+>
+> > ...by using additional greater-than signs right next to each other...
+> >
 > > > ...or with spaces between arrows.
 ```
 

@@ -89,8 +89,10 @@ import { LinkType } from "../components/Link.astro";
         ]}
       />
       <main>
-        <PageTitle pageTitle={pageTitle} pageLinks={pageLinks} />
-        <slot />
+        <div class="main-limit">
+          <PageTitle pageTitle={pageTitle} pageLinks={pageLinks} />
+          <slot />
+        </div>
       </main>
     </div>
   </body>

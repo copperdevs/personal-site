@@ -18,7 +18,7 @@ const currentPath = Astro.url.pathname;
     {capitalizeFirstLetter(pageTitle)}
     <span class="color-lighter-gray">- {currentPath}</span>
   </h1>
-  <hr class="limit" />
+  <hr />
 </div>
 {
   pageLinks !== undefined && (
@@ -28,7 +28,7 @@ const currentPath = Astro.url.pathname;
           {link[2] !== undefined && <Icons icon={link[2]} />} {link[0]}
         </a>
       ))}
-      <hr class="limit" />
+      <hr />
     </div>
   )
 }
