@@ -19,6 +19,8 @@ import { capitalizeFirstLetter } from "../lib/util";
 // import "../styles/links.css";
 // import "../styles/callout.css";
 // import LinkRedirect from "../components/utility/LinkRedirect.astro";
+
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -45,7 +47,10 @@ import { capitalizeFirstLetter } from "../lib/util";
       <Sidebar />
       <main>
         <div class="spacer-title" transition:name="main-page-tital">
-          <h1 class="no-spacing">{capitalizeFirstLetter(pageTitle)}</h1>
+          <h1 class="no-spacing">
+            {capitalizeFirstLetter(pageTitle)}
+            <span class="color-lighter-gray">- {currentPath}</span>
+          </h1>
           <hr class="limit" />
         </div>
         <slot />
