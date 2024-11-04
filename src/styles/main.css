@@ -273,3 +273,24 @@ p {
   padding: 0px;
   margin: 0px;
 }
+
+.stack {
+  margin-top: 16px;
+}
+
+.stack * {
+  padding: 0px;
+  margin: 0px;
+}
+
+.stack .item {
+  max-width: 45%;
+  margin-left: 24px;
+}
+
+.stack .hardware,
+.software {
+  width: 45%;
+  /* list-style-type: none; */
+  float: left;
+}

@@ -1,9 +1,40 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { StackType } from "../lib/enums";
+
+const stack = await getCollection("stack");
+
+const softwareStack = stack.filter(
+  (stack) => stack.data.type === StackType.Software
+);
+
+const hardwareStack = stack.filter(
+  (stack) => stack.data.type === StackType.Hardware
+);
 ---
 
 <BaseLayout pageTitle="stack" description="stuff">
-  <p>
-    gonna put the hardware, software, and anything inbetween that i use here
-  </p>
+  <div class="stack">
+    <ul class="software">
+      <h2>Software</h2>
+      {
+        softwareStack.map((stackItem) => (
+          <li class="item">
+            <p>{stackItem.data.name}</p>
+          </li>
+        ))
+      }
+    </ul>
+    <ul class="hardware">
+      <h2>Hardware</h2>
+      {
+        hardwareStack.map((stackItem) => (
+          <li class="item">
+            <p>{stackItem.data.name}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </BaseLayout>

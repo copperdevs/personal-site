@@ -1,4 +1,5 @@
 import { z, defineCollection } from "astro:content";
+import { softwarePlatform, stackType } from "../lib/zod-types";
 
 const projects = defineCollection({
   type: "content",
@@ -14,10 +15,12 @@ const songs = defineCollection({
   }),
 });
 
-const uses = defineCollection({
+const stack = defineCollection({
   type: "content",
   schema: z.object({
     name: z.string(),
+    type: stackType,
+    platform: softwarePlatform.optional(),
   }),
 });
 
@@ -38,7 +41,7 @@ const posts = defineCollection({
 export const collections = {
   projects: projects,
   songs: songs,
-  uses: uses,
+  stack: stack,
   pictures: photos,
   posts: posts,
 };
