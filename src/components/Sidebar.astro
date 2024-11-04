@@ -1,79 +1,29 @@
 ---
-import Archive from "./icons/Archive.astro";
-import Book from "./icons/Book.astro";
-import Butterfly from "./icons/Butterfly.astro";
-import Github from "./icons/Github.astro";
-import Home from "./icons/Home.astro";
-import Images from "./icons/Images.astro";
-import Layers from "./icons/Layers.astro";
-import Library from "./icons/Library.astro";
-import Twitter from "./icons/Twitter.astro";
-import Youtube from "./icons/Youtube.astro";
+interface Props {
+  links: [string, [string, string, Icon, LinkType, boolean][]][];
+}
+
 import Link, { LinkType } from "./Link.astro";
+import Icons, { Icon } from "./icons/Icons.astro";
+
+const { links } = Astro.props;
 ---
 
 <aside class="sidebar">
-  <nav class="menu">
-    <p class="title">Pages</p>
-    <ul>
-      <li>
-        <Link url="/" type={LinkType.Default} disableActive={true}>
-          <Home /> Home
-        </Link>
-      </li>
-      <li>
-        <Link url="/projects" type={LinkType.Default} disableActive={true}>
-          <Archive /> Projects
-        </Link>
-      </li>
-      <li>
-        <Link url="/photos" type={LinkType.Default} disableActive={true}>
-          <Images /> Photos
-        </Link>
-      </li>
-      <li>
-        <Link url="/stack" type={LinkType.Default} disableActive={true}>
-          <Layers /> Stack
-        </Link>
-      </li>
-      <li>
-        <Link url="/content" type={LinkType.Default} disableActive={true}>
-          <Library /> Content
-        </Link>
-      </li>
-      <li>
-        <Link url="/blog" type={LinkType.Default} disableActive={true}>
-          <Book /> Blog
-        </Link>
-      </li>
-    </ul>
-  </nav>
-  <div class="menu">
-    <p class="title">Socials</p>
-    <ul>
-      <li>
-        <Link url="https://x.com/copperdevs" type={LinkType.Blank}>
-          <Twitter /> X (Twitter)
-        </Link>
-      </li>
-      <li>
-        <Link url="https://github.com/copperdevs" type={LinkType.Blank}>
-          <Github /> Github
-        </Link>
-      </li>
-      <li>
-        <Link url="https://www.youtube.com/@copperdevs" type={LinkType.Blank}>
-          <Youtube /> Youtube
-        </Link>
-      </li>
-      <li>
-        <Link
-          url="https://bsky.app/profile/copperdevs.com"
-          type={LinkType.Blank}
-        >
-          <Butterfly /> Bluesky
-        </Link>
-      </li>
-    </ul>
-  </div>
+  {
+    links.map((linkCollection) => (
+      <nav class="menu">
+        <p class="title">{linkCollection[0]}</p>
+        <ul>
+          {linkCollection[1].map((link) => (
+            <li>
+              <Link url={link[1]} type={link[3]} disableActive={link[4]}>
+                <Icons icon={link[2]} /> {link[0]}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    ))
+  }
 </aside>

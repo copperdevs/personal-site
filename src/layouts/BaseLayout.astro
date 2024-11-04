@@ -15,7 +15,8 @@ import LinkRedirect from "../components/LinkRedirect.astro";
 
 import "../styles/main.css";
 import PageTitle from "../components/PageTitle.astro";
-import type { Icon } from "../components/icons/Icons.astro";
+import { Icon } from "../components/icons/Icons.astro";
+import { LinkType } from "../components/Link.astro";
 ---
 
 <!doctype html>
@@ -38,7 +39,54 @@ import type { Icon } from "../components/icons/Icons.astro";
 
   <body>
     <div class="content">
-      <Sidebar />
+      <Sidebar
+        links={[
+          [
+            "Pages",
+            [
+              ["Home", "/", Icon.Home, LinkType.Default, true],
+              ["Projects", "/projects", Icon.Archive, LinkType.Default, true],
+              ["Photos", "/photos", Icon.Images, LinkType.Default, true],
+              ["Stack", "/stack", Icon.Layers, LinkType.Default, true],
+              ["Content", "/content", Icon.Library, LinkType.Default, true],
+              ["Posts", "/posts", Icon.Book, LinkType.Default, true],
+            ],
+          ],
+          [
+            "Socials",
+            [
+              [
+                "X (Twitter)",
+                "https://x.com/copperdevs",
+                Icon.Home,
+                LinkType.Blank,
+                false,
+              ],
+              [
+                "Github",
+                "https://github.com/copperdevs",
+                Icon.Archive,
+                LinkType.Blank,
+                false,
+              ],
+              [
+                "Youtube",
+                "https://www.youtube.com/@copperdevs",
+                Icon.Images,
+                LinkType.Blank,
+                false,
+              ],
+              [
+                "Blusky",
+                "https://bsky.app/profile/copperdevs.com",
+                Icon.Layers,
+                LinkType.Blank,
+                false,
+              ],
+            ],
+          ],
+        ]}
+      />
       <main>
         <PageTitle pageTitle={pageTitle} pageLinks={pageLinks} />
         <slot />

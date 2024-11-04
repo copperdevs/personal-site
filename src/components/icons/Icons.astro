@@ -1,13 +1,18 @@
 ---
 import Archive from "./Archive.astro";
+import AudioLines from "./AudioLines.astro";
 import Book from "./Book.astro";
+import BoomBox from "./BoomBox.astro";
 import Butterfly from "./Butterfly.astro";
+import Clapperboard from "./Clapperboard.astro";
 import ExternalLink from "./ExternalLink.astro";
 import Github from "./Github.astro";
 import Home from "./Home.astro";
 import Images from "./Images.astro";
 import Layers from "./Layers.astro";
 import Library from "./Library.astro";
+import Theater from "./Theater.astro";
+import TvMinimalPlay from "./TvMinimalPlay.astro";
 import Twitter from "./Twitter.astro";
 import Youtube from "./Youtube.astro";
 
@@ -19,27 +24,37 @@ const { icon } = Astro.props;
 
 export enum Icon {
   Archive,
+  AudioLines,
   Book,
+  BoomBox,
   Butterfly,
+  Clapperboard,
   ExternalLink,
   Github,
   Home,
   Images,
   Layers,
   Library,
+  Theater,
+  TvMinimalPlay,
   Twitter,
   Youtube,
 }
 ---
 
 {icon === Icon.Archive && <Archive />}
+{icon === Icon.AudioLines && <AudioLines />}
 {icon === Icon.Book && <Book />}
+{icon === Icon.BoomBox && <BoomBox />}
 {icon === Icon.Butterfly && <Butterfly />}
+{icon === Icon.Clapperboard && <Clapperboard />}
 {icon === Icon.ExternalLink && <ExternalLink />}
 {icon === Icon.Github && <Github />}
 {icon === Icon.Home && <Home />}
 {icon === Icon.Images && <Images />}
 {icon === Icon.Layers && <Layers />}
 {icon === Icon.Library && <Library />}
+{icon === Icon.Theater && <Theater />}
+{icon === Icon.TvMinimalPlay && <TvMinimalPlay />}
 {icon === Icon.Twitter && <Twitter />}
 {icon === Icon.Youtube && <Youtube />}
