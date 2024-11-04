@@ -227,6 +227,6 @@ hr.limit {
   margin-top: 16px;
 }
 
-.icon {
-  transform: translateY(0px);
+.lucide {
+  transform: translateY(02.5px);
 }
