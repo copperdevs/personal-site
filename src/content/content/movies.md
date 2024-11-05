@@ -1,0 +1,30 @@
+---
+name: Movies
+---
+
+- [x] Civil War
+- [ ] Bodies Bodies Bodies
+- [ ] The Killers Game
+- [ ] Piece by Piece
+- [ ] Trap
+- [ ] Perfect Blue
+- [ ] Fractured
+- [ ] Whiplash
+- [ ] Heathers
+- [ ] Tick tick boom
+- [ ] Entergalactic
+- [ ] Lucy
+- [ ] We Live In Time
+- [ ] Pulp Fiction
+- [ ] Kill Bill
+- [ ] Alien Romulus
+- [ ] Red One
+- [ ] Beetlejuice
+- [ ] Speak No Evil
+- [ ] 10 Things I Hate About You
+- [ ] 500 Days of Summer
+- [ ] Truman Show
+- [ ] Nimona
+- [ ] Set it up
+- [ ] Anyone but You
+- [ ] Love Hurts
