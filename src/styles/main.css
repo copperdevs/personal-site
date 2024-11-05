@@ -334,7 +334,7 @@ blockquote {
   margin-left: 0;
   margin-right: 0;
   font-weight: 400;
-  cursor: text;
+  /* cursor: default; */
 }
 
 blockquote:hover {
