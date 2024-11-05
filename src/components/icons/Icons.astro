@@ -40,21 +40,27 @@ export enum Icon {
   Twitter = "twitter",
   Youtube = "youtube",
 }
+
+const iconComponents = {
+  [Icon.Archive]: Archive,
+  [Icon.AudioLines]: AudioLines,
+  [Icon.Book]: Book,
+  [Icon.BoomBox]: BoomBox,
+  [Icon.Butterfly]: Butterfly,
+  [Icon.Clapperboard]: Clapperboard,
+  [Icon.ExternalLink]: ExternalLink,
+  [Icon.Github]: Github,
+  [Icon.Home]: Home,
+  [Icon.Images]: Images,
+  [Icon.Layers]: Layers,
+  [Icon.Library]: Library,
+  [Icon.Theater]: Theater,
+  [Icon.TvMinimalPlay]: TvMinimalPlay,
+  [Icon.Twitter]: Twitter,
+  [Icon.Youtube]: Youtube,
+};
+
+const TargetIcon = iconComponents[icon];
 ---
 
-{icon === Icon.Archive && <Archive />}
-{icon === Icon.AudioLines && <AudioLines />}
-{icon === Icon.Book && <Book />}
-{icon === Icon.BoomBox && <BoomBox />}
-{icon === Icon.Butterfly && <Butterfly />}
-{icon === Icon.Clapperboard && <Clapperboard />}
-{icon === Icon.ExternalLink && <ExternalLink />}
-{icon === Icon.Github && <Github />}
-{icon === Icon.Home && <Home />}
-{icon === Icon.Images && <Images />}
-{icon === Icon.Layers && <Layers />}
-{icon === Icon.Library && <Library />}
-{icon === Icon.Theater && <Theater />}
-{icon === Icon.TvMinimalPlay && <TvMinimalPlay />}
-{icon === Icon.Twitter && <Twitter />}
-{icon === Icon.Youtube && <Youtube />}
+<TargetIcon />

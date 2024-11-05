@@ -1,0 +1,16 @@
+---
+interface Props {
+  boxes: [string, boolean, boolean][];
+}
+
+const { boxes } = Astro.props;
+---
+
+{
+  boxes.map(([label, isChecked, isDisabled]) => (
+    <div>
+      <input type="checkbox" checked={isChecked} disabled={isDisabled} />{" "}
+      {label} <br />
+    </div>
+  ))
+}

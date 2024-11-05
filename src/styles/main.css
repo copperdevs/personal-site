@@ -245,6 +245,10 @@ hr.spacer {
   margin-bottom: 16px;
 }
 
+.invisible {
+  opacity: 0;
+}
+
 .spacer-title {
   margin-top: 16px;
 }
