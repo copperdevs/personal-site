@@ -349,7 +349,7 @@ input[type="checkbox"] {
   background-color: var(--light-gray);
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color ease-in-out 0.15s;
+  transition: var(--primary-transition);
   transform: translateY(7px);
 }
 
@@ -390,4 +390,14 @@ input[type="checkbox"]:disabled:checked {
 
 input[type="checkbox"]:disabled::after {
   border-color: var(--light-gray);
+}
+
+input[type="checkbox"]:checked + * {
+  text-decoration: line-through;
+  color: var(--lighter-gray);
+}
+
+input[type="checkbox"]:disabled:checked + * {
+  text-decoration: line-through;
+  color: var(--lighter-gray);
 }
