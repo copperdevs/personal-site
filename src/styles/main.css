@@ -334,10 +334,60 @@ blockquote {
   margin-left: 0;
   margin-right: 0;
   font-weight: 400;
-  /* cursor: default; */
 }
 
 blockquote:hover {
   border-left: var(--lighter-gray) 4px solid;
   background-color: var(--light-gray);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-color: var(--light-gray);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color ease-in-out 0.15s;
+  transform: translateY(7px);
+}
+
+input[type="checkbox"]:hover {
+  background-color: var(--lighter-gray);
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--accent-main);
+}
+
+input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+input[type="checkbox"]:checked::after {
+  display: block;
+}
+
+/* Disabled state */
+input[type="checkbox"]:disabled {
+  background-color: var(--lighter-gray);
+  cursor: not-allowed;
+}
+
+input[type="checkbox"]:disabled:checked {
+  background-color: var(--accent-secondary);
+}
+
+input[type="checkbox"]:disabled::after {
+  border-color: var(--light-gray);
 }
