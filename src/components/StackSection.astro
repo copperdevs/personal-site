@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+import { StackType } from "../lib/enums";
+
+interface Props {
+  title: string;
+  type: StackType;
+}
+
+const { title, type } = Astro.props;
+
+const stack = await getCollection("stack");
+
+const data = stack.filter((stack) => stack.data.type === type);
+
+const itemsFound = data.length > 0;
+---
+
+{
+  itemsFound && (
+    <div>
+      <h2>{title}</h2>
+      {data.map((stackItem) => (
+        <li class="item">
+          <p>{stackItem.data.name}</p>
+        </li>
+      ))}
+    </div>
+  )
+}

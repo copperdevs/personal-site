@@ -1,12 +1,13 @@
 enum StackType {
   Software = "software",
   Hardware = "hardware",
+  Langauge = "language",
 }
 
 enum SoftwarePlatform {
   Windows = "windows",
   Mac = "mac",
-  Web = "web",
+  Both = "both",
 }
 
 export { StackType, SoftwarePlatform };

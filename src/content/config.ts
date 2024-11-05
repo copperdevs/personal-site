@@ -21,6 +21,7 @@ const stack = defineCollection({
     name: z.string(),
     type: stackType,
     platform: softwarePlatform.optional(),
+    link: z.string().optional(),
   }),
 });
 

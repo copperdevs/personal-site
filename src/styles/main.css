@@ -240,6 +240,11 @@ hr.limit {
   max-width: 85%;
 }
 
+hr.spacer {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
 .spacer-title {
   margin-top: 16px;
 }
@@ -294,8 +299,8 @@ p {
   margin-left: 24px;
 }
 
-.stack .hardware,
-.software {
+.stack .left,
+.right {
   width: 45%;
   /* list-style-type: none; */
   float: left;

@@ -1,5 +1,5 @@
 ---
-name: Software Two
+name: Raycast
 type: software
 platform: mac
 ---
