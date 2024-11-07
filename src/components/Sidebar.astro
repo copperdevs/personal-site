@@ -9,22 +9,29 @@ import Icons, { Icon } from "./icons/Icons.astro";
 const { links } = Astro.props;
 ---
 
-<div class="sidebar-spacer"></div>
-<aside class="sidebar">
-  {
-    links.map((linkCollection) => (
-      <nav class="menu">
-        <p class="title">{linkCollection[0]}</p>
-        <ul>
-          {linkCollection[1].map((link) => (
-            <li>
-              <Link url={link[1]} type={link[3]} disableActive={link[4]}>
-                <Icons icon={link[2]} /> {link[0]}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    ))
-  }
-</aside>
+<div class="show-on-desktop desktop">
+  <div class="sidebar-spacer"></div>
+
+  <aside class="sidebar" id="sidebar">
+    {
+      links.map((linkCollection) => (
+        <nav class="menu">
+          <p class="title">{linkCollection[0]}</p>
+          <ul>
+            {linkCollection[1].map((link) => (
+              <li>
+                <Link url={link[1]} type={link[3]} disableActive={link[4]}>
+                  <Icons icon={link[2]} /> {link[0]}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ))
+    }
+  </aside>
+</div>
+
+<div class="hide-on-desktop mobile">
+  <div class="menu-button"><button>menu</button></div>
+</div>
