@@ -42,18 +42,10 @@ const posts = defineCollection({
   }),
 });
 
-const content = defineCollection({
-  type: "content",
-  schema: z.object({
-    name: z.string(),
-  }),
-});
-
 export const collections = {
   projects: projects,
   songs: songs,
   stack: stack,
   pictures: photos,
   posts: posts,
-  content: content,
 };
