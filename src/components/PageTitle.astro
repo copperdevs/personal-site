@@ -14,9 +14,11 @@ const currentPath = Astro.url.pathname;
 ---
 
 <div class="spacer-title">
-  <h1 class="no-spacing">
+  <h1 class="no-spacing" style="display: inline-block">
     {capitalizeFirstLetter(pageTitle)}
-    <span class="color-lighter-gray">- {currentPath}</span>
+    <h2 class="color-lighter-gray no-spacing" style="display: inline-block">
+      ​ - {currentPath}
+    </h2>
   </h1>
   <hr />
 </div>
