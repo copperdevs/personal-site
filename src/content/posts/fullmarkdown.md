@@ -1,6 +1,6 @@
 ---
-name: Full Markdown Sample
-description: test page to see how all the markdown is styled
+name: Markdown Styling Testing
+description: Simple test page to test how markdown is rendered :3 (don't mind it)
 published: 0000-00-00
 ---
 
@@ -13,14 +13,6 @@ published: 0000-00-00
 #### h4 Heading
 ##### h5 Heading
 ###### h6 Heading
-
-Alternatively, for H1 and H2, an underline-ish style:
-
-Alt-H1
-======
-
-Alt-H2
-------
 ```
 
 # h1 Heading 8-)
@@ -34,12 +26,6 @@ Alt-H2
 ##### h5 Heading
 
 ###### h6 Heading
-
-Alternatively, for H1 and H2, an underline-ish style:
-
-# Alt-H1
-
-## Alt-H2
 
 ---
 
