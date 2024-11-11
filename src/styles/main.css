@@ -34,8 +34,6 @@ html {
   font-optical-sizing: auto;
   font-variation-settings: "slnt" 0;
   background: var(--gray);
-  background-size: 224px;
-  height: 100vh;
   /* border: blue 4px solid; */
 }
 
@@ -49,18 +47,122 @@ main {
   line-height: 1.6;
   cursor: default;
   flex: 1;
-  /* flex-grow: 1;
-  padding: 20px; */
   /* border: red 4px solid; */
-}
-
-.main-limit {
-  max-width: 85%;
 }
 
 .no-spacing {
   margin: 0px;
   padding: 0px;
+}
+
+/* desktop */
+@media (min-width: 521px) {
+  .content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .main-limit {
+    max-width: 95%;
+  }
+
+  .show-on-desktop {
+    display: inherit;
+  }
+
+  .hide-on-desktop {
+    display: none;
+  }
+
+  h1 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.61em;
+    margin-bottom: 0.61em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 600;
+    cursor: text;
+  }
+
+  h2 {
+    display: block;
+    font-size: 1.17em;
+    margin-top: 0.78em;
+    margin-bottom: 0.78em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 580;
+    cursor: text;
+  }
+
+  h3 {
+    display: block;
+    font-size: 1.03em;
+    margin-top: 0.89em;
+    margin-bottom: 0.89em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 560;
+    cursor: text;
+  }
+
+  h4 {
+    display: block;
+    font-size: 0.97em;
+    margin-top: 1.26em;
+    margin-bottom: 1.26em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 540;
+    cursor: text;
+  }
+
+  h5 {
+    display: block;
+    font-size: 0.99em;
+    font-size: 0.83em;
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 520;
+    cursor: text;
+  }
+
+  h6 {
+    display: block;
+    font-size: 0.98em;
+    font-size: 0.67em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 500;
+    cursor: text;
+  }
+
+  p {
+    display: block;
+    font-size: 0.85em;
+    margin-top: 0.64em;
+    margin-bottom: 0.64em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 400;
+    cursor: text;
+  }
+
+  ul li {
+    display: list-item;
+    font-size: 0.95em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 400;
+    cursor: text;
+  }
 }
 
 /* mobile */
@@ -153,95 +255,12 @@ main {
     font-weight: 400;
     cursor: text;
   }
-}
 
-/* desktop */
-@media (min-width: 521px) {
-  .content {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .show-on-desktop {
-    display: inherit;
-  }
-  .hide-on-desktop {
-    display: none;
-  }
-
-  h1 {
-    display: block;
-    font-size: 1.5em;
-    margin-top: 0.61em;
-    margin-bottom: 0.61em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: 600;
-    cursor: text;
-  }
-
-  h2 {
-    display: block;
-    font-size: 1.17em;
-    margin-top: 0.78em;
-    margin-bottom: 0.78em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: 580;
-    cursor: text;
-  }
-
-  h3 {
-    display: block;
-    font-size: 1.03em;
-    margin-top: 0.89em;
-    margin-bottom: 0.89em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: 560;
-    cursor: text;
-  }
-
-  h4 {
-    display: block;
-    font-size: 0.97em;
-    margin-top: 1.26em;
-    margin-bottom: 1.26em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: 540;
-    cursor: text;
-  }
-
-  h5 {
-    display: block;
-    font-size: 0.99em;
-    font-size: 0.83em;
-    margin-top: 1.6em;
-    margin-bottom: 1.6em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: 520;
-    cursor: text;
-  }
-
-  h6 {
-    display: block;
-    font-size: 0.98em;
-    font-size: 0.67em;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: 500;
-    cursor: text;
-  }
-
-  p {
-    display: block;
-    font-size: 0.85em;
-    margin-top: 0.64em;
-    margin-bottom: 0.64em;
+  ul li {
+    display: list-item;
+    font-size: 0.9em;
+    margin-top: 0.45em;
+    margin-bottom: 0.45em;
     margin-left: 0;
     margin-right: 0;
     font-weight: 400;
@@ -262,6 +281,7 @@ main {
 
 .desktop .sidebar * {
   text-decoration: none;
+  margin: 0px;
 }
 
 .mobile .sidebar .menu-button {
@@ -344,6 +364,7 @@ hr {
   box-shadow: var(--hr-glow);
   margin: 0px;
   padding: 0px;
+  width: 100%;
 }
 
 hr.limit {
