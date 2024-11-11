@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # :3
 deno.lock
+
+# :3 pt2
+.vscode
