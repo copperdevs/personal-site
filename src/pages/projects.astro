@@ -1,7 +1,26 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const projects = (await getCollection("projects")).filter(
+  (projects) => projects.data.unlisted === false
+);
 ---
 
 <BaseLayout pageTitle="projects" description="stuff">
-  <p>this is where ima showcase some projects ive made eventually</p>
+  <ul class="posts">
+    {
+      projects.map((post, index) => (
+        <li transition:name={`posts-list-item-${index}`}>
+          <blockquote>
+            <h2 class="title">
+              <a href={post.slug}>{post.data.name}</a>
+            </h2>
+
+            <li class="description">{post.data.description}</li>
+          </blockquote>
+        </li>
+      ))
+    }
+  </ul>
 </BaseLayout>

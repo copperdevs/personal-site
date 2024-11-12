@@ -1,22 +1,25 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Link from "../../components/Link.astro";
 
 const posts = (await getCollection("posts")).filter(
   (post) => post.data.unlisted === false
 );
 ---
 
-<BaseLayout pageTitle="posts" description="stuff">
+<BaseLayout pageTitle="post" description="stuff">
   <ul class="posts">
     {
-      posts.map((post) => (
-        <li class="title">
-          <a href={post.slug}>{post.data.name}</a>
-        </li>
+      posts.map((post, index) => (
+        <li transition:name={`posts-list-item-${index}`}>
+          <blockquote>
+            <h2 class="title">
+              <a href={post.slug}>{post.data.name}</a>
+            </h2>
 
-        <li class="description">{post.data.description}</li>
+            <li class="description">{post.data.description}</li>
+          </blockquote>
+        </li>
       ))
     }
   </ul>

@@ -163,6 +163,17 @@ main {
     font-weight: 400;
     cursor: text;
   }
+
+  .stack .item .title {
+    display: block;
+    font-size: 1em;
+    margin-top: 0.55em;
+    margin-bottom: 0.55em;
+    margin-right: 0;
+    margin-left: 8px;
+    font-weight: 400;
+    cursor: text;
+  }
 }
 
 /* mobile */
@@ -266,6 +277,17 @@ main {
     font-weight: 400;
     cursor: text;
   }
+
+  .stack .item .title {
+    display: block;
+    font-size: 0.85;
+    margin-top: 0.725;
+    margin-bottom: 0.725;
+    margin-right: 0;
+    margin-left: 8px;
+    font-weight: 400;
+    cursor: text;
+  }
 }
 
 .desktop .sidebar-spacer,
@@ -296,6 +318,11 @@ main {
   height: 100%;
 }
 
+.menu {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
 .menu ul {
   list-style: none;
   padding: 0;
@@ -310,6 +337,7 @@ main {
 .menu .title {
   font-weight: 500;
   color: var(--lighter-gray);
+  margin-top: 4px;
   margin-bottom: 2px;
   cursor: default;
 }
@@ -392,11 +420,6 @@ hr.spacer {
   cursor: default;
 }
 
-/* .pagenav a {
-  padding: 4px 0px;
-  font-size: 1em;
-} */
-
 .pagenav * {
   text-decoration: none;
   padding: 4px 4px;
@@ -411,6 +434,7 @@ hr.spacer {
 
 .stack {
   margin-top: 16px;
+  margin-left: 24px;
 }
 
 .stack * {
@@ -419,15 +443,31 @@ hr.spacer {
 }
 
 .stack .item {
-  max-width: 45%;
-  margin-left: 24px;
+  max-width: 94.5%;
+  margin-left: 8px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  cursor: pointer;
 }
 
 .stack .left,
-.right {
-  width: 45%;
-  /* list-style-type: none; */
+.stack .right {
+  width: 47.5%;
   float: left;
+  margin-left: 2%;
+}
+
+.stack hr {
+  max-width: 95%;
+  margin-left: 2%;
+}
+
+.stack ul {
+  list-style: none;
+}
+
+ul.posts {
+  list-style: none;
 }
 
 .posts .title {

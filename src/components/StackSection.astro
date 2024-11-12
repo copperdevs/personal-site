@@ -1,13 +1,13 @@
 ---
 import { getCollection } from "astro:content";
 import { StackType } from "../lib/enums";
+import { capitalizeFirstLetter } from "../lib/util";
 
 interface Props {
-  title: string;
   type: StackType;
 }
 
-const { title, type } = Astro.props;
+const { type } = Astro.props;
 
 const stack = await getCollection("stack");
 
@@ -19,12 +19,16 @@ const itemsFound = data.length > 0;
 {
   itemsFound && (
     <div>
-      <h2>{title}</h2>
-      {data.map((stackItem) => (
-        <li class="item">
-          <p>{stackItem.data.name}</p>
-        </li>
-      ))}
+      <h2>{capitalizeFirstLetter(type.toString())}</h2>
+      <ul>
+        {data.map((stackItem) => (
+          <li>
+            <blockquote class="item">
+              <p class="title">{stackItem.data.name}</p>
+            </blockquote>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

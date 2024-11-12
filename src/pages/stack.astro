@@ -6,13 +6,8 @@ import { StackType } from "../lib/enums";
 
 <BaseLayout pageTitle="stack" description="stuff">
   <div class="stack">
-    <ul class="left">
-      <StackSection title="Software" type={StackType.Software} />
-      <hr class="spacer" />
-      <StackSection title="Languages" type={StackType.Langauge} />
-    </ul>
-    <ul class="right">
-      <StackSection title="Hardware" type={StackType.Hardware} />
-    </ul>
+    <StackSection type={StackType.Software} />
+    <StackSection type={StackType.Langauge} />
+    <StackSection type={StackType.Hardware} />
   </div>
 </BaseLayout>
