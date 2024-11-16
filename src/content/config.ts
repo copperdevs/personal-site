@@ -1,5 +1,5 @@
 import { z, defineCollection } from "astro:content";
-import { softwarePlatform, stackType } from "../lib/zod-types";
+import { softwarePlatform, stackType, urlType } from "../lib/zod-types";
 
 const projects = defineCollection({
   type: "content",
@@ -7,6 +7,8 @@ const projects = defineCollection({
     name: z.string(),
     description: z.string(),
     unlisted: z.boolean().optional().default(false),
+    links: z.record(urlType, z.string()),
+    primaryLink: urlType,
   }),
 });
 

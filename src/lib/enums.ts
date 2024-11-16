@@ -10,4 +10,10 @@ enum SoftwarePlatform {
   Both = "both",
 }
 
-export { StackType, SoftwarePlatform };
+enum UrlType {
+  Project = "project",
+  Source = "source",
+  Package = "package",
+}
+
+export { StackType, SoftwarePlatform, UrlType };

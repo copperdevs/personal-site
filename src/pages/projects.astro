@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPrimaryLink } from "../lib/util";
+import { UrlType } from "../lib/enums";
 
 const projects = (await getCollection("projects")).filter(
   (projects) => projects.data.unlisted === false
@@ -10,14 +12,23 @@ const projects = (await getCollection("projects")).filter(
 <BaseLayout pageTitle="projects" description="stuff">
   <ul class="posts">
     {
-      projects.map((post, index) => (
+      projects.map((project, index) => (
         <li transition:name={`posts-list-item-${index}`}>
           <blockquote>
             <h2 class="title">
-              <a href={post.slug}>{post.data.name}</a>
+              <a
+                href={getPrimaryLink(
+                  project.data.primaryLink,
+                  project.data.links[UrlType.Project],
+                  project.data.links[UrlType.Source],
+                  project.data.links[UrlType.Package]
+                )}
+              >
+                {project.data.name}
+              </a>
             </h2>
 
-            <li class="description">{post.data.description}</li>
+            <li class="description">{project.data.description}</li>
           </blockquote>
         </li>
       ))
