@@ -1,8 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getPrimaryLink } from "../lib/util";
+import { getLinkData } from "../lib/util";
 import { UrlType } from "../lib/enums";
+import { capitalizeFirstLetter } from "../lib/util";
 
 const projects = (await getCollection("projects")).filter(
   (projects) => projects.data.unlisted === false
@@ -17,18 +18,40 @@ const projects = (await getCollection("projects")).filter(
           <blockquote>
             <h2 class="title">
               <a
-                href={getPrimaryLink(
-                  project.data.primaryLink,
-                  project.data.links[UrlType.Project],
-                  project.data.links[UrlType.Source],
-                  project.data.links[UrlType.Package]
-                )}
+                href={
+                  getLinkData(
+                    project.data.primaryLink,
+                    project.data.links.project,
+                    project.data.links.source,
+                    project.data.links.package
+                  )[0]
+                }
               >
                 {project.data.name}
               </a>
             </h2>
 
-            <li class="description">{project.data.description}</li>
+            <li class="description">
+              {project.data.description}
+              <div>
+                <ul>
+                  {getLinkData(
+                    project.data.primaryLink,
+                    project.data.links.project,
+                    project.data.links.source,
+                    project.data.links.package
+                  )[1].map(
+                    (link) =>
+                      link[1] !== undefined &&
+                      link[0] !== project.data.primaryLink && (
+                        <li>
+                          <a href={link[1]}>{capitalizeFirstLetter(link[0])}</a>
+                        </li>
+                      )
+                  )}
+                </ul>
+              </div>
+            </li>
           </blockquote>
         </li>
       ))

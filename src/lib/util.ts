@@ -11,22 +11,36 @@ export function shuffle(array: any[]) {
   }
 }
 
-export function getPrimaryLink(
+export function getLinkData(
   primaryLink: UrlType,
   projectUrl: string | undefined,
   sourceUrl: string | undefined,
   packageUrl: string | undefined
-): string {
+): [string, [UrlType, string | undefined][]] {
+  let primaryUrl = "#";
+
+  let urls: [UrlType, string | undefined][] = [
+    [UrlType.Project, projectUrl],
+    [UrlType.Source, sourceUrl],
+    [UrlType.Package, packageUrl],
+  ];
+
   switch (primaryLink) {
     case UrlType.Project:
-      return projectUrl === undefined ? "#" : projectUrl;
+      primaryUrl = projectUrl === undefined ? "#" : projectUrl;
+      break;
     case UrlType.Source:
-      return sourceUrl === undefined ? "#" : sourceUrl;
+      primaryUrl = sourceUrl === undefined ? "#" : sourceUrl;
+      break;
     case UrlType.Package:
-      return packageUrl === undefined ? "#" : packageUrl;
+      primaryUrl = packageUrl === undefined ? "#" : packageUrl;
+      break;
     default:
-      return "#";
+      primaryUrl = "#";
+      break;
   }
+
+  return [primaryUrl, urls];
 }
 
 export type Dictionary<TKey extends string | number | symbol, TValue> = {
