@@ -13,10 +13,10 @@ import Sidebar from "../components/Sidebar.astro";
 import Umami from "../components/Umami.astro";
 import LinkRedirect from "../components/LinkRedirect.astro";
 
-import "../styles/style.css";
 import PageTitle from "../components/PageTitle.astro";
 import { Icon } from "../components/icons/Icons.astro";
 import { LinkType } from "../components/Link.astro";
+import Style from "../components/Style.astro";
 ---
 
 <!doctype html>
@@ -29,6 +29,8 @@ import { LinkType } from "../components/Link.astro";
 
     <link rel="icon" type="image/x-icon" href="/favicon.png" />
     <title>{pageTitle} // copperdevs</title>
+
+    <Style />
 
     <ViewTransitions />
 
