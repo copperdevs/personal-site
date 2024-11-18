@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getLinkData } from "../lib/util";
-import { UrlType } from "../lib/enums";
 import { capitalizeFirstLetter } from "../lib/util";
 
 const projects = (await getCollection("projects")).filter(
@@ -10,7 +9,10 @@ const projects = (await getCollection("projects")).filter(
 );
 ---
 
-<BaseLayout pageTitle="projects" description="stuff">
+<BaseLayout
+  pageTitle="projects"
+  description="some of my wonderful projects ive made"
+>
   <ul class="posts">
     {
       projects.map((project, index) => (
