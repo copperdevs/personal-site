@@ -1,8 +1,8 @@
 import { defineConfig } from "astro/config";
 
-import react from "@astrojs/react";
-
 import sitemap from "@astrojs/sitemap";
+
+import umami from "@yeskunall/astro-umami";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,5 +14,8 @@ export default defineConfig({
       },
     },
   },
-  integrations: [react(), sitemap()],
+  integrations: [
+    sitemap(),
+    umami({ id: "bc408a92-1357-4f9b-86ad-5f608ff9e04d" }),
+  ],
 });

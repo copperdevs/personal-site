@@ -10,7 +10,6 @@ const { description, pageTitle, pageLinks } = Astro.props;
 import ViewTransitions from "astro/components/ViewTransitions.astro";
 
 import Sidebar from "../components/Sidebar.astro";
-import Umami from "../components/Umami.astro";
 import LinkRedirect from "../components/LinkRedirect.astro";
 
 import PageTitle from "../components/PageTitle.astro";
@@ -33,8 +32,6 @@ import Style from "../components/Style.astro";
     <Style />
 
     <ViewTransitions />
-
-    <Umami siteId="bc408a92-1357-4f9b-86ad-5f608ff9e04d" />
   </head>
 
   <LinkRedirect badUrls={["copperdevs.pages.dev"]} targetUrl="copperdevs.com" />
