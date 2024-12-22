@@ -274,9 +274,9 @@ main {
 
   .stack .item .title {
     display: block;
-    font-size: 0.85;
-    margin-top: 0.725;
-    margin-bottom: 0.725;
+    font-size: 0.85em;
+    margin-top: 0.725em;
+    margin-bottom: 0.725em;
     margin-right: 0;
     margin-left: 8px;
     font-weight: 400;
