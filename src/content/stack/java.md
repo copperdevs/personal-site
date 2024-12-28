@@ -1,4 +1,0 @@
----
-name: Java
-type: language
----
