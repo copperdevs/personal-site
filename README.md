@@ -14,10 +14,3 @@ my personal site has many different versions of varying styles that can be found
 ## built with
 
 - astro
-- <https://lucide.dev/icons>
-
-## inspirations
-
-- <https://ana.sh/>
-- <https://onur.dev/>
-- <https://venqoi.lol/>
