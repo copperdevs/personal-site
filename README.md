@@ -8,4 +8,5 @@ my personal site has many different versions of varying styles that can be found
 
 1. [v1](https://github.com/copperdevs/personal-site/tree/v1)
 2. [v2](https://github.com/copperdevs/personal-site/tree/v2)
-3. [v3](https://github.com/copperdevs/personal-site/tree/v3) (current)
+3. [v3](https://github.com/copperdevs/personal-site/tree/v3)
+4. [v4](https://github.com/copperdevs/personal-site/tree/v4) (current)
