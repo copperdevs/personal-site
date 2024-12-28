@@ -1,15 +1,21 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import favicon from "../assets/favicon.png";
 ---
 
 <BaseLayout pageTitle="home" description="home page of my random stuff">
-  <p>hey im copper</p>
+  <div class="thing">
+    <div class="thing2">
+      <blockquote>
+        <div class="usertitle">
+          <img src={favicon.src} alt="Havanese Dog" />
+          <h1><a href="https://github.com/copperdevs">copperdevs</a></h1>
+        </div>
 
-  <hr class="spacer invisible" />
-
-  <blockquote>lowkey what do i put here</blockquote>
-
-  <hr class="spacer invisible" />
-
-  <p>but yeah everything here is still a work in progress!</p>
+        <div>
+          <h1 class="title">lowkey what do i put here</h1>
+        </div>
+      </blockquote>
+    </div>
+  </div>
 </BaseLayout>

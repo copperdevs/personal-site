@@ -2,20 +2,18 @@
 interface Props {
   pageTitle: string;
   description: string;
-  pageLinks?: [string, string, Icon?][];
 }
 
-const { description, pageTitle, pageLinks } = Astro.props;
+const { description, pageTitle } = Astro.props;
 
 import { ClientRouter } from "astro:transitions";
 
-import Sidebar from "../components/Sidebar.astro";
 import LinkRedirect from "../components/LinkRedirect.astro";
 
-import PageTitle from "../components/PageTitle.astro";
 import { Icon } from "../components/icons/Icons.astro";
-import { LinkType } from "../components/Link.astro";
 import Style from "../components/Style.astro";
+
+import favicon from "../assets/favicon.png";
 ---
 
 <!doctype html>
@@ -26,7 +24,7 @@ import Style from "../components/Style.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
 
-    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <link rel="icon" type="image/x-icon" href={favicon.src} />
     <title>{pageTitle} // copperdevs</title>
 
     <Style />
@@ -37,61 +35,6 @@ import Style from "../components/Style.astro";
   <LinkRedirect badUrls={["copperdevs.pages.dev"]} targetUrl="copperdevs.com" />
 
   <body>
-    <div class="content">
-      <Sidebar
-        links={[
-          [
-            "Pages",
-            [
-              ["Home", "/", Icon.Home, LinkType.Default, true],
-              ["Projects", "/projects", Icon.Archive, LinkType.Default, true],
-              ["Photos", "/photos", Icon.Images, LinkType.Default, true],
-              ["Uses", "/uses", Icon.Layers, LinkType.Default, true],
-              ["Posts", "/posts", Icon.Book, LinkType.Default, true],
-              // ["Music", "/music", Icon.AudioLines, LinkType.Default, true],
-            ],
-          ],
-          [
-            "Socials",
-            [
-              [
-                "X (Twitter)",
-                "https://x.com/copperdevs",
-                Icon.Twitter,
-                LinkType.Blank,
-                false,
-              ],
-              [
-                "Github",
-                "https://github.com/copperdevs",
-                Icon.Github,
-                LinkType.Blank,
-                false,
-              ],
-              [
-                "Youtube",
-                "https://www.youtube.com/@copperdevs",
-                Icon.Youtube,
-                LinkType.Blank,
-                false,
-              ],
-              [
-                "Blusky",
-                "https://bsky.app/profile/copperdevs.com",
-                Icon.Butterfly,
-                LinkType.Blank,
-                false,
-              ],
-            ],
-          ],
-        ]}
-      />
-      <main>
-        <div class="main-limit">
-          <PageTitle pageTitle={pageTitle} pageLinks={pageLinks} />
-          <slot />
-        </div>
-      </main>
-    </div>
+    <slot />
   </body>
 </html>

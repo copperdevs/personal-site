@@ -29,6 +29,16 @@ html {
   font-variation-settings: "slnt" 0;
   background: var(--gray);
   /* border: blue 4px solid; */
+
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
 main {
@@ -66,17 +76,6 @@ main {
 
   .hide-on-desktop {
     display: none;
-  }
-
-  h1 {
-    display: block;
-    font-size: 1.5em;
-    margin-top: 0.61em;
-    margin-bottom: 0.61em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: 600;
-    cursor: text;
   }
 
   h2 {
@@ -571,4 +570,53 @@ input[type="checkbox"]:disabled:checked + * {
 
 .indent {
   margin-left: 8px;
+}
+
+.thing {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.thing .thing2 {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.thing .title {
+  color: var(--white);
+  display: block;
+  font-size: 1.45em;
+  margin-top: 0.61em;
+  margin-bottom: 0.61em;
+  margin-left: 0;
+  margin-right: 4px;
+  font-weight: 600;
+  cursor: text;
+}
+
+.thing .usertitle {
+  display: flex;
+  align-items: center;
+  color: var(--lighter-gray);
+  gap: 8px;
+}
+
+.thing .usertitle img {
+  width: 24px;
+  height: 24px;
+}
+
+.thing .usertitle h1 {
+  display: block;
+  font-size: 1.25em;
+  margin-top: 0.56em;
+  margin-bottom: 0.56em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 600;
+  cursor: text;
 }
