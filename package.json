@@ -1,7 +1,7 @@
 {
   "name": "personal-site",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,14 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^3.6.2",
+    "@astrojs/react": "^4.1.2",
     "@astrojs/sitemap": "^3.2.1",
-    "@notionhq/client": "^2.2.15",
     "@types/react": "^18.3.4",
     "@types/react-dom": "^18.3.0",
     "@yeskunall/astro-umami": "^0.0.2",
-    "astro": "^4.12.2",
-    "notion-to-md": "^3.1.1",
+    "astro": "^5.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   }
