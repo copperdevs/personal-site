@@ -601,14 +601,40 @@ input[type="checkbox"]:disabled:checked + * {
   justify-content: center;
 }
 
-.thing .thing2 {
-  display: flex;
-  align-items: start;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  min-width: 25%;
-  max-width: 35%;
+@media (min-width: 831px) {
+  .thing .thing2 {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    min-width: 25%;
+    max-width: 35%;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 830px) {
+  .thing .thing2 {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    min-width: 55%;
+    max-width: 65%;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .thing .thing2 {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
 }
 
 .thing .title {
