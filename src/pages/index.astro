@@ -1,10 +1,11 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import QuoteLayout from "../layouts/QuoteLayout.astro";
 import favicon from "../assets/favicon.png";
 import Blockquote from "../components/Blockquote.astro";
+import BlockquoteLink from "../components/BlockquoteLink.astro";
 ---
 
-<BaseLayout pageTitle="home" description="home page of my random stuff">
+<QuoteLayout pageTitle="home" description="home page of my random stuff">
   <Blockquote full={true}>
     <div class="usertitle">
       <img src={favicon.src} alt="Havanese Dog" />
@@ -16,9 +17,6 @@ import Blockquote from "../components/Blockquote.astro";
     </div>
   </Blockquote>
 
-  <Blockquote full={true}>
-    <div class="usertitle">
-      <h1><a href="projects">projects</a></h1>
-    </div>
-  </Blockquote>
-</BaseLayout>
+  <hr />
+  <BlockquoteLink href="/projects"> Projects </BlockquoteLink>
+</QuoteLayout>

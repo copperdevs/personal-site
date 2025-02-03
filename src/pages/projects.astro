@@ -1,12 +1,12 @@
 ---
 import BlockquoteLink from "../components/BlockquoteLink.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import QuoteLayout from "../layouts/QuoteLayout.astro";
 import { getCollection } from "astro:content";
 
 const allProjects = await getCollection("projects");
 ---
 
-<BaseLayout pageTitle="projects" description="i've made stuff perchance">
+<QuoteLayout pageTitle="projects" description="i've made stuff perchance">
   <BlockquoteLink href="/"> Home </BlockquoteLink>
   <hr />
   {
@@ -16,4 +16,4 @@ const allProjects = await getCollection("projects");
       </BlockquoteLink>
     ))
   }
-</BaseLayout>
+</QuoteLayout>
