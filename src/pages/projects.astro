@@ -1,20 +1,19 @@
 ---
+import BlockquoteLink from "../components/BlockquoteLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 const allProjects = await getCollection("projects");
 ---
 
-<BaseLayout pageTitle="home" description="home page of my random stuff">
-  <div class="thing">
-    <div class="thing2">
-      {
-        allProjects.map((project) => (
-          <blockquote class="full">
-            <h1>{project.data.name}</h1>
-          </blockquote>
-        ))
-      }
-    </div>
-  </div>
+<BaseLayout pageTitle="projects" description="i've made stuff perchance">
+  <BlockquoteLink href="/"> Home </BlockquoteLink>
+  <hr />
+  {
+    allProjects.map((project) => (
+      <BlockquoteLink href={project.data.link}>
+        {project.data.name}
+      </BlockquoteLink>
+    ))
+  }
 </BaseLayout>

@@ -1,0 +1,13 @@
+---
+interface Props {
+  full: boolean;
+}
+
+const { full = false } = Astro.props;
+---
+
+<blockquote class={full ? "full" : ""}>
+  <div class="push">
+    <slot />
+  </div>
+</blockquote>

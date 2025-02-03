@@ -8,6 +8,7 @@ export const collections = {
     schema: z.object({
       name: z.string(),
       description: z.string(),
+      link: z.string(),
     }),
   }),
 };
