@@ -18,5 +18,9 @@ import BlockquoteLink from "../components/BlockquoteLink.astro";
   </Blockquote>
 
   <hr />
-  <BlockquoteLink href="/projects"> Projects </BlockquoteLink>
+
+  <BlockquoteLink href="/projects" noBottomSpacing={true}>
+    Projects
+  </BlockquoteLink>
+  <BlockquoteLink href="/socials" noSpacing={true}> Socials </BlockquoteLink>
 </QuoteLayout>

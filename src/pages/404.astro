@@ -1,0 +1,15 @@
+---
+import QuoteLayout from "../layouts/QuoteLayout.astro";
+import Blockquote from "../components/Blockquote.astro";
+import BlockquoteLink from "../components/BlockquoteLink.astro";
+---
+
+<QuoteLayout pageTitle="home" description="home page of my random stuff">
+  <Blockquote full={true}>
+    <h1 class="title">404 :(</h1>
+  </Blockquote>
+
+  <hr />
+
+  <BlockquoteLink href="/"> Home </BlockquoteLink>
+</QuoteLayout>

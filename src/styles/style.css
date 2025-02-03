@@ -520,6 +520,16 @@ blockquote.full {
   width: 100%;
 }
 
+blockquote.nospacing {
+  padding: 0px;
+  margin: 0px;
+}
+
+blockquote.nobottomspacing {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
 input[type="checkbox"] {
   appearance: none;
   position: relative;

@@ -1,12 +1,20 @@
 ---
 interface Props {
   full: boolean;
+  noSpacing?: boolean;
+  noBottomSpacing?: boolean;
 }
 
-const { full = false } = Astro.props;
+const {
+  full = false,
+  noSpacing = false,
+  noBottomSpacing = false,
+} = Astro.props;
 ---
 
-<blockquote class={full ? "full" : ""}>
+<blockquote
+  class={`${full ? "full" : ""} ${noSpacing ? "nospacing" : ""} ${noBottomSpacing ? "nobottomspacing" : ""}`}
+>
   <div class="push">
     <slot />
   </div>
