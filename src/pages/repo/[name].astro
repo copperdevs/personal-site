@@ -1,0 +1,9 @@
+---
+const { name } = Astro.params;
+
+export const prerender = false;
+
+if (name === undefined) return Astro.rewrite("/404");
+
+return Astro.redirect(`https://github.com/copperdevs/${name}`);
+---
