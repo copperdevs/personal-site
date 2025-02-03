@@ -1,0 +1,19 @@
+---
+import BlockquoteLink from "../components/BlockquoteLink.astro";
+import QuoteLayout from "../layouts/QuoteLayout.astro";
+import { getCollection } from "astro:content";
+
+const allProjects = await getCollection("projects");
+---
+
+<QuoteLayout pageTitle="projects" description="i've made stuff perchance">
+  <BlockquoteLink href="/"> Home </BlockquoteLink>
+  <hr />
+  {
+    allProjects.map((project) => (
+      <BlockquoteLink href={project.data.link}>
+        {project.data.name}
+      </BlockquoteLink>
+    ))
+  }
+</QuoteLayout>

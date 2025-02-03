@@ -1,21 +1,22 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import QuoteLayout from "../layouts/QuoteLayout.astro";
 import favicon from "../assets/favicon.png";
+import Blockquote from "../components/Blockquote.astro";
+import BlockquoteLink from "../components/BlockquoteLink.astro";
 ---
 
-<BaseLayout pageTitle="home" description="home page of my random stuff">
-  <div class="thing">
-    <div class="thing2">
-      <blockquote>
-        <div class="usertitle">
-          <img src={favicon.src} alt="Havanese Dog" />
-          <h1><a href="https://github.com/copperdevs">copperdevs</a></h1>
-        </div>
-
-        <div>
-          <h1 class="title">lowkey what do i put here</h1>
-        </div>
-      </blockquote>
+<QuoteLayout pageTitle="home" description="home page of my random stuff">
+  <Blockquote full={true}>
+    <div class="usertitle">
+      <img src={favicon.src} alt="Havanese Dog" />
+      <h1><a href="https://github.com/copperdevs">copperdevs</a></h1>
     </div>
-  </div>
-</BaseLayout>
+
+    <div>
+      <h1 class="title">lowkey what do i put here</h1>
+    </div>
+  </Blockquote>
+
+  <hr />
+  <BlockquoteLink href="/projects"> Projects </BlockquoteLink>
+</QuoteLayout>

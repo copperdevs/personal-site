@@ -1,0 +1,17 @@
+---
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+
+import Blockquote from "./Blockquote.astro";
+---
+
+<Blockquote full={true}>
+  <div class="usertitle">
+    <h1>
+      <a href={href}><slot /> </a>
+    </h1>
+  </div>
+</Blockquote>
