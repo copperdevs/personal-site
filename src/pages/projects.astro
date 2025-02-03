@@ -10,8 +10,12 @@ const allProjects = await getCollection("projects");
   <BlockquoteLink href="/"> Home </BlockquoteLink>
   <hr />
   {
-    allProjects.map((project) => (
-      <BlockquoteLink href={project.data.link}>
+    allProjects.map((project, index) => (
+      <BlockquoteLink
+        href={project.data.link}
+        noSpacing={index !== 0}
+        noBottomSpacing={index === 0}
+      >
         {project.data.name}
       </BlockquoteLink>
     ))

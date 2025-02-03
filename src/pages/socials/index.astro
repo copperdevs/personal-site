@@ -1,0 +1,25 @@
+---
+import QuoteLayout from "../../layouts/QuoteLayout.astro";
+import BlockquoteLink from "../../components/BlockquoteLink.astro";
+import { Socials } from "../../variables";
+import { capitalizeFirstLetter } from "../../lib/util";
+---
+
+<QuoteLayout
+  pageTitle="socials"
+  description="you can find me at some other places"
+>
+  <BlockquoteLink href="/"> Home </BlockquoteLink>
+  <hr />
+  {
+    Object.keys(Socials).map((social, index) => (
+      <BlockquoteLink
+        href={`/socials/${social}`}
+        noSpacing={index !== 0}
+        noBottomSpacing={index === 0}
+      >
+        {capitalizeFirstLetter(social)}
+      </BlockquoteLink>
+    ))
+  }
+</QuoteLayout>
