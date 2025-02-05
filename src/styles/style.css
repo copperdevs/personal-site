@@ -44,19 +44,7 @@ body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-}
-
-main {
-  margin: 0 auto;
-  padding: 1rem;
-  width: 750px;
-  max-width: calc(100% - 2rem);
   color: var(--white);
-  font-size: 20px;
-  line-height: 1.6;
-  cursor: default;
-  flex: 1;
-  /* border: red 4px solid; */
 }
 
 .no-spacing {
@@ -601,8 +589,12 @@ input[type="checkbox"]:disabled:checked + * {
   justify-content: center;
 }
 
+.post blockquote {
+  padding-left: 8px;
+}
+
 @media (min-width: 831px) {
-  .thing .thing2 {
+  .thing .quotecenter {
     display: flex;
     align-items: start;
     flex-direction: column;
@@ -611,10 +603,8 @@ input[type="checkbox"]:disabled:checked + * {
     min-width: 25%;
     max-width: 35%;
   }
-}
 
-@media (min-width: 561px) and (max-width: 830px) {
-  .thing .thing2 {
+  .thing .blogcenter {
     display: flex;
     align-items: start;
     flex-direction: column;
@@ -623,17 +613,61 @@ input[type="checkbox"]:disabled:checked + * {
     min-width: 55%;
     max-width: 65%;
   }
+
+  .post {
+    padding-top: 64px;
+  }
 }
 
-@media only screen and (max-width: 560px) {
-  .thing .thing2 {
+@media (min-width: 561px) and (max-width: 830px) {
+  .thing .quotecenter {
     display: flex;
     align-items: start;
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    min-width: 100%;
-    max-width: 100%;
+    min-width: 75%;
+    max-width: 85%;
+  }
+
+  .thing .blogcenter {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    min-width: 75%;
+    max-width: 85%;
+  }
+
+  .post {
+    padding-top: 32px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .thing .quotecenter {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    min-width: 95%;
+    max-width: 95%;
+  }
+
+  .thing .blogcenter {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    min-width: 90%;
+    max-width: 95%;
+  }
+
+  .post {
+    padding-top: 16px;
   }
 }
 

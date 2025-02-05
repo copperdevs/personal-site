@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlockquoteLink from "../../components/BlockquoteLink.astro";
+import { capitalizeFirstLetter } from "../../lib/util";
+import { getCollection, type CollectionEntry, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: post,
+  }));
+}
+type Props = CollectionEntry<"posts">;
+
+const post = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout
+  pageTitle="posts"
+  description="i might write stuff perchane idk lol"
+>
+  <div class="post">
+    <div class="thing">
+      <div class="blogcenter">
+        <BlockquoteLink href="/"> Home </BlockquoteLink>
+        <hr />
+        <Content />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

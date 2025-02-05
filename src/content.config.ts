@@ -11,4 +11,15 @@ export const collections = {
       link: z.string(),
     }),
   }),
+  posts: defineCollection({
+    loader: glob({ pattern: ["*.md"], base: "src/content/posts/" }),
+    schema: z.object({
+      name: z.string(), // TODO: Display on post page
+      description: z.string(), // TODO: Display on posts and post page?
+      unlisted: z.boolean().default(false), // TODO: Hide on posts page
+      tags: z.array(z.string()).default([]), // TODO: Implement fully
+      pubDate: z.coerce.date(), // TODO: Display on post page
+      updatedDate: z.coerce.date().optional(), // TODO: Display on post page
+    }),
+  }),
 };

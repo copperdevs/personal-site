@@ -1,0 +1,29 @@
+---
+import QuoteLayout from "../../layouts/QuoteLayout.astro";
+import BlockquoteLink from "../../components/BlockquoteLink.astro";
+import { capitalizeFirstLetter } from "../../lib/util";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("posts")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<QuoteLayout
+  pageTitle="posts"
+  description="i might write stuff perchane idk lol"
+>
+  <BlockquoteLink href="/"> Home </BlockquoteLink>
+  <hr />
+  {
+    posts.map((post, index) => (
+      <BlockquoteLink
+        href={`/posts/${post.id}`}
+        noSpacing={index !== 0}
+        noBottomSpacing={index === 0}
+      >
+        {capitalizeFirstLetter(post.data.name)}
+      </BlockquoteLink>
+    ))
+  }
+</QuoteLayout>
