@@ -24,7 +24,14 @@ const { Content } = await render(post);
   <div class="post">
     <div class="thing">
       <div class="blogcenter">
-        <BlockquoteLink href="/"> Home </BlockquoteLink>
+        <h1 class="no-bottom-spacing">
+          {capitalizeFirstLetter(post.data.name)}
+        </h1>
+        <hr />
+        <BlockquoteLink href="/" noBottomSpacing={true}> Home </BlockquoteLink>
+        <BlockquoteLink href="/posts" onlyBottomSpacing={true}>
+          All Posts
+        </BlockquoteLink>
         <hr />
         <Content />
       </div>
