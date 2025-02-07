@@ -31,7 +31,10 @@ import favicon from "../assets/favicon.png";
     <ClientRouter />
   </head>
 
-  <LinkRedirect badUrls={["copperdevs.pages.dev"]} targetUrl="copperdevs.com" />
+  <LinkRedirect
+    badUrls={["copperdevs.pages.dev", "v4.copperdevs.com"]}
+    targetUrl="copperdevs.com"
+  />
 
   <body>
     <slot />
