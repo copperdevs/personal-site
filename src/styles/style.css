@@ -22,7 +22,7 @@
 }
 
 /* * {
-  border: solid red 2px;
+  border: solid red 1px;
 } */
 
 html {
@@ -35,7 +35,7 @@ html {
   /* border: blue 4px solid; */
 
   margin: 0;
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
 }
 
@@ -44,24 +44,17 @@ body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-}
-
-main {
-  margin: 0 auto;
-  padding: 1rem;
-  width: 750px;
-  max-width: calc(100% - 2rem);
   color: var(--white);
-  font-size: 20px;
-  line-height: 1.6;
-  cursor: default;
-  flex: 1;
-  /* border: red 4px solid; */
 }
 
 .no-spacing {
   margin: 0px;
   padding: 0px;
+}
+
+.no-bottom-spacing {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 
 /* desktop */
@@ -85,9 +78,9 @@ main {
 
   h2 {
     display: block;
-    font-size: 1.17em;
-    margin-top: 0.78em;
-    margin-bottom: 0.78em;
+    font-size: 1.17rem;
+    margin-top: 0.78rem;
+    margin-bottom: 0.78rem;
     margin-left: 0;
     margin-right: 0;
     font-weight: 580;
@@ -96,9 +89,9 @@ main {
 
   h3 {
     display: block;
-    font-size: 1.03em;
-    margin-top: 0.89em;
-    margin-bottom: 0.89em;
+    font-size: 1.03rem;
+    margin-top: 0.89rem;
+    margin-bottom: 0.89rem;
     margin-left: 0;
     margin-right: 0;
     font-weight: 560;
@@ -107,9 +100,9 @@ main {
 
   h4 {
     display: block;
-    font-size: 0.97em;
-    margin-top: 1.26em;
-    margin-bottom: 1.26em;
+    font-size: 0.97rem;
+    margin-top: 1.26rem;
+    margin-bottom: 1.26rem;
     margin-left: 0;
     margin-right: 0;
     font-weight: 540;
@@ -118,10 +111,10 @@ main {
 
   h5 {
     display: block;
-    font-size: 0.99em;
-    font-size: 0.83em;
-    margin-top: 1.6em;
-    margin-bottom: 1.6em;
+    font-size: 0.99rem;
+    font-size: 0.83rem;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
     margin-left: 0;
     margin-right: 0;
     font-weight: 520;
@@ -130,10 +123,10 @@ main {
 
   h6 {
     display: block;
-    font-size: 0.98em;
-    font-size: 0.67em;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    font-size: 0.98rem;
+    font-size: 0.67rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     margin-left: 0;
     margin-right: 0;
     font-weight: 500;
@@ -142,9 +135,9 @@ main {
 
   p {
     display: block;
-    font-size: 0.85em;
-    margin-top: 0.64em;
-    margin-bottom: 0.64em;
+    font-size: 1.05rem;
+    margin-top: 0.54rem;
+    margin-bottom: 0.54rem;
     margin-left: 0;
     margin-right: 0;
     font-weight: 400;
@@ -153,9 +146,9 @@ main {
 
   ul li {
     display: list-item;
-    font-size: 0.95em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     margin-left: 0;
     margin-right: 0;
     font-weight: 400;
@@ -164,9 +157,9 @@ main {
 
   .stack .item .title {
     display: block;
-    font-size: 1em;
-    margin-top: 0.55em;
-    margin-bottom: 0.55em;
+    font-size: 1rem;
+    margin-top: 0.55rem;
+    margin-bottom: 0.55rem;
     margin-right: 0;
     margin-left: 8px;
     font-weight: 400;
@@ -190,9 +183,9 @@ main {
 
   h1 {
     display: block;
-    font-size: 1.275em;
-    margin-top: 0.5185em;
-    margin-bottom: 0.5185em;
+    font-size: 1.275rem;
+    margin-top: 0.5185rem;
+    margin-bottom: 0.5185rem;
     margin-left: 0;
     margin-right: 0;
     font-weight: 600;
@@ -201,9 +194,9 @@ main {
 
   h2 {
     display: block;
-    font-size: 0.9945em;
-    margin-top: 0.663em;
-    margin-bottom: 0.663em;
+    font-size: 0.9945rem;
+    margin-top: 0.663rem;
+    margin-bottom: 0.663rem;
     margin-left: 0;
     margin-right: 0;
     font-weight: 580;
@@ -212,9 +205,9 @@ main {
 
   h3 {
     display: block;
-    font-size: 0.8755em;
-    margin-top: 0.7565em;
-    margin-bottom: 0.7565em;
+    font-size: 0.8755rem;
+    margin-top: 0.7565rem;
+    margin-bottom: 0.7565rem;
     margin-left: 0;
     margin-right: 0;
     font-weight: 560;
@@ -223,9 +216,9 @@ main {
 
   h4 {
     display: block;
-    font-size: 0.8245em;
-    margin-top: 1.071em;
-    margin-bottom: 1.071em;
+    font-size: 0.8245rem;
+    margin-top: 1.071rem;
+    margin-bottom: 1.071rem;
     margin-left: 0;
     margin-right: 0;
     font-weight: 540;
@@ -234,9 +227,9 @@ main {
 
   h5 {
     display: block;
-    font-size: 0.7055em;
-    margin-top: 1.36em;
-    margin-bottom: 1.36em;
+    font-size: 0.7055rem;
+    margin-top: 1.36rem;
+    margin-bottom: 1.36rem;
     margin-left: 0;
     margin-right: 0;
     font-weight: 520;
@@ -245,9 +238,9 @@ main {
 
   h6 {
     display: block;
-    font-size: 0.5695em;
-    margin-top: 1.12em;
-    margin-bottom: 1.12em;
+    font-size: 0.5695rem;
+    margin-top: 1.12rem;
+    margin-bottom: 1.12rem;
     margin-left: 0;
     margin-right: 0;
     font-weight: 500;
@@ -256,9 +249,9 @@ main {
 
   p {
     display: block;
-    font-size: 0.7225em;
-    margin-top: 0.544em;
-    margin-bottom: 0.544em;
+    font-size: 0.9225rem;
+    margin-top: 0.444rem;
+    margin-bottom: 0.444rem;
     margin-left: 0;
     margin-right: 0;
     font-weight: 400;
@@ -267,9 +260,9 @@ main {
 
   ul li {
     display: list-item;
-    font-size: 0.9em;
-    margin-top: 0.45em;
-    margin-bottom: 0.45em;
+    font-size: 0.9rem;
+    margin-top: 0.45rem;
+    margin-bottom: 0.45rem;
     margin-left: 0;
     margin-right: 0;
     font-weight: 400;
@@ -278,9 +271,9 @@ main {
 
   .stack .item .title {
     display: block;
-    font-size: 0.85em;
-    margin-top: 0.725em;
-    margin-bottom: 0.725em;
+    font-size: 0.85rem;
+    margin-top: 0.725rem;
+    margin-bottom: 0.725rem;
     margin-right: 0;
     margin-left: 8px;
     font-weight: 400;
@@ -421,7 +414,7 @@ hr.spacer {
 .pagenav * {
   text-decoration: none;
   padding: 4px 4px;
-  font-size: 0.95em;
+  font-size: 0.95rem;
 }
 
 .pagenav .lucide {
@@ -501,9 +494,9 @@ blockquote {
   transition: var(--primary-transition);
 
   display: block;
-  font-size: 0.85em;
-  margin-top: 0.64em;
-  margin-bottom: 0.64em;
+  font-size: 0.85rem;
+  margin-top: 0.64rem;
+  margin-bottom: 0.64rem;
   font-weight: 400;
 }
 
@@ -528,6 +521,15 @@ blockquote.nospacing {
 blockquote.nobottomspacing {
   padding-bottom: 0px;
   margin-bottom: 0px;
+}
+
+blockquote.onlybottomspacing {
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-left: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  padding-right: 0px;
 }
 
 input[type="checkbox"] {
@@ -601,8 +603,19 @@ input[type="checkbox"]:disabled:checked + * {
   justify-content: center;
 }
 
+.post blockquote {
+  padding-left: 8px;
+}
+
+.thing .blogcenter .links {
+  gap: 8px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  color: var(--lighter-gray);
+}
+
 @media (min-width: 831px) {
-  .thing .thing2 {
+  .thing .quotecenter {
     display: flex;
     align-items: start;
     flex-direction: column;
@@ -611,10 +624,8 @@ input[type="checkbox"]:disabled:checked + * {
     min-width: 25%;
     max-width: 35%;
   }
-}
 
-@media (min-width: 561px) and (max-width: 830px) {
-  .thing .thing2 {
+  .thing .blogcenter {
     display: flex;
     align-items: start;
     flex-direction: column;
@@ -623,26 +634,70 @@ input[type="checkbox"]:disabled:checked + * {
     min-width: 55%;
     max-width: 65%;
   }
+
+  .post {
+    padding-top: 64px;
+  }
 }
 
-@media only screen and (max-width: 560px) {
-  .thing .thing2 {
+@media (min-width: 561px) and (max-width: 830px) {
+  .thing .quotecenter {
     display: flex;
     align-items: start;
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    min-width: 100%;
-    max-width: 100%;
+    min-width: 75%;
+    max-width: 85%;
+  }
+
+  .thing .blogcenter {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    min-width: 75%;
+    max-width: 85%;
+  }
+
+  .post {
+    padding-top: 32px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .thing .quotecenter {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    min-width: 95%;
+    max-width: 95%;
+  }
+
+  .thing .blogcenter {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    min-width: 90%;
+    max-width: 95%;
+  }
+
+  .post {
+    padding-top: 16px;
   }
 }
 
 .thing .title {
   color: var(--white);
   display: block;
-  font-size: 1.45em;
-  margin-top: 0.61em;
-  margin-bottom: 0.61em;
+  font-size: 1.45rem;
+  margin-top: 0.61rem;
+  margin-bottom: 0.61rem;
   margin-left: 0;
   margin-right: 4px;
   font-weight: 600;
@@ -663,9 +718,9 @@ input[type="checkbox"]:disabled:checked + * {
 
 .thing .usertitle h1 {
   display: block;
-  font-size: 1.25em;
-  margin-top: 0.56em;
-  margin-bottom: 0.56em;
+  font-size: 1.25rem;
+  margin-top: 0.56rem;
+  margin-bottom: 0.56rem;
   margin-left: 0;
   margin-right: 0;
   font-weight: 600;
@@ -679,4 +734,8 @@ input[type="checkbox"]:disabled:checked + * {
   color: var(--white);
 
   text-decoration: underline;
+}
+
+.inline-children * {
+  display: inline;
 }

@@ -3,13 +3,24 @@ interface Props {
   href: string;
   noSpacing?: boolean;
   noBottomSpacing?: boolean;
+  onlyBottomSpacing?: boolean;
 }
-const { href, noSpacing = false, noBottomSpacing = false } = Astro.props;
+const {
+  href,
+  noSpacing = false,
+  noBottomSpacing = false,
+  onlyBottomSpacing = false,
+} = Astro.props;
 
 import Blockquote from "./Blockquote.astro";
 ---
 
-<Blockquote full={true} noSpacing={noSpacing} noBottomSpacing={noBottomSpacing}>
+<Blockquote
+  full={true}
+  noSpacing={noSpacing}
+  noBottomSpacing={noBottomSpacing}
+  onlyBottomSpacing={onlyBottomSpacing}
+>
   <div class="usertitle">
     <h1>
       <a href={href}><slot /> </a>

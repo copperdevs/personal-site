@@ -46,3 +46,7 @@ export function getLinkData(
 export type Dictionary<TKey extends string | number | symbol, TValue> = {
   [Key in TKey]: TValue;
 };
+
+export function onlyUnique(value, index, array) {
+  return array.indexOf(value) === index;
+}
