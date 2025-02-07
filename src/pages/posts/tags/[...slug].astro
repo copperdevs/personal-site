@@ -2,34 +2,51 @@
 import BlockquoteLink from "../../../components/BlockquoteLink.astro";
 import QuoteLayout from "../../../layouts/QuoteLayout.astro";
 import { capitalizeFirstLetter, onlyUnique } from "../../../lib/util";
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry, render } from "astro:content";
 
-const posts = (await getCollection("posts")).filter(
-  (post) => !post.data.unlisted
-);
+export async function getStaticPaths() {
+  const posts = (await getCollection("posts")).filter(
+    (post) => !post.data.unlisted
+  );
 
-let allTags: string[] = [];
+  let allTags: string[] = [];
 
-posts.forEach((post) => {
-  post.data.tags.forEach((tag) => {
-    allTags.push(tag.toString());
+  posts.forEach((post) => {
+    post.data.tags.forEach((tag) => {
+      allTags.push(tag.toString());
+    });
   });
-});
 
-allTags = allTags.filter(onlyUnique);
+  allTags = allTags.filter(onlyUnique);
+
+  return allTags.map((tag) => ({
+    params: { slug: tag },
+    props: { value: tag },
+  }));
+}
+
+const tag = Astro.props;
+
+const taggedPosts = (await getCollection("posts")).filter((post) =>
+  post.data.tags.includes(tag.value)
+);
 ---
 
 <QuoteLayout pageTitle="tags" description="tags for posts moment">
+  <h1 class="no-bottom-spacing">
+    Tag: {capitalizeFirstLetter(tag.value)}
+  </h1>
+  <hr />
   <BlockquoteLink href="/"> Home </BlockquoteLink>
   <hr />
   {
-    allTags.map((tag, index) => (
+    taggedPosts.map((post, index) => (
       <BlockquoteLink
-        href={`/posts/tags/${tag}`}
+        href={`/posts/${post.id}`}
         noSpacing={index !== 0}
         noBottomSpacing={index === 0}
       >
-        {capitalizeFirstLetter(tag)}
+        {capitalizeFirstLetter(post.data.name)}
       </BlockquoteLink>
     ))
   }

@@ -28,7 +28,12 @@ export async function getStaticPaths() {
 ---
 
 <QuoteLayout pageTitle="tags" description="tags for posts moment">
-  <BlockquoteLink href="/"> Home </BlockquoteLink>
+  <h1 class="no-bottom-spacing">Tags</h1>
+  <hr />
+  <BlockquoteLink href="/" noBottomSpacing={true}> Home </BlockquoteLink>
+  <BlockquoteLink href="/posts/posts" onlyBottomSpacing={true}>
+    Posts
+  </BlockquoteLink>
   <hr />
   {
     allTags.map((tag, index) => (
