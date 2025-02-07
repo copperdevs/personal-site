@@ -22,7 +22,7 @@
 }
 
 /* * {
-  border: solid red 2px;
+  border: solid red 1px;
 } */
 
 html {
@@ -35,7 +35,7 @@ html {
   /* border: blue 4px solid; */
 
   margin: 0;
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
 }
 
@@ -607,6 +607,13 @@ input[type="checkbox"]:disabled:checked + * {
   padding-left: 8px;
 }
 
+.thing .blogcenter .links {
+  gap: 8px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  color: var(--lighter-gray);
+}
+
 @media (min-width: 831px) {
   .thing .quotecenter {
     display: flex;
@@ -727,4 +734,8 @@ input[type="checkbox"]:disabled:checked + * {
   color: var(--white);
 
   text-decoration: underline;
+}
+
+.inline-children * {
+  display: inline;
 }

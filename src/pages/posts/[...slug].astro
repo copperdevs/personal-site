@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlockquoteLink from "../../components/BlockquoteLink.astro";
+import Blockquote from "../../components/Blockquote.astro";
 import { capitalizeFirstLetter } from "../../lib/util";
 import { getCollection, type CollectionEntry, render } from "astro:content";
 
@@ -17,10 +18,7 @@ const post = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BaseLayout
-  pageTitle="posts"
-  description="i might write stuff perchane idk lol"
->
+<BaseLayout pageTitle=`post - ${post.id}` description={post.data.description}>
   <div class="post">
     <div class="thing">
       <div class="blogcenter">
@@ -28,10 +26,13 @@ const { Content } = await render(post);
           {capitalizeFirstLetter(post.data.name)}
         </h1>
         <hr />
-        <BlockquoteLink href="/" noBottomSpacing={true}> Home </BlockquoteLink>
-        <BlockquoteLink href="/posts" onlyBottomSpacing={true}>
-          All Posts
-        </BlockquoteLink>
+        <Blockquote>
+          <div class="links inline-children">
+            <h2><a href="/posts">All Posts</a></h2>
+            <h3>•</h3>
+            <h2><a href="/">Home</a></h2>
+          </div>
+        </Blockquote>
         <hr />
         <Content />
       </div>

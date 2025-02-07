@@ -4,9 +4,9 @@ import BlockquoteLink from "../../components/BlockquoteLink.astro";
 import { capitalizeFirstLetter } from "../../lib/util";
 import { getCollection } from "astro:content";
 
-const posts = (await getCollection("posts")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const posts = (await getCollection("posts"))
+  .filter((post) => !post.data.unlisted)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <QuoteLayout
