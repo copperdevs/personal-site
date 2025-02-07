@@ -34,10 +34,8 @@ import LinkRedirect from "../components/utility/LinkRedirect.astro";
   </head>
   <body>
     <main>
-      <LinkRedirect
-        badUrls={["copperdevs.pages.dev"]}
-        targetUrl="copperdevs.com"
-      />
+      <LinkRedirect badUrls={["copperdevs.pages.dev"]} targetUrl="copperdevs.com" />
+      <LinkRedirect badUrls={["v2.copperdevs.pages.dev"]} targetUrl="v2.copperdevs.com" />
       <slot />
     </main>
   </body>
