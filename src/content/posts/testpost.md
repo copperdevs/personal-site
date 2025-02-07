@@ -2,6 +2,8 @@
 name: Test Post
 description: simple test post :D
 pubDate: Jul 08 2022
+tags:
+  - testing
 ---
 
 test post moment perchance

@@ -13,7 +13,10 @@ const posts = (await getCollection("posts"))
   pageTitle="posts"
   description="i might write stuff perchane idk lol"
 >
-  <BlockquoteLink href="/"> Home </BlockquoteLink>
+  <BlockquoteLink href="/" noBottomSpacing={true}> Home </BlockquoteLink>
+  <BlockquoteLink href="/posts/tags" onlyBottomSpacing={true}>
+    Tags
+  </BlockquoteLink>
   <hr />
   {
     posts.map((post, index) => (

@@ -1,0 +1,36 @@
+---
+import BlockquoteLink from "../../../components/BlockquoteLink.astro";
+import QuoteLayout from "../../../layouts/QuoteLayout.astro";
+import { capitalizeFirstLetter, onlyUnique } from "../../../lib/util";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("posts")).filter(
+  (post) => !post.data.unlisted
+);
+
+let allTags: string[] = [];
+
+posts.forEach((post) => {
+  post.data.tags.forEach((tag) => {
+    allTags.push(tag.toString());
+  });
+});
+
+allTags = allTags.filter(onlyUnique);
+---
+
+<QuoteLayout pageTitle="tags" description="tags for posts moment">
+  <BlockquoteLink href="/"> Home </BlockquoteLink>
+  <hr />
+  {
+    allTags.map((tag, index) => (
+      <BlockquoteLink
+        href={`/posts/tags/${tag}`}
+        noSpacing={index !== 0}
+        noBottomSpacing={index === 0}
+      >
+        {capitalizeFirstLetter(tag)}
+      </BlockquoteLink>
+    ))
+  }
+</QuoteLayout>
