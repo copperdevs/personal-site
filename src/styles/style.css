@@ -491,7 +491,7 @@ blockquote {
   margin-left: 0px;
   padding-left: -4px;
   color: default;
-  transition: var(--primary-transition);
+  transition: all ease-in 0.45s;
 
   display: block;
   font-size: 0.85rem;
@@ -500,13 +500,14 @@ blockquote {
   font-weight: 400;
 }
 
-blockquote .push {
-  padding-left: 8px;
-}
-
 blockquote:hover {
   border-left: var(--lighter-gray) 4px solid;
   background-color: var(--light-gray);
+  transition: all ease-out 0.15s;
+}
+
+blockquote .push {
+  padding-left: 8px;
 }
 
 blockquote.full {
