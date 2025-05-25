@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.4.0",
     "@yeskunall/astro-umami": "^0.0.6",
-    "astro": "^5.8.0"
+    "astro": "^5.8.0",
+    "lucide": "^0.511.0"
   }
 }
