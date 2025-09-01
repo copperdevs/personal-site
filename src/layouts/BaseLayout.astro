@@ -1,18 +1,15 @@
 ---
-interface Props {
-  pageTitle: string;
-  description: string;
-}
+type Props = {
+	pageTitle: string;
+	description: string;
+};
 
 const { description, pageTitle } = Astro.props;
 
 import { ClientRouter } from "astro:transitions";
-
-import LinkRedirect from "../components/LinkRedirect.astro";
-
-import Style from "../components/Style.astro";
-
 import favicon from "../assets/favicon.png";
+import LinkRedirect from "../components/LinkRedirect.astro";
+import Style from "../components/Style.astro";
 ---
 
 <!doctype html>

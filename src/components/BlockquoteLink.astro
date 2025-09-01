@@ -1,15 +1,15 @@
 ---
-interface Props {
-  href: string;
-  noSpacing?: boolean;
-  noBottomSpacing?: boolean;
-  onlyBottomSpacing?: boolean;
-}
+type Props = {
+	href: string;
+	noSpacing?: boolean;
+	noBottomSpacing?: boolean;
+	onlyBottomSpacing?: boolean;
+};
 const {
-  href,
-  noSpacing = false,
-  noBottomSpacing = false,
-  onlyBottomSpacing = false,
+	href,
+	noSpacing = false,
+	noBottomSpacing = false,
+	onlyBottomSpacing = false,
 } = Astro.props;
 
 import Blockquote from "./Blockquote.astro";

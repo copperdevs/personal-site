@@ -369,7 +369,6 @@ code {
 	font-family: "JetBrains Mono", monospace;
 }
 
-/* biome-ignore lint/style/noDescendingSpecificity: shhhh */
 code * {
 	margin: 0px;
 	padding: 0px;

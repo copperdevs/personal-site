@@ -12,10 +12,12 @@
     "format:unsafe": "astro check && ultracite format --unsafe"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.4",
     "@astrojs/sitemap": "^3.4.0",
     "@yeskunall/astro-umami": "^0.0.6",
     "astro": "^5.8.0",
-    "lucide": "^0.511.0"
+    "lucide": "^0.511.0",
+    "typescript": "^5.9.2"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.2",

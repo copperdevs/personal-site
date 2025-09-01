@@ -1,8 +1,8 @@
 ---
-interface Props {
-  badUrls: string[];
-  targetUrl: string;
-}
+type Props = {
+	badUrls: string[];
+	targetUrl: string;
+};
 
 const { badUrls, targetUrl } = Astro.props;
 ---

@@ -1,16 +1,16 @@
 ---
-interface Props {
-  full?: boolean;
-  noSpacing?: boolean;
-  noBottomSpacing?: boolean;
-  onlyBottomSpacing?: boolean;
-}
+type Props = {
+	full?: boolean;
+	noSpacing?: boolean;
+	noBottomSpacing?: boolean;
+	onlyBottomSpacing?: boolean;
+};
 
 const {
-  full = true,
-  noSpacing = false,
-  noBottomSpacing = false,
-  onlyBottomSpacing = false,
+	full = true,
+	noSpacing = false,
+	noBottomSpacing = false,
+	onlyBottomSpacing = false,
 } = Astro.props;
 ---
 
