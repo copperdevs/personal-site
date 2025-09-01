@@ -1,4 +1,6 @@
 ---
+import { Github, Icon, Mail, Twitter, Youtube } from "@lucide/astro";
+import { butterfly } from "@lucide/lab";
 import favicon from "../assets/favicon.png";
 import Blockquote from "../components/Blockquote.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -7,7 +9,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout pageTitle="home" description="home page of my random stuff">
   <div class="thing">
     <div class="quotecenter">
-      <Blockquote full={true}>
+      <Blockquote full={true} noBottomSpacing={true}>
         <div class="usertitle">
           <img src={favicon.src} alt="Havanese Dog" />
           <h1><a href="https://github.com/copperdevs">copperdevs</a></h1>
@@ -18,14 +20,48 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
       </Blockquote>
 
-      <!-- <hr /> -->
-
-      <!-- <BlockquoteLink href="/projects" noBottomSpacing={true}>
-        Projects
-      </BlockquoteLink>
-      <BlockquoteLink href="/socials" noSpacing={true}>
-        Socials
-      </BlockquoteLink> -->
+      <Blockquote full={true}>
+        <a
+          href="mailto:me@copperdevs.com"
+          target="_blank"
+          rel="noopener"
+          class="icon"
+        >
+          <Mail size={24} />
+        </a>
+        <a
+          href="https://twitter.com/copperdevs"
+          target="_blank"
+          rel="noopener"
+          class="icon"
+        >
+          <Twitter size={24} />
+        </a>
+        <a
+          href="https://youtube.com/@copperdevs"
+          target="_blank"
+          rel="noopener"
+          class="icon"
+        >
+          <Youtube size={24} />
+        </a>
+        <a
+          href="https://github.com/copperdevs"
+          target="_blank"
+          rel="noopener"
+          class="icon"
+        >
+          <Github size={24} />
+        </a>
+        <a
+          href="https://bsky.app/profile/copperdevs.com"
+          target="_blank"
+          rel="noopener"
+          class="icon"
+        >
+          <Icon iconNode={butterfly} size={24} />
+        </a>
+      </Blockquote>
     </div>
   </div>
 </BaseLayout>

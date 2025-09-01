@@ -292,6 +292,17 @@ a {
 	color: var(--white);
 }
 
+a.icon {
+	text-decoration: none;
+}
+
+.icon svg {
+	transform: translateY(2.5px);
+	/* border: var(--red-border); */
+	width: auto;
+	height: auto;
+}
+
 a:hover {
 	color: var(--accent-main);
 }
@@ -400,6 +411,9 @@ blockquote .push {
 
 blockquote.full {
 	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
 
 blockquote.nospacing {
