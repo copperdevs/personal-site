@@ -11,7 +11,7 @@
   --accent-secondary: rgb(129, 228, 218);
 
   /* transitions */
-  --primary-transition: all ease-in-out 0.15s;
+  --primary-transition: all ease-in-out 0.01s;
 
   /* gradients */
   --accent-gradient: -webkit-linear-gradient(
@@ -19,11 +19,17 @@
     var(--accent-main),
     var(--accent-secondary) 75%
   );
+
+  --red-border: solid red 1px;
 }
 
 /* * {
   border: solid red 1px;
 } */
+
+.border.red{
+  border: var(--red-border);
+}
 
 html {
   font-family: "Rubik", sans-serif;

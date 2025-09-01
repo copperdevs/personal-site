@@ -6,21 +6,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout pageTitle="home" description="home page of my random stuff">
-  <Blockquote full={true}>
-    <div class="usertitle">
-      <img src={favicon.src} alt="Havanese Dog" />
-      <h1><a href="https://github.com/copperdevs">copperdevs</a></h1>
+  <div class="thing">
+    <div class="quotecenter">
+      <Blockquote full={true}>
+        <div class="usertitle">
+          <img src={favicon.src} alt="Havanese Dog" />
+          <h1><a href="https://github.com/copperdevs">copperdevs</a></h1>
+        </div>
+
+        <div>
+          <h1 class="title">lowkey what do i put here</h1>
+        </div>
+      </Blockquote>
+
+      <!-- <hr /> -->
+
+      <!-- <BlockquoteLink href="/projects" noBottomSpacing={true}>
+        Projects
+      </BlockquoteLink>
+      <BlockquoteLink href="/socials" noSpacing={true}>
+        Socials
+      </BlockquoteLink> -->
     </div>
-
-    <div>
-      <h1 class="title">lowkey what do i put here</h1>
-    </div>
-  </Blockquote>
-
-  <hr />
-
-  <BlockquoteLink href="/projects" noBottomSpacing={true}>
-    Projects
-  </BlockquoteLink>
-  <BlockquoteLink href="/socials" noSpacing={true}> Socials </BlockquoteLink>
+  </div>
 </BaseLayout>
