@@ -1,20 +1,21 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "personal-site",
       "dependencies": {
-        "@astrojs/check": "latest",
-        "@astrojs/sitemap": "latest",
-        "@lucide/astro": "latest",
-        "@lucide/lab": "latest",
-        "@yeskunall/astro-umami": "latest",
-        "astro": "latest",
-        "typescript": "latest",
+        "@astrojs/check": "^0.9.4",
+        "@astrojs/sitemap": "^3.5.1",
+        "@lucide/astro": "^0.542.0",
+        "@lucide/lab": "^0.1.2",
+        "@yeskunall/astro-umami": "^0.0.6",
+        "astro": "^5.13.5",
+        "typescript": "^5.9.2",
       },
       "devDependencies": {
-        "@biomejs/biome": "latest",
-        "ultracite": "latest",
+        "@biomejs/biome": "2.2.2",
+        "ultracite": "5.3.0",
       },
     },
   },

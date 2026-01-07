@@ -285,22 +285,23 @@ body {
 	}
 }
 
+ul {
+	padding: 0;
+	list-style: none;
+	width: 100%;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
 a {
 	cursor: pointer;
 
 	transition: var(--primary-transition);
 	color: var(--white);
-}
 
-a.icon {
 	text-decoration: none;
-}
-
-.icon svg {
-	transform: translateY(2.5px);
-	/* border: var(--red-border); */
-	width: auto;
-	height: auto;
 }
 
 a:hover {
@@ -599,12 +600,10 @@ input[type="checkbox"]:disabled:checked + * {
 .title {
 	color: var(--white);
 	display: block;
-	font-size: 1.45rem;
 	margin-top: 0.61rem;
 	margin-bottom: 0.61rem;
-	margin-left: 0;
+	margin-left: 2px;
 	margin-right: 4px;
-	font-weight: 600;
 	cursor: text;
 }
 

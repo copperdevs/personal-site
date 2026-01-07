@@ -16,52 +16,45 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
 
         <div>
-          <h1 class="title">lowkey what do i put here</h1>
+          <h2 class="title">hi i'm copper :3 i do stuff</h2>
         </div>
       </Blockquote>
 
-      <Blockquote full={true}>
-        <a
-          href="mailto:me@copperdevs.com"
-          target="_blank"
-          rel="noopener"
-          class="icon"
-        >
-          <Mail size={24} />
+      <ul>
+        <a href="mailto:me@copperdevs.com" target="_blank" rel="noopener">
+          <Blockquote full={true}>
+            <li class="pointer">email</li>
+          </Blockquote>
         </a>
-        <a
-          href="https://twitter.com/copperdevs"
-          target="_blank"
-          rel="noopener"
-          class="icon"
-        >
-          <Twitter size={24} />
+        <a href="https://twitter.com/copperdevs" target="_blank" rel="noopener">
+          <Blockquote full={true}>
+            <li class="pointer">twitter</li>
+          </Blockquote>
         </a>
         <a
           href="https://youtube.com/@copperdevs"
           target="_blank"
           rel="noopener"
-          class="icon"
         >
-          <Youtube size={24} />
+          <Blockquote full={true}>
+            <li class="pointer">youtube</li>
+          </Blockquote>
         </a>
-        <a
-          href="https://github.com/copperdevs"
-          target="_blank"
-          rel="noopener"
-          class="icon"
-        >
-          <Github size={24} />
+        <a href="https://github.com/copperdevs" target="_blank" rel="noopener">
+          <Blockquote full={true}>
+            <li class="pointer">github</li>
+          </Blockquote>
         </a>
         <a
           href="https://bsky.app/profile/copperdevs.com"
           target="_blank"
           rel="noopener"
-          class="icon"
         >
-          <Icon iconNode={butterfly} size={24} />
+          <Blockquote full={true}>
+            <li class="pointer">bsky</li>
+          </Blockquote>
         </a>
-      </Blockquote>
+      </ul>
     </div>
   </div>
 </BaseLayout>
