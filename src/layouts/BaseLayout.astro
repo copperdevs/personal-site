@@ -1,15 +1,13 @@
 ---
 type Props = {
-	pageTitle: string;
-	description: string;
+  pageTitle: string;
+  description: string;
 };
 
 const { description, pageTitle } = Astro.props;
 
 import { ClientRouter } from "astro:transitions";
 import favicon from "../assets/favicon.png";
-import LinkRedirect from "../components/LinkRedirect.astro";
-import Style from "../components/Style.astro";
 ---
 
 <!doctype html>
@@ -23,13 +21,15 @@ import Style from "../components/Style.astro";
     <link rel="icon" type="image/x-icon" href={favicon.src} />
     <title>{pageTitle} // copperdevs</title>
 
-    <Style />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&family=Rubik:wght@300..900&display=swap"
+      rel="stylesheet"
+    />
 
     <ClientRouter />
   </head>
-
-  <LinkRedirect badUrls={["copperdevs.pages.dev"]} targetUrl="copperdevs.com" />
-  <LinkRedirect badUrls={["v3.copperdevs.pages.dev"]} targetUrl="v3.copperdevs.com" />
 
   <body>
     <slot />
