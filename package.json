@@ -16,7 +16,6 @@
     "@astrojs/sitemap": "3.7.0",
     "@lucide/astro": "^0.542.0",
     "@lucide/lab": "^0.1.2",
-    "@yeskunall/astro-umami": "^0.0.6",
     "astro": "5.17.2",
     "typescript": "^5.9.2"
   },
