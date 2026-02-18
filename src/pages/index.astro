@@ -1,11 +1,14 @@
 ---
+import { CurrentSection } from "../components/current-section";
+import { SectionLink } from "../components/section-link";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout pageTitle="home" description="home page of my random stuff">
   <p>copper // escape will make me god</p>
+  <CurrentSection client:load />
   <div class="close">
-    <a href="javascript"><p>socials</p></a>
-    <a href="javascript"><p>projects</p></a>
+    <SectionLink section="socials" client:load />
+    <SectionLink section="projects" client:load />
   </div>
 </BaseLayout>
