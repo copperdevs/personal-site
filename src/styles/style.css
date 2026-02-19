@@ -50,6 +50,11 @@ a:active {
 div.close p {
 	margin: 2px 0px 2px 0px;
 }
+
 p.close {
 	margin: 2px 0px 2px 0px;
+}
+
+.toppad {
+	padding-top: 4px;
 }

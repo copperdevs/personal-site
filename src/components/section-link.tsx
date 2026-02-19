@@ -7,7 +7,9 @@ export function SectionLink({ section }: { section: Section }) {
 			href="javascript"
 			onClick={(e) => {
 				e.preventDefault();
-				currentSection.set(section);
+				currentSection.set(
+					currentSection.get() === section ? "none" : section
+				);
 			}}
 		>
 			<p>{section}</p>

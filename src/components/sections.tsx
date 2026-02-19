@@ -10,14 +10,16 @@ export const Sections = {
 	Content: ({
 		section,
 		children,
+		className,
 	}: {
 		section: Section;
 		children: ComponentChildren;
+		className?: string;
 	}) => {
 		const activeSection = useStore(currentSection);
 
 		if (activeSection !== section) return null;
 
-		return <div>{children}</div>;
+		return <div className={className}>{children}</div>;
 	},
 };

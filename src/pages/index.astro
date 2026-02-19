@@ -1,5 +1,6 @@
 ---
 import { CurrentSection } from "../components/current-section";
+import Link from "../components/link.astro";
 import { SectionLink } from "../components/section-link";
 import { Sections } from "../components/sections";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -14,8 +15,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </div>
 
   <Sections.Holder>
-    <Sections.Content section="socials" client:load>
-      <p>socials</p>
+    <Sections.Content section="socials" client:load className="close toppad">
+      <Link href="mailto:me@copperdevs.com">email</Link>
+      <Link href="https://twitter.com/copperdevs">twitter</Link>
+      <Link href="https://youtube.com/@copperdevs">youtube</Link>
+      <Link href="https://github.com/copperdevs">github</Link>
+      <Link href="https://bsky.app/profile/copperdevs.com">bluesky</Link>
+      <Link href="https://modrinth.com/user/copperdevs">modrinth</Link>
     </Sections.Content>
 
     <Sections.Content section="projects" client:load>
