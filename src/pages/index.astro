@@ -1,14 +1,25 @@
 ---
 import { CurrentSection } from "../components/current-section";
 import { SectionLink } from "../components/section-link";
+import { Sections } from "../components/sections";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout pageTitle="home" description="home page of my random stuff">
   <p>copper // escape will make me god</p>
-  <CurrentSection client:load />
+
   <div class="close">
     <SectionLink section="socials" client:load />
     <SectionLink section="projects" client:load />
   </div>
+
+  <Sections.Holder>
+    <Sections.Content section="socials" client:load>
+      <p>socials</p>
+    </Sections.Content>
+
+    <Sections.Content section="projects" client:load>
+      <p>projects</p>
+    </Sections.Content>
+  </Sections.Holder>
 </BaseLayout>
