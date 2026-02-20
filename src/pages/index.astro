@@ -1,21 +1,17 @@
 ---
-import { CurrentSection } from "../components/current-section";
 import Link from "../components/link.astro";
-import { SectionLink } from "../components/section-link";
 import { Sections } from "../components/sections";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout pageTitle="home" description="home page of my random stuff">
   <p>copper // escape will make me god</p>
-
-  <div class="close">
-    <SectionLink section="socials" client:load />
-    <SectionLink section="projects" client:load />
-  </div>
-
-  <Sections.Holder>
-    <Sections.Content section="socials" client:load className="close toppad">
+  <Sections.Holder className="close" client:load>
+    <Sections.Link section="socials" />
+    <Sections.Link section="projects" />
+  </Sections.Holder>
+  <Sections.Holder client:load>
+    <Sections.Content section="socials" className="close toppad">
       <Link href="mailto:me@copperdevs.com">email</Link>
       <Link href="https://twitter.com/copperdevs">twitter</Link>
       <Link href="https://youtube.com/@copperdevs">youtube</Link>
@@ -23,9 +19,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <Link href="https://bsky.app/profile/copperdevs.com">bluesky</Link>
       <Link href="https://modrinth.com/user/copperdevs">modrinth</Link>
     </Sections.Content>
-
-    <Sections.Content section="projects" client:load>
-      <p>projects</p>
+    <Sections.Content section="projects">
+      <Link href="#">placeholder</Link>
+      <Link href="#">placeholder</Link>
+      <Sections.SubSection.Holder>
+        <Sections.SubSection.Trigger>
+          placeholder
+        </Sections.SubSection.Trigger>
+        <Sections.SubSection.Content>
+          <Link href="#">placeholder</Link>
+          <Link href="#">placeholder</Link>
+        </Sections.SubSection.Content>
+      </Sections.SubSection.Holder>
     </Sections.Content>
   </Sections.Holder>
 </BaseLayout>
