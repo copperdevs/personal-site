@@ -4,8 +4,8 @@
 	"version": "0.1.0",
 	"scripts": {
 		"dev": "waku dev",
-		"build": "waku build",
-		"deploy": "CLOUDFLARE=1 bun run build && wrangler deploy"
+		"build": "CLOUDFLARE=1 waku build",
+		"deploy": "CLOUDFLARE=1 waku build && wrangler deploy"
 	},
 	"dependencies": {
 		"@nanostores/react": "^1.0.0",
