@@ -9,6 +9,7 @@ type Data = {
 	description: string;
 	projects: {
 		name: string;
+		description: string;
 		links: {
 			[key: string]: string;
 		};
@@ -54,6 +55,7 @@ export default async function HomePage() {
 				{data.projects.map((project) => (
 					<div key={project.name}>
 						<SubSection section={project.name} className="sub">
+							<p>{project.description}</p>
 							{Object.entries(project.links).map(
 								([key, value]) => (
 									<ExternalLink key={key} href={value}>
@@ -82,6 +84,7 @@ const getData = async () => {
 		projects: [
 			{
 				name: "maia",
+				description: "message based networking library for .NET",
 				links: {
 					nuget: "https://www.nuget.org/packages/Artimora.Maia/",
 					source: "https://github.com/artimora/maia",
@@ -89,6 +92,7 @@ const getData = async () => {
 			},
 			{
 				name: "electra",
+				description: "message based networking library for node",
 				links: {
 					npm: "https://www.npmjs.com/package/@artimora/electra",
 					source: "https://github.com/artimora/electra",
@@ -96,6 +100,7 @@ const getData = async () => {
 			},
 			{
 				name: "kronos",
+				description: "simple web framework for .NET",
 				links: {
 					nuget: "https://www.nuget.org/packages/Artimora.Kronos",
 					source: "https://github.com/artimora/kronos",
