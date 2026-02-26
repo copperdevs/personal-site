@@ -12,3 +12,4 @@ pnpm-debug.log*
 deno.lock
 src/pages.gen.ts
 worker-configuration.d.ts
+.wrangler
