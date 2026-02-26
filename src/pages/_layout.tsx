@@ -22,6 +22,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 				href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap"
 				precedence="font"
 			/>
+			<title>{data.title}</title>
 			<main>{children}</main>
 		</div>
 	);
@@ -31,6 +32,7 @@ const getData = async () => {
 	const data = {
 		description: "personal website for me to put my things on i suppose",
 		icon: "/favicon.png",
+		title: "copperdevs",
 	};
 
 	return data;
