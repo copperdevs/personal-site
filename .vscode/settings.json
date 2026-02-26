@@ -4,7 +4,7 @@
 		// "**/node_modules": true,
 		"**/bun.lock": true,
 		"**/package-lock.json": true,
-		"**/dist": true,
+		// "**/dist": true,
 		"**/next-env.d.ts": true,
 		"**/tsconfig.tsbuildinfo": true,
 		"**/cloudflare-env.d.ts": true
