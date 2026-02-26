@@ -6,19 +6,23 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "bun run build && wrangler dev",
     "astro": "astro",
     "format": "astro check && ultracite format",
-    "format:unsafe": "astro check && ultracite format --unsafe"
+    "format:unsafe": "astro check && ultracite format --unsafe",
+    "deploy": "bun run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/sitemap": "^3.5.1",
     "@lucide/astro": "^0.542.0",
     "@lucide/lab": "^0.1.2",
     "@yeskunall/astro-umami": "^0.0.6",
     "astro": "^5.13.5",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "wrangler": "^4.68.1"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.2",
