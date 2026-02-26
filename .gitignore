@@ -10,3 +10,6 @@ pnpm-debug.log*
 .DS_Store
 .idea/
 deno.lock
+src/pages.gen.ts
+worker-configuration.d.ts
+.wrangler
