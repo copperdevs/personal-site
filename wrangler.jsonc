@@ -1,19 +1,14 @@
 {
-	"$schema": "node_modules/wrangler/config-schema.json",
+	"main": "dist/_worker.js/index.js",
 	"name": "personal-site",
-	"main": "./src/waku.server",
-	"compatibility_flags": ["nodejs_als"],
-	"compatibility_date": "2025-11-17",
+	"compatibility_date": "2025-09-27",
+	"compatibility_flags": ["global_fetch_strictly_public", "nodejs_compat"],
 	"assets": {
 		"binding": "ASSETS",
-		"directory": "./dist/public",
-		"html_handling": "drop-trailing-slash"
+		"directory": "dist"
 	},
-	"rules": [
-		{
-			"type": "ESModule",
-			"globs": ["**/*.js", "**/*.mjs"]
-		}
-	],
-	"no_bundle": true
+	"observability": {
+		"enabled": true
+	},
+	"$schema": "node_modules/wrangler/config-schema.json"
 }
