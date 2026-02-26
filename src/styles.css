@@ -56,5 +56,10 @@ p.close {
 }
 
 .toppad {
-	padding-top: 4px;
+	padding-top: 8px;
+}
+
+.sub {
+	position: absolute;
+	left: 100px;
 }
