@@ -16,11 +16,16 @@
 	--seagrass: #609a86ff;
 }
 
+@font-face {
+	font-family: PPFraktionMono;
+	src: url("/fonts/PPFraktionMono-Regular.otf") format("opentype");
+}
+
 html,
 body {
 	background: var(--gray);
 	color: var(--honeydew);
-	font-family: Tahoma, sans-serif;
+	font-family: PPFraktionMono, sans-serif;
 }
 
 a {
@@ -62,4 +67,12 @@ p.close {
 .sub {
 	position: absolute;
 	left: 100px;
+}
+
+a.underlined {
+	text-decoration: underline;
+}
+
+.cursor.default {
+	cursor: default;
 }

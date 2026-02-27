@@ -32,6 +32,7 @@ export function Link(props: LinkProps) {
 					);
 				}
 			}}
+			className="cursor default"
 		>
 			<p>
 				{props.type === "subsection" &&
