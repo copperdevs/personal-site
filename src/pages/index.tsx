@@ -131,6 +131,14 @@ const getData = async () => {
 					source: "https://github.com/artimora/kronos",
 				},
 			},
+			{
+				name: "celesium",
+				description: "general use utility library",
+				links: {
+					nuget: "https://www.nuget.org/packages/CopperDevs.Celesium",
+					source: "https://github.com/copperdevs/celesium",
+				},
+			},
 		],
 	};
 
