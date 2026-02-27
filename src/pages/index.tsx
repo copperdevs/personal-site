@@ -7,6 +7,10 @@ import { SubSection } from "@/components/sections/subsection";
 type Data = {
 	name: string;
 	description: string;
+	socials: {
+		name: string;
+		url: string;
+	}[];
 	projects: {
 		name: string;
 		description: string;
@@ -31,24 +35,11 @@ export default async function HomePage() {
 			</Holder>
 
 			<Content section="socials" className="close toppad">
-				<ExternalLink href="mailto:me@copperdevs.com">
-					email
-				</ExternalLink>
-				<ExternalLink href="https://twitter.com/copperdevs">
-					twitter
-				</ExternalLink>
-				<ExternalLink href="https://youtube.com/@copperdevs">
-					youtube
-				</ExternalLink>
-				<ExternalLink href="https://github.com/copperdevs">
-					github
-				</ExternalLink>
-				<ExternalLink href="https://bsky.app/profile/copperdevs.com">
-					bluesky
-				</ExternalLink>
-				<ExternalLink href="https://modrinth.com/user/copperdevs">
-					modrinth
-				</ExternalLink>
+				{data.socials.map((social) => (
+					<ExternalLink key={social.name} href={social.url}>
+						{social.name}
+					</ExternalLink>
+				))}
 			</Content>
 
 			<Content section="projects" className="close toppad">
@@ -81,6 +72,40 @@ const getData = async () => {
 	const data: Data = {
 		name: "copper",
 		description: "escape will make me god",
+		socials: [
+			{
+				name: "email",
+				url: "mailto:me@copperdevs.com",
+			},
+			{
+				name: "twitter",
+				url: "https://twitter.com/copperdevs",
+			},
+			{
+				name: "youtube",
+				url: "https://youtube.com/@copperdevs",
+			},
+			{
+				name: "github",
+				url: "https://github.com/copperdevs",
+			},
+			{
+				name: "bluesky",
+				url: "https://bsky.app/profile/copperdevs.com",
+			},
+			{
+				name: "modrinth",
+				url: "https://modrinth.com/user/copperdevs",
+			},
+			{
+				name: "npm",
+				url: "https://www.npmjs.com/~copperdevs",
+			},
+			{
+				name: "nuget",
+				url: "https://www.nuget.org/profiles/copperdevs",
+			},
+		],
 		projects: [
 			{
 				name: "maia",
