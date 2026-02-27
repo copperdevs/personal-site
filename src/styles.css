@@ -66,7 +66,7 @@ p.close {
 
 .sub {
 	position: absolute;
-	left: 100px;
+	left: 128px; /* TODO: make this dynamic depending on the text maybe? */
 }
 
 a.underlined {
