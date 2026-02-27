@@ -1,10 +1,23 @@
 {
-  "extends": "astro/tsconfigs/base",
-  "compilerOptions": {
-    "strictNullChecks": true,
-    "allowImportingTsExtensions": true,
-    "allowJs": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
-  }
+	"compilerOptions": {
+		"strict": true,
+		"target": "esnext",
+		"noEmit": true,
+		"isolatedModules": true,
+		"moduleDetection": "force",
+		"downlevelIteration": true,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"skipLibCheck": true,
+		"noUncheckedIndexedAccess": true,
+		"exactOptionalPropertyTypes": true,
+		"jsx": "react-jsx",
+		"rootDir": "src",
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	},
+	"include": ["src"],
+	"exclude": ["node_modules", "dist"]
 }

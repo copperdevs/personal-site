@@ -1,0 +1,78 @@
+:root {
+	/* primary colors */
+	--black: rgb(9, 8, 9);
+	--white: rgb(253, 247, 250);
+	--gray: rgb(20, 19, 23);
+	--light-gray: rgb(30, 30, 36);
+	--lighter-gray: rgb(86, 85, 90);
+
+	--rich-mahogany: #391d1dff;
+	--espresso: #4f2318ff;
+	--rusty-spice: #a54122ff;
+	--burnt-rose: #8e4847ff;
+	--ash-grey: #bbc6c0ff;
+	--honeydew: #f5feedff;
+	--celadon: #bee7beff;
+	--seagrass: #609a86ff;
+}
+
+@font-face {
+	font-family: PPFraktionMono;
+	src: url("/fonts/PPFraktionMono-Regular.otf") format("opentype");
+}
+
+html,
+body {
+	background: var(--gray);
+	color: var(--honeydew);
+	font-family: PPFraktionMono, sans-serif;
+}
+
+a {
+	cursor: pointer;
+
+	color: var(--white);
+
+	text-decoration: none;
+}
+
+a:link {
+	color: var(--celadon);
+}
+
+a:visited {
+	color: var(--seagrass);
+}
+
+a:hover {
+	color: var(--celadon);
+}
+
+a:active {
+	color: var(--burnt-rose);
+}
+
+div.close p {
+	margin: 2px 0px 2px 0px;
+}
+
+p.close {
+	margin: 2px 0px 2px 0px;
+}
+
+.toppad {
+	padding-top: 8px;
+}
+
+.sub {
+	position: absolute;
+	left: 100px;
+}
+
+a.underlined {
+	text-decoration: underline;
+}
+
+.cursor.default {
+	cursor: default;
+}

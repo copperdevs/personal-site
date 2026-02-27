@@ -1,31 +1,30 @@
 {
-  "name": "personal-site",
-  "type": "module",
-  "version": "0.0.4",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "bun run build && wrangler dev",
-    "astro": "astro",
-    "format": "astro check && ultracite format",
-    "format:unsafe": "astro check && ultracite format --unsafe",
-    "deploy": "bun run build && wrangler deploy",
-    "cf-typegen": "wrangler types"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/cloudflare": "^12.6.12",
-    "@astrojs/sitemap": "^3.5.1",
-    "@lucide/astro": "^0.542.0",
-    "@lucide/lab": "^0.1.2",
-    "@yeskunall/astro-umami": "^0.0.6",
-    "astro": "^5.13.5",
-    "typescript": "^5.9.2",
-    "wrangler": "^4.68.1"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.2.2",
-    "ultracite": "5.3.0"
-  }
+	"name": "personal-site",
+	"type": "module",
+	"version": "0.1.0",
+	"scripts": {
+		"dev": "waku dev",
+		"build": "CLOUDFLARE=1 waku build",
+		"deploy": "CLOUDFLARE=1 waku build && wrangler deploy"
+	},
+	"dependencies": {
+		"@nanostores/react": "^1.0.0",
+		"nanostores": "^1.1.1",
+		"react": "~19.2.4",
+		"react-dom": "~19.2.4",
+		"react-server-dom-webpack": "~19.2.4",
+		"vite-tsconfig-paths": "^6.1.1",
+		"waku": "1.0.0-alpha.4"
+	},
+	"devDependencies": {
+		"@cloudflare/vite-plugin": "^1.25.5",
+		"@types/react": "^19.2.14",
+		"@types/react-dom": "^19.2.3",
+		"@vitejs/plugin-react": "^5.1.0",
+		"babel-plugin-react-compiler": "^1.0.0",
+		"typescript": "^5.9.3",
+		"wrangler": "^4.68.1",
+		"@biomejs/biome": "2.2.2",
+		"ultracite": "5.3.0"
+	}
 }
