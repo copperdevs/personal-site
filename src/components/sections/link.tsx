@@ -1,10 +1,11 @@
 "use client";
 import { useStore } from "@nanostores/react";
-import { currentSection, currentSubSection, type Section } from "@/stores";
+import { currentSection, currentSubSection } from "@/lib/stores";
 
 type LinkProps =
-	| { type: "section"; section: Section }
+	| { type: "section"; section: string }
 	| { type: "subsection"; subsection: string };
+
 export function Link(props: LinkProps) {
 	const activeSubSection = useStore(currentSubSection);
 	const activeSection = useStore(currentSection);
