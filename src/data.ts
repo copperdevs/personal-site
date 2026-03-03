@@ -4,40 +4,16 @@ export const data: HomepageData = {
 	name: "copper",
 	description: "escape will make me god",
 	links: {
-		socials: [
-			{
-				name: "email",
-				url: "mailto:me@copperdevs.com",
-			},
-			{
-				name: "twitter",
-				url: "https://twitter.com/copperdevs",
-			},
-			{
-				name: "youtube",
-				url: "https://youtube.com/@copperdevs",
-			},
-			{
-				name: "github",
-				url: "https://github.com/copperdevs",
-			},
-			{
-				name: "bluesky",
-				url: "https://bsky.app/profile/copperdevs.com",
-			},
-			{
-				name: "modrinth",
-				url: "https://modrinth.com/user/copperdevs",
-			},
-			{
-				name: "npm",
-				url: "https://www.npmjs.com/~copperdevs",
-			},
-			{
-				name: "nuget",
-				url: "https://www.nuget.org/profiles/copperdevs",
-			},
-		],
+		socials: {
+			email: "mailto:me@copperdevs.com",
+			twitter: "https://twitter.com/copperdevs",
+			youtube: "https://youtube.com/@copperdevs",
+			github: "https://github.com/@copperdevs",
+			bluesky: "https://bsky.app/profile/copperdevs.com",
+			modrinth: "https://modrinth.com/user/copperdevs",
+			npm: "https://www.npmjs.com/~copperdevs",
+			nuget: "https://www.nuget.org/profiles/copperdevs",
+		},
 	},
 	projects: {
 		packages: [

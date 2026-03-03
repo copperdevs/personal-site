@@ -32,11 +32,17 @@ export default async function HomePage() {
 					className="close toppad"
 					key={key}
 				>
-					{links.values[links.keys.indexOf(key)]?.map((social) => (
-						<ExternalLink key={social.name} href={social.url}>
-							{social.name}
-						</ExternalLink>
-					))}
+					{links.values[links.keys.indexOf(key)] &&
+						Object.entries(
+							links.values[links.keys.indexOf(key)] as Record<
+								string,
+								string
+							>,
+						).map(([name, url]) => (
+							<ExternalLink key={name} href={url}>
+								{name}
+							</ExternalLink>
+						))}
 				</Content>
 			))}
 
