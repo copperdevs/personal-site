@@ -22,6 +22,7 @@ type Data = {
 
 export default async function HomePage() {
 	const data = getData();
+	const hash = import.meta.env.WAKU_PUBLIC_GIT_HASH;
 
 	return (
 		<div>
@@ -64,6 +65,12 @@ export default async function HomePage() {
 					</div>
 				))}
 			</Content>
+			<ExternalLink
+				href={`https://github.com/copperdevs/personal-site/commit/${hash}`}
+				style={{ position: "fixed", bottom: "10px", right: "10px" }}
+			>
+				<div>{hash}</div>
+			</ExternalLink>
 		</div>
 	);
 }
@@ -137,6 +144,14 @@ const getData = () => {
 				links: {
 					nuget: "https://www.nuget.org/packages/CopperDevs.Celesium",
 					source: "https://github.com/copperdevs/celesium",
+				},
+			},
+			{
+				name: "windowing",
+				description: "simple, thin, windowing abstraction",
+				links: {
+					nuget: "https://www.nuget.org/packages/CopperDevs.Windowing",
+					source: "https://github.com/copperdevs/windowing",
 				},
 			},
 		],
