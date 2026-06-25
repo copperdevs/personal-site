@@ -3,90 +3,161 @@ import { Content } from "@/components/sections/content";
 import { Holder } from "@/components/sections/holder";
 import { Link } from "@/components/sections/link";
 import { SubSection } from "@/components/sections/subsection";
-import { data } from "@/data";
-import { getValues, keys } from "@/lib/util";
+
+type Data = {
+	name: string;
+	description: string;
+	socials: {
+		name: string;
+		url: string;
+	}[];
+	projects: {
+		name: string;
+		description: string;
+		links: {
+			[key: string]: string;
+		};
+	}[];
+};
 
 export default async function HomePage() {
-	const data = await getData();
-
-	var links = getValues(data.links);
-	var projects = getValues(data.projects);
-
-	var allKeys = keys([data.links, data.projects]);
+	const data = getData();
+	const hash = import.meta.env.WAKU_PUBLIC_GIT_HASH;
 
 	return (
 		<div>
 			<p>
-				{/** biome-ignore lint/suspicious/noCommentText: not a comment jackass */}
+				{/** biome-ignore lint/suspicious/noCommentText: not a comment */}
 				{data.name} // {data.description}
 			</p>
 			<Holder className="close">
-				{(allKeys as string[]).map((key) => (
-					<Link section={key} type="section" key={key} />
-				))}
+				<Link section="socials" type="section" />
+				<Link section="projects" type="section" />
 			</Holder>
 
-			{links.keys.map((key) => (
-				<Content
-					section={key as string}
-					className="close toppad"
-					key={key}
-				>
-					{links.values[links.keys.indexOf(key)] &&
-						Object.entries(
-							links.values[links.keys.indexOf(key)] as Record<
-								string,
-								string
-							>,
-						).map(([name, url]) => (
-							<ExternalLink key={name} href={url}>
-								{name}
-							</ExternalLink>
-						))}
-				</Content>
-			))}
+			<Content section="socials" className="close toppad">
+				{data.socials.map((social) => (
+					<ExternalLink key={social.name} href={social.url}>
+						{social.name}
+					</ExternalLink>
+				))}
+			</Content>
 
-			{projects.keys.map((key) => (
-				<Content
-					section={key as string}
-					className="close toppad"
-					key={key}
-				>
-					{projects.values[projects.keys.indexOf(key)]?.map(
-						(project) => (
-							<div key={project.name}>
-								<SubSection
-									section={project.name}
-									className="sub"
-								>
-									<p>{project.description}</p>
-									{Object.entries(project.links).map(
-										([key, value]) => (
-											<ExternalLink
-												key={key}
-												href={value}
-											>
-												{key}
-											</ExternalLink>
-										),
-									)}
-								</SubSection>
+			<Content section="projects" className="close toppad">
+				{data.projects.map((project) => (
+					<div key={project.name}>
+						<SubSection section={project.name} className="sub">
+							<p>{project.description}</p>
+							{Object.entries(project.links).map(
+								([key, value]) => (
+									<ExternalLink key={key} href={value}>
+										{key}
+									</ExternalLink>
+								),
+							)}
+						</SubSection>
 
-								<Link
-									key={project.name}
-									subsection={project.name}
-									type="subsection"
-								/>
-							</div>
-						),
-					)}
-				</Content>
-			))}
+						<Link
+							key={project.name}
+							subsection={project.name}
+							type="subsection"
+						/>
+					</div>
+				))}
+			</Content>
+
+			<ExternalLink
+				href={`https://github.com/copperdevs/personal-site/commit/${hash}`}
+				style={{ position: "fixed", bottom: "10px", right: "10px" }}
+			>
+				<div>{hash}</div>
+			</ExternalLink>
 		</div>
 	);
 }
 
-const getData = async () => {
+const getData = () => {
+	const data: Data = {
+		name: "copper",
+		description: "escape will make me god",
+		socials: [
+			{
+				name: "email",
+				url: "mailto:me@copperdevs.com",
+			},
+			{
+				name: "twitter",
+				url: "https://twitter.com/copperdevs",
+			},
+			{
+				name: "youtube",
+				url: "https://youtube.com/@copperdevs",
+			},
+			{
+				name: "github",
+				url: "https://github.com/copperdevs",
+			},
+			{
+				name: "bluesky",
+				url: "https://bsky.app/profile/copperdevs.com",
+			},
+			{
+				name: "modrinth",
+				url: "https://modrinth.com/user/copperdevs",
+			},
+			{
+				name: "npm",
+				url: "https://www.npmjs.com/~copperdevs",
+			},
+			{
+				name: "nuget",
+				url: "https://www.nuget.org/profiles/copperdevs",
+			},
+		],
+		projects: [
+			{
+				name: "maia",
+				description: "message based networking library for .NET",
+				links: {
+					nuget: "https://www.nuget.org/packages/Artimora.Maia/",
+					source: "https://github.com/artimora/maia",
+				},
+			},
+			{
+				name: "electra",
+				description: "message based networking library for node",
+				links: {
+					npm: "https://www.npmjs.com/package/@artimora/electra",
+					source: "https://github.com/artimora/electra",
+				},
+			},
+			{
+				name: "kronos",
+				description: "simple web framework for .NET",
+				links: {
+					nuget: "https://www.nuget.org/packages/Artimora.Kronos",
+					source: "https://github.com/artimora/kronos",
+				},
+			},
+			{
+				name: "celesium",
+				description: "general use utility library",
+				links: {
+					nuget: "https://www.nuget.org/packages/CopperDevs.Celesium",
+					source: "https://github.com/copperdevs/celesium",
+				},
+			},
+			{
+				name: "windowing",
+				description: "simple, thin, windowing abstraction",
+				links: {
+					nuget: "https://www.nuget.org/packages/CopperDevs.Windowing",
+					source: "https://github.com/copperdevs/windowing",
+				},
+			},
+		],
+	};
+
 	return data;
 };
 

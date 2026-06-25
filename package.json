@@ -3,9 +3,10 @@
 	"type": "module",
 	"version": "0.1.0",
 	"scripts": {
-		"dev": "waku dev",
+		"dev": "WAKU_PUBLIC_GIT_HASH=$(git rev-parse --short HEAD) waku dev",
 		"build": "CLOUDFLARE=1 waku build",
-		"deploy": "CLOUDFLARE=1 waku build && wrangler deploy"
+		"deploy": "CLOUDFLARE=1 waku build && wrangler deploy",
+		"check": "CLOUDFLARE=1 node -e \"console.log(process.env.CLOUDFLARE)\""
 	},
 	"dependencies": {
 		"@nanostores/react": "^1.0.0",
