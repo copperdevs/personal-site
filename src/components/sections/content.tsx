@@ -1,13 +1,13 @@
 "use client";
 import { useStore } from "@nanostores/react";
-import { currentSection, type Section } from "@/stores";
+import { currentSection } from "@/lib/stores";
 
 export function Content({
 	section,
 	children,
 	className,
 }: {
-	section: Section;
+	section: string;
 	children: React.ReactNode;
 	className?: string;
 }) {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useStore } from "@nanostores/react";
-import { currentSubSection } from "@/stores";
+import { currentSubSection } from "@/lib/stores";
 
 export function SubSection({
 	section,

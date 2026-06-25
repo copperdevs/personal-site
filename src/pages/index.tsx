@@ -65,6 +65,7 @@ export default async function HomePage() {
 					</div>
 				))}
 			</Content>
+
 			<ExternalLink
 				href={`https://github.com/copperdevs/personal-site/commit/${hash}`}
 				style={{ position: "fixed", bottom: "10px", right: "10px" }}
