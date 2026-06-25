@@ -21,12 +21,12 @@ type Data = {
 };
 
 export default async function HomePage() {
-	const data = await getData();
+	const data = getData();
 
 	return (
 		<div>
 			<p>
-				{/** biome-ignore lint/suspicious/noCommentText: not a comment jackass */}
+				{/** biome-ignore lint/suspicious/noCommentText: not a comment */}
 				{data.name} // {data.description}
 			</p>
 			<Holder className="close">
@@ -68,7 +68,7 @@ export default async function HomePage() {
 	);
 }
 
-const getData = async () => {
+const getData = () => {
 	const data: Data = {
 		name: "copper",
 		description: "escape will make me god",
