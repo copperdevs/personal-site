@@ -59,7 +59,11 @@ export default async function HomePage() {
 								<p>{project.description}</p>
 								{Object.entries(project.links).map(
 									([key, value]) => (
-										<ExternalLink key={key} href={value}>
+										<ExternalLink
+											key={key}
+											href={value}
+											style={{ marginRight: "8px" }}
+										>
 											{key}
 										</ExternalLink>
 									),
