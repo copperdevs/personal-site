@@ -21,11 +21,27 @@
 	src: url("/fonts/officecodepro-regular.otf") format("opentype");
 }
 
+@media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+	}
+}
+
 html,
 body {
-	background: var(--gray);
-	color: var(--honeydew);
+	color: var(--gray);
+	background: var(--honeydew);
+	@media (prefers-color-scheme: dark) {
+		color: var(--honeydew);
+		background: var(--gray);
+	}
+
 	font-family: OfficeCodePro, monospace;
+
+	font-optical-sizing: auto;
+	font-variation-settings: "slnt" 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 a {
