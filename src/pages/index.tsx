@@ -11,7 +11,7 @@ type Data = {
 		name: string;
 		url: string;
 	}[];
-	projects: {
+	libraries: {
 		name: string;
 		description: string;
 		links: {
@@ -26,49 +26,65 @@ export default async function HomePage() {
 
 	return (
 		<div>
-			<p>
-				{/** biome-ignore lint/suspicious/noCommentText: not a comment */}
-				{data.name} // {data.description}
-			</p>
+			<div>
+				<p>
+					{/** biome-ignore lint/suspicious/noCommentText: not a comment */}
+					{data.name} // {data.description}
+				</p>
+				<p>i write C# (usually it works pretty well)</p>
+			</div>
+
 			<Holder className="close">
 				<Link section="socials" type="section" />
-				<Link section="projects" type="section" />
+				<Link section="libraries" type="section" />
 			</Holder>
 
 			<Content section="socials" className="close toppad">
-				{data.socials.map((social) => (
-					<ExternalLink key={social.name} href={social.url}>
-						{social.name}
-					</ExternalLink>
-				))}
+				<ul className="content">
+					{data.socials.map((social) => (
+						<li key={social.name}>
+							<ExternalLink key={social.name} href={social.url}>
+								{social.name}
+							</ExternalLink>
+						</li>
+					))}
+				</ul>
 			</Content>
 
-			<Content section="projects" className="close toppad">
-				{data.projects.map((project) => (
-					<div key={project.name}>
-						<SubSection section={project.name} className="sub">
-							<p>{project.description}</p>
-							{Object.entries(project.links).map(
-								([key, value]) => (
-									<ExternalLink key={key} href={value}>
-										{key}
-									</ExternalLink>
-								),
-							)}
-						</SubSection>
-
-						<Link
-							key={project.name}
-							subsection={project.name}
-							type="subsection"
-						/>
-					</div>
-				))}
+			<Content section="libraries" className="close toppad">
+				<ul className="content">
+					{data.libraries.map((project) => (
+						<div key={project.name}>
+							<SubSection section={project.name} className="sub">
+								<p>{project.description}</p>
+								{Object.entries(project.links).map(
+									([key, value]) => (
+										<ExternalLink key={key} href={value}>
+											{key}
+										</ExternalLink>
+									),
+								)}
+							</SubSection>
+							<li key={`${project.name}-item`}>
+								<Link
+									key={project.name}
+									subsection={project.name}
+									type="subsection"
+								/>
+							</li>
+						</div>
+					))}
+				</ul>
 			</Content>
 
 			<ExternalLink
 				href={`https://github.com/copperdevs/personal-site/commit/${hash}`}
-				style={{ position: "fixed", bottom: "10px", right: "10px" }}
+				style={{
+					position: "fixed",
+					bottom: "16px",
+					right: "32px",
+					lineHeight: "0",
+				}}
 			>
 				<div>{hash}</div>
 			</ExternalLink>
@@ -114,7 +130,7 @@ const getData = () => {
 				url: "https://www.nuget.org/profiles/copperdevs",
 			},
 		],
-		projects: [
+		libraries: [
 			{
 				name: "maia",
 				description: "message based networking library for .NET",

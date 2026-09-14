@@ -33,7 +33,7 @@ export function Link(props: LinkProps) {
 					);
 				}
 			}}
-			className="cursor default"
+			className={`cursor default${props.type === "section" && activeSection === props.section ? " active" : ""}`}
 		>
 			<p>
 				{props.type === "subsection" &&

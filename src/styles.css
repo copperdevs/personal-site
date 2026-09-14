@@ -17,15 +17,15 @@
 }
 
 @font-face {
-	font-family: PPFraktionMono;
-	src: url("/fonts/PPFraktionMono-Regular.otf") format("opentype");
+	font-family: OfficeCodePro;
+	src: url("/fonts/officecodepro-regular.otf") format("opentype");
 }
 
 html,
 body {
 	background: var(--gray);
 	color: var(--honeydew);
-	font-family: PPFraktionMono, sans-serif;
+	font-family: OfficeCodePro, monospace;
 }
 
 a {
@@ -46,6 +46,7 @@ a:visited {
 
 a:hover {
 	color: var(--celadon);
+	text-decoration: underline;
 }
 
 a:active {
@@ -75,4 +76,14 @@ a.underlined {
 
 .cursor.default {
 	cursor: default;
+}
+
+ul.content {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul.content li {
+	margin: 4px;
 }
