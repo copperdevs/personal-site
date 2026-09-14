@@ -5,8 +5,11 @@ import { Link } from "@/components/sections/link";
 import { SubSection } from "@/components/sections/subsection";
 
 type Data = {
-	name: string;
-	description: string;
+	info: {
+		name: string;
+		title: string;
+		description: string;
+	};
 	socials: {
 		name: string;
 		url: string;
@@ -26,12 +29,12 @@ export default async function HomePage() {
 
 	return (
 		<div>
-			<div>
-				<p>
+			<div className="main">
+				<p className="header">
 					{/** biome-ignore lint/suspicious/noCommentText: not a comment */}
-					{data.name} // {data.description}
+					{data.info.name} // {data.info.title}
 				</p>
-				<p>i write C# (usually it works pretty well)</p>
+				<p className="sub">{data.info.description}</p>
 			</div>
 
 			<Holder className="close">
@@ -55,7 +58,10 @@ export default async function HomePage() {
 				<ul className="content">
 					{data.libraries.map((project) => (
 						<div key={project.name}>
-							<SubSection section={project.name} className="sub">
+							<SubSection
+								section={project.name}
+								className="subsection"
+							>
 								<p>{project.description}</p>
 								{Object.entries(project.links).map(
 									([key, value]) => (
@@ -98,8 +104,11 @@ export default async function HomePage() {
 
 const getData = () => {
 	const data: Data = {
-		name: "copper",
-		description: "escape will make me god",
+		info: {
+			name: "copper",
+			title: "escape will make me god",
+			description: "I write C# (usually it works pretty well)",
+		},
 		socials: [
 			{
 				name: "email",

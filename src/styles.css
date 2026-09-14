@@ -65,7 +65,7 @@ p.close {
 	padding-top: 8px;
 }
 
-.sub {
+.subsection {
 	position: absolute;
 	left: 128px; /* TODO: make this dynamic depending on the text maybe? */
 }
@@ -86,4 +86,17 @@ ul.content {
 
 ul.content li {
 	margin: 4px;
+}
+
+/* .main .header {
+	margin-bottom: 4px;
+}
+
+.main .sub {
+	margin-top: 4px;
+} */
+
+.link-external {
+	height: 15px;
+	width: 15px;
 }
