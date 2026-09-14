@@ -1,24 +1,18 @@
 export type HomepageData = {
-	name: string;
-	description: string;
-	// links: {
-	// 	[key: string]: {
-	// 		name: string;
-	// 		url: string;
-	// 	}[];
-	// };
-	links: {
-		[key: string]: {
+	info: {
+		name: string;
+		title: string;
+		description: string;
+	};
+	socials: {
+		name: string;
+		url: string;
+	}[];
+	libraries: {
+		name: string;
+		description: string;
+		links: {
 			[key: string]: string;
 		};
-	};
-	projects: {
-		[key: string]: {
-			name: string;
-			description: string;
-			links: {
-				[key: string]: string;
-			};
-		}[];
-	};
+	}[];
 };
